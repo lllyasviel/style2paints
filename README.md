@@ -1,7 +1,7 @@
 # style2paints
 sketch + style = paints !
 
-These results are predicted **only after learned about 10,000 pictures** and the network is still under training.
+These randomly selected results are predicted **only after learned about 10,000 pictures** and the network is still under training.
 
 | Sketch | Style | Result |
 | :-: | :-: | :-: |
