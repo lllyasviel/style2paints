@@ -2,6 +2,8 @@
 
 Submitted to ACPR 2017.
 
+Our paper is limited to 6 pages due to the rule of ACPR 2017.
+
 sketch + style = paints !
 
 These randomly selected results are predicted **only after learned about 10,000 pictures** and the network is still under training.
