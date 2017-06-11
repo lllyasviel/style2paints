@@ -12,6 +12,8 @@ Codes will be avaliable once ACPR 2017's paper reviewing is finished.
 
 **Our paper is shared in this repo.**
 
+https://github.com/lllyasviel/style2paints/blob/master/paper.pdf
+
 sketch + style = paints !
 
 These randomly selected results are predicted **only after learned about 10,000 pictures** and the network is still under training.
