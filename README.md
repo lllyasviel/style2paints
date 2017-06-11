@@ -10,6 +10,8 @@ Our paper is limited to 6 pages due to the rule of ACPR 2017.
 
 Codes will be avaliable once ACPR 2017's paper reviewing is finished.
 
+**Our paper is shared in this repo. **
+
 sketch + style = paints !
 
 These randomly selected results are predicted **only after learned about 10,000 pictures** and the network is still under training.
