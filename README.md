@@ -8,6 +8,10 @@ sketch + style = paints !
 
 These randomly selected results are predicted **only after learned about 10,000 pictures** and the network is still under training.
 
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_1.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
+
 | Sketch | Style | Result |
 | :-: | :-: | :-: |
 |<img width="180" height="180" src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/previews/sketch0.jpg"/>|<img width="180" height="180" src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/previews/style0.jpg"/>|<img width="180" height="180" src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/previews/result0.jpg"/>|
