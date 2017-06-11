@@ -4,9 +4,23 @@ Submitted to ACPR 2017.
 
 Our paper is limited to 6 pages due to the rule of ACPR 2017.
 
+**This is a style transfer for sketchs and paintings.**
+
+**The AI can automatically recognize eyes, hair, clothes, skin and so on. The AI can paint on a sketch accroding to the specific style.**
+
+Codes will be avaliable once ACPR 2017's paper reviewing is finished.
+
+**Our paper is shared in this repo.**
+
+https://github.com/lllyasviel/style2paints/blob/master/paper.pdf
+
 sketch + style = paints !
 
 These randomly selected results are predicted **only after learned about 10,000 pictures** and the network is still under training.
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_1.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
 
 | Sketch | Style | Result |
 | :-: | :-: | :-: |
