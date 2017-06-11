@@ -10,7 +10,7 @@ Our paper is limited to 6 pages due to the rule of ACPR 2017.
 
 Codes will be avaliable once ACPR 2017's paper reviewing is finished.
 
-**Our paper is shared in this repo. **
+**Our paper is shared in this repo.**
 
 sketch + style = paints !
 
