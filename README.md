@@ -8,7 +8,7 @@ Our paper is limited to 6 pages due to the rule of ACPR 2017.
 
 **The AI can automatically recognize eyes, hair, clothes, skin and so on. The AI can paint on a sketch accroding to the specific style.**
 
-Codes will be avaliable once ACPR 2017's paper reviewing is finished.
+Codes will be avaliable before ACPR 2017's paper reviewing is finished.
 
 **Our paper is shared in this repo.**
 
