@@ -14,7 +14,15 @@ Codes will be avaliable before ACPR 2017's paper reviewing is finished.
 
 https://github.com/lllyasviel/style2paints/blob/master/paper.pdf
 
-sketch + style = paints !
+# As the First Man to Eat Crabs
+
+ours: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced Residual U-net and Auxiliary Classifier GAN
+
+21 Jun 2017 *cGAN-based Manga Colorization Using a Single Training Image* 
+
+21 Jun 2017 *Comicolorization : Semi-automatic Manga Colorization*
+
+# sketch + style = paints !
 
 These randomly selected results are predicted **only after learned about 10,000 pictures** and the network is still under training.
 
