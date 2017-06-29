@@ -14,7 +14,7 @@ Codes will be avaliable before ACPR 2017's paper reviewing is finished.
 
 https://github.com/lllyasviel/style2paints/blob/master/paper.pdf
 
-# As the First Man to Eat Crabs
+# Related Works
 
 ours: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced Residual U-net and Auxiliary Classifier GAN
 
