@@ -10,6 +10,8 @@ Our paper is limited to 6 pages due to the rule of ACPR 2017.
 
 Codes will be avaliable before ACPR 2017's paper reviewing is finished.
 
+Web demo is coming soon!
+
 **Our paper is shared in this repo.**
 
 https://github.com/lllyasviel/style2paints/blob/master/paper.pdf
