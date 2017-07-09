@@ -30,63 +30,61 @@ These randomly selected results are predicted **only after learned about 10,000 
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/111.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (1).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/116.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (2).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/133.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (3).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/134.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (4).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/144.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (5).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/147.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (6).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/154.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (7).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/156.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (8).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/157.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (9).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/159.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (10).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/160.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (11).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/172.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (12).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/173.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (13).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/179.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (14).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/180.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (15).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/181.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (16).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/182.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (17).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/184.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (18).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/202.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (19).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/29.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (20).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/39.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (21).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/48.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (22).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/29.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (23).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/39.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (24).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/48.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (25).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/7.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (26).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/80.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (27).jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/95.scaled.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/97.scaled.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/pic (28).jpg"/>
 
 | Sketch | Style | Result |
 | :-: | :-: | :-: |
