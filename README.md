@@ -32,8 +32,6 @@ These randomly selected results are predicted **only after learned about 10,000 
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/111.scaled.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/115.scaled.jpg"/>
-
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/116.scaled.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/133.scaled.jpg"/>
