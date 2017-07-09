@@ -30,6 +30,66 @@ These randomly selected results are predicted **only after learned about 10,000 
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
 
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/111.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/115.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/116.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/133.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/134.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/144.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/147.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/154.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/156.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/157.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/159.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/160.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/172.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/173.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/179.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/180.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/181.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/182.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/184.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/202.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/29.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/39.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/48.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/29.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/39.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/48.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/7.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/80.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/95.scaled.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/gallery/97.scaled.jpg"/>
+
 | Sketch | Style | Result |
 | :-: | :-: | :-: |
 |<img width="180" height="180" src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/previews/sketch0.jpg"/>|<img width="180" height="180" src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/previews/style0.jpg"/>|<img width="180" height="180" src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/previews/result0.jpg"/>|
