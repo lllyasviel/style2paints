@@ -24,6 +24,10 @@ Our first one: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced R
 
 *coming soon*
 
+# community
+
+QQ Group ID: 184467946
+
 # Demo
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_1.jpg"/>
