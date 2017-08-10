@@ -20,11 +20,11 @@ Our first one: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced R
 
 21 Jun 2017 *Comicolorization : Semi-automatic Manga Colorization*
 
-# requirement
+# Requirement
 
 *coming soon*
 
-# community
+# Community
 
 QQ Group ID: 184467946
 
