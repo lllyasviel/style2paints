@@ -52,8 +52,6 @@ Our first one: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced R
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/11.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/12.jpg"/>
-
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/13.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/14.jpg"/>
@@ -63,3 +61,11 @@ Our first one: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced R
 # More results
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
+
+# Acknowledgements
+
+All illustrations and sketches are from the internet and It is hard to mention all the painters.
+
+If you find your painting in the page, you can reach us at 914847518@qq.com. We will convert our sinsere gratefulness.
+
+If you do not like your painting being exhibited above, we will remove them at once.
