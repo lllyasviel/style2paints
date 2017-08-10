@@ -20,17 +20,13 @@ Our first one: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced R
 
 21 Jun 2017 *Comicolorization : Semi-automatic Manga Colorization*
 
-# sketch + style = paints !
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_1.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
-
 # requirement
 
 *coming soon*
 
 # Demo
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_1.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/1.jpg"/>
 
@@ -63,3 +59,7 @@ Our first one: **11 Jun 2017** Style Transfer for Anime Sketches with Enhanced R
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/14.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/15.jpg"/>
+
+# More results
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
