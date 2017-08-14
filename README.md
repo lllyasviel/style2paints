@@ -2,7 +2,7 @@
 
 Submitted to ACPR 2017.
 
-**We are hunting a server now and the website will coming in a week.**
+**We are hunting a server now and the website is coming soon in several weeks.**
 
 The AI can automatically recognize eyes, hair, clothes, skin and so on. The AI can paint on a sketch accroding to the specific style.
 
