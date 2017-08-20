@@ -1,6 +1,6 @@
 # style2paints
 
-Submitted to ACPR 2017.
+Accepted by ACPR 2017.
 
 **We are hunting a server now and the website is coming soon in several weeks.**
 
