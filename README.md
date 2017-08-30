@@ -18,6 +18,7 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
     pip install cupy
     pip install bottle
     pip install h5py
+    pip install opencv_python
 
 # Launch Server
 
@@ -26,9 +27,8 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
     cd style2paints/server
     python server.py
 
-# We are Collecting Failures
-
-If you find a colorization failure, it can be helpful to us that you upload the sketch and your reference image [here](https://github.com/lllyasviel/style2paints/issues/7).
+*You may need to check code to make the best of your GPU memory.*
+*server.py line 22 and 190*
 
 # Demo
 
@@ -48,8 +48,6 @@ If you find a colorization failure, it can be helpful to us that you upload the 
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/8.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/9.jpg"/>
-
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/10.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/11.jpg"/>
@@ -67,6 +65,14 @@ If you find a colorization failure, it can be helpful to us that you upload the 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/16.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/17.jpg"/>
+
+# We are Collecting Failures
+
+If you find a colorization failure, it can be helpful to us that you upload the sketch and your reference image [here](https://github.com/lllyasviel/style2paints/issues/7).
+
+For example, the hair in this image is blured and colored not so well.
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/9.jpg"/>
 
 # More results
 
