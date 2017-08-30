@@ -82,21 +82,27 @@ If you would like to write a paper to improve this works, you should keep in min
 
 2. If you make a comparison, please make your model avaliable to other reseachers to see if the improvement is really true.
 
-3. Recently many reseachers like to write paper in this way: find a old paper and replace conv layers with resnet blocks and then they have a new paper. Please stop this kind of violence.
+3. Recently many reseachers like to write paper in this way: find an old paper and replace conv layers with resnet blocks and then they have a new paper. Please stop this kind of violence.
 
-4. It is very easy to train a model with better ability to handel one of 'global hint' and 'local hint'. It is hard to train a model to deal with both of them. It is NOT a improvement that you train a model to handle one of these, you need to find a balance and improve them at same time.
+4. It is very easy to train a model with better ability to handel one of the 'global hint' and the 'local hint'. It is hard to train a model to deal with both of them. It is NOT an improvement that you train a model to handle one of these, you need to find a balance and improve them at the same time.
 
-*The 'global hint' is users' inputed reference image.*
+*The 'global hint' is users' reference images input.*
 
-*The 'local hint' is users' inputed pointed color hints.*
+*The 'local hint' is users' pointed color hints input.*
 
 # Model
 
 Models are avaliable in 'release' page.
 
-    base_generator.net            all rights reserved 2017 style2paints
-    paintschainer.net             from paintschainer
-    google_net.net                from nico-opendata
+1. base_generator.net            all rights reserved 2017 style2paints
+2. paintschainer.net             from [paintschainer](https://github.com/pfnet/PaintsChainer)
+3. google_net.net                from [nico-opendata](https://nico-opendata.jp/en/demo/tag/index.html)
+
+# Training Datasets
+
+1. The recommended training dataset of illustrations is the 400k images from [nico-opendata](https://nico-opendata.jp/en/seigadata/index.html)
+
+2. The recommended training sketches is from [sketchKeras](https://github.com/lllyasviel/sketchKeras)
 
 # Community
 
