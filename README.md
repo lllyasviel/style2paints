@@ -5,6 +5,7 @@ The AI can automatically recognize eyes, hair, clothes, skin and so on. The AI c
 The AI can not only paints on sketches, but also reconstruct the color of a finished illustration.
 
 *Our poor guys finally failed to find a cheap server, GPU server is very expensive that we cannot afford.*
+
 *Please contact QQ 914847518 or email at 914847518@qq.com if you would like to help us with the server.*
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/web.png"/>
@@ -21,6 +22,7 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
 # Launch Server
 
     git clone https://github.com/lllyasviel/style2paints.git
+    (then download all pretrained models from **release** page and then put them in **style2paints/server**)
     cd style2paints/server
     python server.py
 
