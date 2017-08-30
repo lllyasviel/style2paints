@@ -1,0 +1,73 @@
+<html>
+
+<head></head>
+
+<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.github.io/templates/blank/theme.css" type="text/css">
+  <nav class="navbar navbar-expand-md navbar-light bg-faded">
+    <div class="container">
+      <a class="navbar-brand" href="">Style2Paints</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">主页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/lllyasviel/style2paints">开源代码</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\full.html">纯净模式</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/lllyasviel/style2paints">下载模型</a>
+          </li>
+        </ul>
+        <a class="btn btn-default navbar-btn" href="\">English</a>
+        <a class="btn navbar-btn btn-primary" href="\index-zh.html">简体中文</a>
+        <a class="btn btn-default navbar-btn" href="\index-jp.html">日本語</a>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5  section">
+    <div class="container">
+      <div class="row">
+        <div id="GameDiv" class="col-md-12"> <canvas id="GameCanvas" width="1280" height="720"></canvas>
+          <div id="splash">
+            <div class="progress-bar stripes"> <span style="width: 0%"></span> </div>
+          </div>
+        </div>
+        <script src="src/settings.js" charset="utf-8"></script>
+        <script src="main.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="text-sm-center text-primary">操作方法</h2>
+          <p class="text-justify my-1">上传线稿和参考图片然后点击上色即可。注意不同于其他上色软件，您只能选择您参考图片中的颜色。鼠标在参考颜色区域移动即可选择颜色，左键点击取色。尽可能选择构图相似的图片或者包含了几乎全部线稿细节的参考图最佳。您可以用颜色添加点的提示。</p>
+        </div>
+        <div class="col-md-4">
+          <h2 class="text-sm-center text-primary">神经网络偏好</h2>
+          <p class="text-justify my-1">实验表明这个神经网络比较能处理白色底色的风格图片，当然其他颜色也没问题。记住选择一张适合的风格参考图片是非常重要的。最终的结果优秀与否大致上取决于风格参考图片。添加的颜色提示倒不会起到决定性作用。</p>
+        </div>
+        <div class="col-md-4">
+          <h2 class="text-sm-center text-primary">加入我们</h2>
+          <p class="text-justify my-1">群号是184467946，喜欢神经网络的可以加一下。或者你喜欢计算机美术的也可以加一下这个群。群内也许会有很多领域的讨论，不局限于人工智能，关于游戏制作与美术设计也欢迎。
+            <br>或者你喜欢发邮件的话这里有个地址:
+            <br>&nbsp;<i>914847518@qq.com</i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+</body>
+
+</html>

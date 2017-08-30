@@ -2,7 +2,7 @@
 
 Accepted by ACPR 2017.
 
-**We are hunting a server now and the website is coming very soon.**
+**We are up loading server now, please wait.**
 
 The AI can automatically recognize eyes, hair, clothes, skin and so on. The AI can paint on a sketch accroding to the specific style.
 
@@ -10,7 +10,7 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
 
 *Our paper is shared in this repo.*
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/web.png"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/web.png"/>
 
 # Related Works
 
@@ -30,47 +30,47 @@ QQ Group ID: 184467946
 
 # Demo
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_1.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/1.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/1.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/2.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/2.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/3.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/3.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/4.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/4.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/5.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/5.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/6.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/6.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/7.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/7.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/8.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/8.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/9.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/9.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/10.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/10.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/11.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/11.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/12.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/12.jpg"/>
 
 # Style Reconstruction for Illustrations
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/13.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/13.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/14.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/14.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/15.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/15.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/16.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/16.jpg"/>
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/17.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/17.jpg"/>
 
 # More results
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/preview_2.jpg"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/preview_1.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/github_page_images/preview_2.jpg"/>
 
 # Acknowledgements
 
