@@ -18,7 +18,7 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
     pip install cupy
     pip install bottle
     pip install h5py
-    pip install opencv_python
+    pip install opencv-python
 
 # Launch Server
 
@@ -113,6 +113,17 @@ Models are avaliable in 'release' page.
 # Community
 
 QQ Group ID: 184467946
+
+# Paper Reference
+
+The paper is accecped by ACPR 2017.
+
+    @article{StyleTansferForAnime,
+        Author = {Lvmin Zhang and Yi Ji and Xin Lin},
+        Title = {Style Transfer for Anime Sketches with Enhanced Residual U-net and Auxiliary Classifier GAN},
+        Journal = {arXiv:1706.03319},
+        Year = {2017}
+    }
 
 # Acknowledgements
 
