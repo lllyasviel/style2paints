@@ -18,6 +18,7 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
     pip install cupy
     pip install bottle
     pip install h5py
+    pip install opencv-python
 
 # Launch Server
 
