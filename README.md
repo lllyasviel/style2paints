@@ -26,6 +26,10 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
     cd style2paints/server
     python server.py
 
+# We are Collecting Failures
+
+If you find a colorization failure, it can be helpful to us that you upload the sketch and your reference image [here](https://github.com/lllyasviel/style2paints/issues/7).
+
 # Demo
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/1.jpg"/>
@@ -78,7 +82,7 @@ If you would like to write a paper to improve this works, you should keep in min
 
 2. If you make a comparison, please make your model avaliable to other reseachers to see if the improvement is really true.
 
-3. Recently many reseachers likes to write paper in this way: find a old paper and replace conv layers with resnet blocks and then they have a new paper. Please stop this kind of violence.
+3. Recently many reseachers like to write paper in this way: find a old paper and replace conv layers with resnet blocks and then they have a new paper. Please stop this kind of violence.
 
 4. It is very easy to train a model with better ability to handel one of 'global hint' and 'local hint'. It is hard to train a model to deal with both of them. It is NOT a improvement that you train a model to handle one of these, you need to find a balance and improve them at same time.
 
