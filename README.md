@@ -2,7 +2,7 @@
 
 Accepted by ACPR 2017.
 
-**We are hunting a server now and the website is coming soon in several weeks.**
+**We are hunting a server now and the website is coming very soon.**
 
 The AI can automatically recognize eyes, hair, clothes, skin and so on. The AI can paint on a sketch accroding to the specific style.
 
@@ -50,17 +50,23 @@ QQ Group ID: 184467946
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/9.jpg"/>
 
-# Style Reconstruction for Illustrations
-
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/10.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/11.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/12.jpg"/>
+
+# Style Reconstruction for Illustrations
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/13.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/14.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/15.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/16.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/webpre/17.jpg"/>
 
 # More results
 
