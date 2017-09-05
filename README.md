@@ -30,7 +30,15 @@ The AI can not only paints on sketches, but also reconstruct the color of a fini
 *You may need to check code to make the best of your GPU memory.*
 *server.py line 22 and 190*
 
+# News
+
+**The model is updated at 2017.9.5.**
+
 # Demo
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/19.jpg"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/18.jpg"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/1.jpg"/>
 
