@@ -4,6 +4,8 @@ The AI can paint on a sketch accroding to a given specific color style.
 
 The AI can also reconstruct the color of a finished illustration (unstable).
 
+https://www.bilibili.com/video/av14381716/
+
 # Requirement
 
     pip install tensorflow_gpu
