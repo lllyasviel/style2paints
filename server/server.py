@@ -1,4 +1,8 @@
-from bottle import route, run, template, static_file, get, post, request, BaseRequest
+chainer_GPU_ID = 0
+tensorflow_GPU_ID = 0
+k_between_tf_and_chainer = 0.5
+
+from bottle import route, run, static_file, request, BaseRequest
 import base64
 import re
 import numpy as np
@@ -19,7 +23,7 @@ tf.set_random_seed(seed)
 np.random.seed(seed)
 random.seed(seed)
 BaseRequest.MEMFILE_MAX = 10000 * 1000
-chainer_ID = 1
+chainer_ID = chainer_GPU_ID
 
 import chainer
 import chainer.links as L
@@ -187,24 +191,11 @@ def ini_chainer():
 chainer_thread = threading.Thread(target=ini_chainer)
 chainer_thread.start()
 
-session = tf.Session(config=tf.ConfigProto(gpu_options=tf.GPUOptions(visible_device_list="1",per_process_gpu_memory_fraction=0.5)))
+session = tf.Session(config=tf.ConfigProto(gpu_options=tf.GPUOptions(visible_device_list=str(tensorflow_GPU_ID),per_process_gpu_memory_fraction=k_between_tf_and_chainer)))
 K.set_session(session)
 EPS = 1e-12
 lr = 1e-6
 beta1 = 0.5
-
-def decode_mat(raw):
-    mat = raw.copy()
-    mat = 1 - mat
-    mat = mat * 255.0
-    mat[mat < 0] = 0
-    mat[mat > 255] = 255
-    mat = mat.astype(np.uint8)
-    return mat
-
-
-def show_512_mat(name,mat,k):
-    cv2.imshow(name, decode_mat(cv2.resize(mat,(512,512))))
 
 with tf.variable_scope("generator"):
     base_generator = load_model('base_generator.net')
@@ -344,7 +335,22 @@ def do_paint():
 
     final = final.clip(0,255).astype(np.uint8)
 
-    sketch = unet_resize(raw_sketch)
+    if raw_sketch.shape[0] < raw_sketch.shape[1]:
+        s0 = 128
+        s1 = int(raw_sketch.shape[1] * (128 / raw_sketch.shape[0]))
+        s1 = s1 - s1 % 16
+        _s0 = 4 * s0
+        _s1 = int(raw_sketch.shape[1] * (_s0 / raw_sketch.shape[0]))
+        _s1 = (_s1 + 8) - (_s1 + 8) % 16
+    else:
+        s1 = 128
+        s0 = int(raw_sketch.shape[0] * (128 / raw_sketch.shape[1]))
+        s0 = s0 - s0 % 16
+        _s1 = 4 * s1
+        _s0 = int(raw_sketch.shape[0] * (_s1 / raw_sketch.shape[1]))
+        _s0 = (_s0 + 8) - (_s0 + 8) % 16
+
+    sketch = cv2.resize(raw_sketch, (_s1, _s0), interpolation=cv2.INTER_AREA)
     final = cv2.resize(final, (sketch.shape[1], sketch.shape[0]), cv2.INTER_LANCZOS4)
     final = cv2.cvtColor(final, cv2.COLOR_RGB2YUV)
     final = final[None, :, :, :]
@@ -360,58 +366,10 @@ def do_paint():
     fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
     fin = np.transpose(fin, [1, 2, 0])
     fin = cv2.cvtColor(fin, cv2.COLOR_YUV2RGB)
-    # fin = cv2.resize(fin, (int(rawshape[1]), int(rawshape[0])), cv2.INTER_LANCZOS4)
 
     cv2.imwrite('record/' + dstr + '.fin.png', fin)
     result, buffer = cv2.imencode(".png", fin)
     return base64.b64encode(buffer)
-
-
-def standard_resize(img):
-    width = img.shape[0]
-    height = img.shape[1]
-    if (width < height):
-        height = int(512.0 * float(height) / float(width))
-        width = int(512)
-    else:
-        width = int(512.0 * float(width) / float(height))
-        height = int(512)
-    return cv2.resize(img, (height, width), cv2.INTER_AREA)
-
-
-def unet_resize(image1,s_size=128):
-    if image1.shape[0] < image1.shape[1]:
-        s0 = s_size
-        s1 = int(image1.shape[1] * (s_size / image1.shape[0]))
-        s1 = s1 - s1 % 16
-        _s0 = 4 * s0
-        _s1 = int(image1.shape[1] * (_s0 / image1.shape[0]))
-        _s1 = (_s1 + 8) - (_s1 + 8) % 16
-    else:
-        s1 = s_size
-        s0 = int(image1.shape[0] * (s_size / image1.shape[1]))
-        s0 = s0 - s0 % 16
-        _s1 = 4 * s1
-        _s0 = int(image1.shape[0] * (_s1 / image1.shape[1]))
-        _s0 = (_s0 + 8) - (_s0 + 8) % 16
-    return cv2.resize(image1, (_s1, _s0),interpolation=cv2.INTER_AREA)
-
-
-def process_image(x):
-    x = x[:, :, ::-1]
-    x[:, :, 0] -= 103.939
-    x[:, :, 1] -= 116.779
-    x[:, :, 2] -= 123.68
-    return x
-
-
-def deprocess_image(x):
-    x[:, :, 0] += 103.939
-    x[:, :, 1] += 116.779
-    x[:, :, 2] += 123.68
-    x = x[:, :, ::-1]
-    x = np.clip(x, 0, 255).astype('uint8')
-    return x
 
 
 run(host="0.0.0.0", port=8000)
