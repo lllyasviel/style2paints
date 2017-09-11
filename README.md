@@ -26,9 +26,9 @@ The AI can also reconstruct the color of a finished illustration (unstable).
 
 # Additional Description
 
-Some results can be checked [here](https://raw.githubusercontent.com/lllyasviel/style2paints/master/additional_results.md).
+Some results can be checked [here](https://github.com/lllyasviel/style2paints/blob/master/additional_results.md).
 
-We are collecting colorization failures [here](https://raw.githubusercontent.com/lllyasviel/style2paints/master/failures.md).
+We are collecting colorization failures [here](https://github.com/lllyasviel/style2paints/blob/master/failures.md).
 
 # Model
 
