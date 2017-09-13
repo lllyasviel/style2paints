@@ -4,7 +4,7 @@ The AI can paint on a sketch accroding to a given specific color style.
 
 The AI can also reconstruct the color of a finished illustration (unstable).
 
-https://www.bilibili.com/video/av14381716/
+<a href="https://www.bilibili.com/video/av14443094/" rel="Video"><img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/link.png" alt="Video" width="100%"></a>
 
 # Requirement
 
@@ -23,51 +23,12 @@ https://www.bilibili.com/video/av14381716/
     cd style2paints/server
     python server.py
 
-# Demo
+# Results
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/19.jpg"/>
+If you would like to have a glance of our work, we recommend you to watch the video above.
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/18.jpg"/>
+you can alse check more results [here](https://github.com/lllyasviel/style2paints/blob/master/demo.md).
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/1.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/2.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/3.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/4.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/5.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/6.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/7.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/8.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/10.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/11.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/12.jpg"/>
-
-# Style Reconstruction for Illustrations
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/13.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/14.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/15.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/16.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/17.jpg"/>
-
-# More results
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/preview_1.jpg"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/images/preview_2.jpg"/>
 
 # Failures
 
