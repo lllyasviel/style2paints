@@ -200,8 +200,8 @@ beta1 = 0.5
 with tf.variable_scope("generator"):
     base_generator = load_model('base_generator.net')
 
-sketch_ref_input_448 = tf.placeholder(dtype=tf.float32, shape=(None, 448, 448, 1))
-local_hint_input_448 = tf.placeholder(dtype=tf.float32, shape=(None, 448, 448, 3))
+sketch_ref_input_448 = tf.placeholder(dtype=tf.float32, shape=(None, None, None, 1))
+local_hint_input_448 = tf.placeholder(dtype=tf.float32, shape=(None, None, None, 3))
 hint_s57c64_0 = tf.placeholder(dtype=tf.float32, shape=(None, 64))
 hint_s29c192_0 = tf.placeholder(dtype=tf.float32, shape=(None, 192))
 hint_s29c256_0 = tf.placeholder(dtype=tf.float32, shape=(None, 256))
@@ -249,6 +249,8 @@ def send_static():
 
 @route('/paint', method='POST')
 def do_paint():
+    print('received')
+
     dstr = datetime.datetime.now().strftime('%b%d_%H%M%S') + str(np.random.randint(10000,99999))
 
     sketchDataURL = request.forms.get("sketch")
@@ -277,19 +279,19 @@ def do_paint():
     sketch = sketchDataURL[:, :, 0:3]
     raw_sketch = sketch.copy()
     sketch = cv2.cvtColor(sketch,cv2.COLOR_RGB2GRAY)
-    sketch = cv2.resize(sketch,(448,448),cv2.INTER_AREA)
+    sketch = unet_resize(sketch,28)
     sketch = sketch.astype(np.float)
     sketch = sketch / 255.0
     sketch = 1 - sketch
     sketch = sketch[None,:,:,None]
 
     reference = referenceDataURL[:, :, 0:3]
-    reference = cv2.resize(reference, (224, 224), interpolation=cv2.INTER_AREA)
+    reference = cv2.resize(reference, (224,224), interpolation=cv2.INTER_AREA)
     reference = reference.astype(np.float32)
     reference = reference / 255.0
     reference = reference.transpose((2, 0, 1))[None, :, :, :]
 
-    with chainer.no_backprop_mode(): 
+    with chainer.no_backprop_mode():
         with chainer.using_config('train', False):
             vhint_s57c64_0, vhint_s29c192_0, vhint_s29c256_0, vhint_s29c320_0, vhint_s15c576_0, vhint_s15c576_1, vhint_s15c576_2, vhint_s15c576_3, vhint_s15c576_4, vhint_s8c1024_0, vhint_s8c1024_1, vhint_s8c1024_2 = google_net.forward(chainer.cuda.to_gpu(reference,chainer_ID))
 
@@ -301,7 +303,7 @@ def do_paint():
     color = cv2.cvtColor(color,cv2.COLOR_HSV2RGB)
     hint[:, :, 0:3] = color
 
-    hint = cv2.resize(hint, (448, 448), cv2.INTER_AREA)
+    hint = cv2.resize(hint, (sketch.shape[2], sketch.shape[1]), cv2.INTER_AREA)
     hint = hint.astype(np.float)
     local_hint = hint[:,:,0:3]
     alpha = hint[:, :, 3] / 255.0
@@ -335,22 +337,7 @@ def do_paint():
 
     final = final.clip(0,255).astype(np.uint8)
 
-    if raw_sketch.shape[0] < raw_sketch.shape[1]:
-        s0 = 128
-        s1 = int(raw_sketch.shape[1] * (128 / raw_sketch.shape[0]))
-        s1 = s1 - s1 % 16
-        _s0 = 4 * s0
-        _s1 = int(raw_sketch.shape[1] * (_s0 / raw_sketch.shape[0]))
-        _s1 = (_s1 + 8) - (_s1 + 8) % 16
-    else:
-        s1 = 128
-        s0 = int(raw_sketch.shape[0] * (128 / raw_sketch.shape[1]))
-        s0 = s0 - s0 % 16
-        _s1 = 4 * s1
-        _s0 = int(raw_sketch.shape[0] * (_s1 / raw_sketch.shape[1]))
-        _s0 = (_s0 + 8) - (_s0 + 8) % 16
-
-    sketch = cv2.resize(raw_sketch, (_s1, _s0), interpolation=cv2.INTER_AREA)
+    sketch = unet_resize(raw_sketch)
     final = cv2.resize(final, (sketch.shape[1], sketch.shape[0]), cv2.INTER_LANCZOS4)
     final = cv2.cvtColor(final, cv2.COLOR_RGB2YUV)
     final = final[None, :, :, :]
@@ -359,7 +346,7 @@ def do_paint():
     fed = np.concatenate([sketch, final], axis=3)
     fed = np.transpose(fed, [0, 3, 1, 2])
 
-    with chainer.no_backprop_mode(): 
+    with chainer.no_backprop_mode():
         with chainer.using_config('train', False):
             fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32),chainer_ID))
 
@@ -370,6 +357,24 @@ def do_paint():
     cv2.imwrite('record/' + dstr + '.fin.png', fin)
     result, buffer = cv2.imencode(".png", fin)
     return base64.b64encode(buffer)
+
+
+def unet_resize(image1,s_size=32):
+    if image1.shape[0] < image1.shape[1]:
+        s0 = s_size
+        s1 = int(image1.shape[1] * (s_size / image1.shape[0]))
+        s1 = s1 - s1 % 64
+        _s0 = 16 * s0
+        _s1 = int(image1.shape[1] * (_s0 / image1.shape[0]))
+        _s1 = (_s1 + 32) - (_s1 + 32) % 64
+    else:
+        s1 = s_size
+        s0 = int(image1.shape[0] * (s_size / image1.shape[1]))
+        s0 = s0 - s0 % 64
+        _s1 = 16 * s1
+        _s0 = int(image1.shape[0] * (_s1 / image1.shape[1]))
+        _s0 = (_s0 + 32) - (_s0 + 32) % 64
+    return cv2.resize(image1, (_s1, _s0),interpolation=cv2.INTER_AREA)
 
 
 run(host="0.0.0.0", port=8000)
