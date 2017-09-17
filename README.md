@@ -23,17 +23,6 @@ The AI can also reconstruct the color of a finished illustration (unstable).
     cd style2paints/server
     python server.py
 
-# Results
-
-If you would like to have a glance of our work, we recommend you to watch the video above.
-
-you can alse check more results [here](https://github.com/lllyasviel/style2paints/blob/master/demo.md).
-
-
-# Failures
-
-We are collecting colorization failures [here](https://github.com/lllyasviel/style2paints/blob/master/failures.md).
-
 # Model
 
 Models are avaliable in 'release' page.
