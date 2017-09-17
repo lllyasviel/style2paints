@@ -1,5 +1,8 @@
 # STYLE2PAINTS
 
+ZhiHu [link](https://zhuanlan.zhihu.com/p/29331219)
+BiliBili [link](https://www.bilibili.com/video/av14443094/)
+
 The AI can paint on a sketch accroding to a given specific color style.
 
 The AI can also reconstruct the color of a finished illustration (unstable).
