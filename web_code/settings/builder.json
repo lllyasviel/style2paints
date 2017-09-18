@@ -19,7 +19,7 @@
   },
   "packageName": "org.cocos2d.helloworld",
   "privateKey": "",
-  "renderMode": "1",
+  "renderMode": "2",
   "startScene": "7309e585-26a0-4bd4-9f94-adb036829c1d",
   "title": "style2paint",
   "webOrientation": "auto"

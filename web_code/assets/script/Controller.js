@@ -24,7 +24,9 @@ var finalY=0;
 var hasSketch=false;
 var hasRef=false;
 
-var hintCan;
+var HTML_Canvas_sketch;
+var HTML_Canvas_reference;
+var HTML_Canvas_hint;
 
 var isPen = true;
 
@@ -60,24 +62,55 @@ function loadLocalReference(uri){
 	}
 	var img = document.getElementById('imgheadReference');
     img.onload = function(){
-		var texture=spRefereneImg.spriteFrame.getTexture();
-		texture._pixels = [];
-		texture.initWithElement(this);
-		texture.handleLoadedTexture();
-		var w = parseFloat(this.width);
-		var h = parseFloat(this.height);
-		if(w<h)
+        
+        var w_224 = parseFloat(this.width);
+		var h_224 = parseFloat(this.height);
+		if(w_224 > h_224)
 		{
-		    w = 200.0 / h * w;
-		    h = 200.0;
+		    w_224 = 224.0 / h_224 * w_224;
+		    h_224 = 224.0;
 		}
 		else
 		{
-		    h = 200.0 / w * h;
-		    w = 200.0;
+		    h_224 = 224.0 / w_224 * h_224;
+		    w_224 = 224.0;
 		}
-		spRefereneImg.node.width = parseInt(w);
-		spRefereneImg.node.height = parseInt(h);
+		
+		var w_200 = parseFloat(this.width);
+		var h_200 = parseFloat(this.height);
+		if(w_200 < h_200)
+		{
+		    w_200 = 200.0 / h_200 * w_200;
+		    h_200 = 200.0;
+		}
+		else
+		{
+		    h_200 = 200.0 / w_200 * h_200;
+		    w_200 = 200.0;
+		}
+		
+		spRefereneImg.node.width = parseInt(w_200);
+		spRefereneImg.node.height = parseInt(h_200);
+		HTML_Canvas_reference.width = parseInt(w_224);
+        HTML_Canvas_reference.height = parseInt(h_224);
+        
+        HTML_Canvas_reference.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_reference.width, HTML_Canvas_reference.height);
+        HTML_Canvas_hint.getContext("2d").clearRect(0,0,HTML_Canvas_hint.width,HTML_Canvas_hint.height);
+        
+        var referenceNodeTexture = spRefereneImg.spriteFrame.getTexture();
+		var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+        
+		hintNodeTexture.initWithElement(HTML_Canvas_hint);
+		hintNodeTexture.handleLoadedTexture();
+		
+		referenceNodeTexture.initWithElement(HTML_Canvas_reference);
+		referenceNodeTexture.handleLoadedTexture();
+		
+		var tempCanvas_200 = document.createElement("canvas");
+        tempCanvas_200.width = parseInt(w_200);
+        tempCanvas_200.height = parseInt(h_200);
+        tempCanvas_200.getContext("2d").drawImage(this, 0, 0, tempCanvas_200.width, tempCanvas_200.height);
+        referenceNodeTexture._pixels = tempCanvas_200.getContext("2d").getImageData(0, 0, tempCanvas_200.width, tempCanvas_200.height).data;
 		
 		hasRef = true;
     }
@@ -97,8 +130,8 @@ function loadLocalResult(uri){
 	}
 	var img = document.getElementById('imgheadResult');
     img.onload = function(){
-		var texture=spResultImg.spriteFrame.getTexture();
-		texture._pixels = [];
+        
+		var texture = spResultImg.spriteFrame.getTexture();
 		texture.initWithElement(this);
 		texture.handleLoadedTexture();
 		var w = parseFloat(this.width);
@@ -148,13 +181,10 @@ function loadLocalSketch(uri){
 	}
 	var img = document.getElementById('imgheadSketch');
     img.onload = function(){
-		var texture=spSketchImg.spriteFrame.getTexture();
-		texture._pixels = [];
-		texture.initWithElement(this);
-		texture.handleLoadedTexture();
-		var w = parseFloat(this.width);
+        
+        var w = parseFloat(this.width);
 		var h = parseFloat(this.height);
-		if(w<h)
+		if(w > h)
 		{
 		    w = 512.0 / h * w;
 		    h = 512.0;
@@ -164,19 +194,40 @@ function loadLocalSketch(uri){
 		    h = 512.0 / w * h;
 		    w = 512.0;
 		}
+        
+        HTML_Canvas_sketch.width = parseInt(w);
+        HTML_Canvas_sketch.height = parseInt(h);
+        HTML_Canvas_hint.width = parseInt(w);
+		HTML_Canvas_hint.height = parseInt(h);
+        
+		w = parseFloat(this.width);
+		h = parseFloat(this.height);
+		if(w < h)
+		{
+		    w = 512.0 / h * w;
+		    h = 512.0;
+		}
+		else
+		{
+		    h = 512.0 / w * h;
+		    w = 512.0;
+		}
+		
 		spSketchImg.node.width = parseInt(w);
 		spSketchImg.node.height = parseInt(h);
+		spHintNode.width = parseInt(w);
+		spHintNode.height = parseInt(h);
+
+        HTML_Canvas_sketch.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_sketch.width, HTML_Canvas_sketch.height);
+	    HTML_Canvas_hint.getContext("2d").clearRect(0,0,HTML_Canvas_hint.width,HTML_Canvas_hint.height);
+	    
+        var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+		hintNodeTexture.initWithElement(HTML_Canvas_hint);
+		hintNodeTexture.handleLoadedTexture();
 		
-		spHintNode.width = spSketchImg.node.width;
-		spHintNode.height = spSketchImg.node.height;
-		
-		hintCan.width = spSketchImg.node.width;
-		hintCan.height = spSketchImg.node.height;
-		var cxt=hintCan.getContext("2d");
-	    cxt.clearRect(0,0,hintCan.width,hintCan.height);
-        var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
-		hintNodeTex.initWithElement(hintCan);
-		hintNodeTex.handleLoadedTexture();
+		var sketchNodeTexture = spSketchImg.spriteFrame.getTexture();
+		sketchNodeTexture.initWithElement(HTML_Canvas_sketch);
+		sketchNodeTexture.handleLoadedTexture();
 		
 		hasSketch = true;
     }
@@ -185,15 +236,6 @@ function loadLocalSketch(uri){
 
 cc.Texture2D.prototype._pixels = [];
 cc.Texture2D.prototype.getPixels = function(x,y,newWidth,newHeight){
-    if(!this._pixels || this._pixels.length == 0){ 
-        var canvas = document.createElement("canvas");
-        canvas.width = newWidth;
-        canvas.height = newHeight;
-        var ctx = canvas.getContext("2d");
-        var obj = this.getHtmlElementObj();
-        ctx.drawImage(obj, 0, 0, newWidth, newHeight);
-        this._pixels = ctx.getImageData(0, 0, newWidth, newHeight).data;
-    }
     var idx = parseInt((newHeight-parseInt(y)) * newWidth * 4 + parseInt(x) * 4);
     return new cc.color(this._pixels[idx],this._pixels[idx + 1],this._pixels[idx + 2]);
 };
@@ -226,7 +268,6 @@ cc.Class({
     },
 
     onLoad: function () {
-        cc.renderer.enableDirtyRegion(false);
 
         spSketchImg = this.sketchImg.getComponent('cc.Sprite');
         spRefereneImg = this.referenceImg.getComponent('cc.Sprite');
@@ -269,8 +310,15 @@ cc.Class({
             mouseIsDown = false;
         });
         
-        hintCan = document.createElement("canvas");
-        hintCan.id = "hintcan";
+        HTML_Canvas_hint = document.createElement("canvas");
+        HTML_Canvas_hint.id = "HTML_Canvas_hint";
+        
+        HTML_Canvas_reference = document.createElement("canvas");
+        HTML_Canvas_reference.id = "HTML_Canvas_reference";
+        
+        HTML_Canvas_sketch = document.createElement("canvas");
+        HTML_Canvas_sketch.id = "HTML_Canvas_sketch";
+        
         loaded = true;
         
     },
@@ -288,10 +336,10 @@ cc.Class({
         isPen = false;
     },
     onClearClicked: function(){
-        var cxt=hintCan.getContext("2d");
-	    cxt.clearRect(0,0,hintCan.width,hintCan.height);
+        var cxt=HTML_Canvas_hint.getContext("2d");
+	    cxt.clearRect(0,0,HTML_Canvas_hint.width,HTML_Canvas_hint.height);
         var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
-		hintNodeTex.initWithElement(hintCan);
+		hintNodeTex.initWithElement(HTML_Canvas_hint);
 		hintNodeTex.handleLoadedTexture();
     },
     onColorizeClicked: function(){
@@ -302,36 +350,9 @@ cc.Class({
             return;
         }
         
-        var canvas = document.createElement("canvas");
-        var texture = spSketchImg.spriteFrame.getTexture();
-        var w = parseFloat(texture.width);
-		var h = parseFloat(texture.height);
-        canvas.width = w;
-        canvas.height = h;
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(texture.getHtmlElementObj(), 0, 0, w, h);
-        var sketchDataURL = canvas.toDataURL("image/png");
-        
-        texture = spRefereneImg.spriteFrame.getTexture();
-        var w = parseFloat(texture.width);
-		var h = parseFloat(texture.height);
-		if(w>h)
-		{
-		    w = 256.0 / h * w;
-		    h = 256.0;
-		}
-		else
-		{
-		    h = 256.0 / w * h;
-		    w = 256.0;
-		}
-        canvas.width = w;
-        canvas.height = h;
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(texture.getHtmlElementObj(), 0, 0, w, h);
-        var referenceDataURL = canvas.toDataURL("image/png");
-        
-        var hintDataURL = hintCan.toDataURL("image/png");
+        var hintDataURL = HTML_Canvas_hint.toDataURL("image/png");
+        var referenceDataURL = HTML_Canvas_reference.toDataURL("image/png");
+        var sketchDataURL = HTML_Canvas_sketch.toDataURL("image/png");
         
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/paint", true);
@@ -378,22 +399,22 @@ cc.Class({
         }
         if(painting){
             if(mouseIsDown){
-                var cxt=hintCan.getContext("2d");
+                var cxt=HTML_Canvas_hint.getContext("2d");
                 
                 if(isPen){
                     cxt.beginPath();
-                    cxt.arc(relativeX, spSketchImg.node.height - relativeY, 3, 0, Math.PI * 2, true);
+                    cxt.arc(parseInt(parseFloat(relativeX) / parseFloat(spSketchImg.node.width) * parseFloat(HTML_Canvas_sketch.width)), parseInt(parseFloat(spSketchImg.node.height - relativeY) / parseFloat(spSketchImg.node.height) * parseFloat(HTML_Canvas_sketch.height)), 3, 0, Math.PI * 2, true);
                     cxt.closePath();
                     var color = spColorImg.node.color
                     cxt.fillStyle = 'rgba('+color.r.toString()+','+color.g.toString()+','+color.b.toString()+',0.5)';
                     cxt.fill();
                 }else{
-                    var cxt=hintCan.getContext("2d");
+                    var cxt=HTML_Canvas_hint.getContext("2d");
                     cxt.clearRect(relativeX-10,spSketchImg.node.height - relativeY-10,20,20);
                 }
                 
                 var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
-                hintNodeTex.initWithElement(hintCan);
+                hintNodeTex.initWithElement(HTML_Canvas_hint);
                 hintNodeTex.handleLoadedTexture();
             }
         }
