@@ -268,7 +268,7 @@ cc.Class({
     },
 
     onLoad: function () {
-
+        
         spSketchImg = this.sketchImg.getComponent('cc.Sprite');
         spRefereneImg = this.referenceImg.getComponent('cc.Sprite');
         spResultImg = this.resultImg.getComponent('cc.Sprite');
@@ -406,7 +406,7 @@ cc.Class({
                     cxt.arc(parseInt(parseFloat(relativeX) / parseFloat(spSketchImg.node.width) * parseFloat(HTML_Canvas_sketch.width)), parseInt(parseFloat(spSketchImg.node.height - relativeY) / parseFloat(spSketchImg.node.height) * parseFloat(HTML_Canvas_sketch.height)), 5, 0, Math.PI * 2, true);
                     cxt.closePath();
                     var color = spColorImg.node.color
-                    cxt.fillStyle = 'rgba('+color.r.toString()+','+color.g.toString()+','+color.b.toString()+',0.9)';
+                    cxt.fillStyle = 'rgba('+color.r.toString()+','+color.g.toString()+','+color.b.toString()+',0.618)';
                     cxt.fill();
                 }else{
                     var cxt=HTML_Canvas_hint.getContext("2d");
@@ -415,7 +415,7 @@ cc.Class({
                 
                 var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
                 hintNodeTex.initWithElement(HTML_Canvas_hint);
-                hintNodeTex.handleLoadedTexture();
+                hintNodeTex.handleLoadedTexture(true);
             }
         }
     },
