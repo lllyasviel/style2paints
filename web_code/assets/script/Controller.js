@@ -403,10 +403,10 @@ cc.Class({
                 
                 if(isPen){
                     cxt.beginPath();
-                    cxt.arc(parseInt(parseFloat(relativeX) / parseFloat(spSketchImg.node.width) * parseFloat(HTML_Canvas_sketch.width)), parseInt(parseFloat(spSketchImg.node.height - relativeY) / parseFloat(spSketchImg.node.height) * parseFloat(HTML_Canvas_sketch.height)), 3, 0, Math.PI * 2, true);
+                    cxt.arc(parseInt(parseFloat(relativeX) / parseFloat(spSketchImg.node.width) * parseFloat(HTML_Canvas_sketch.width)), parseInt(parseFloat(spSketchImg.node.height - relativeY) / parseFloat(spSketchImg.node.height) * parseFloat(HTML_Canvas_sketch.height)), 5, 0, Math.PI * 2, true);
                     cxt.closePath();
                     var color = spColorImg.node.color
-                    cxt.fillStyle = 'rgba('+color.r.toString()+','+color.g.toString()+','+color.b.toString()+',0.5)';
+                    cxt.fillStyle = 'rgba('+color.r.toString()+','+color.g.toString()+','+color.b.toString()+',0.9)';
                     cxt.fill();
                 }else{
                     var cxt=HTML_Canvas_hint.getContext("2d");
