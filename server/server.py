@@ -275,10 +275,18 @@ def do_paint():
     cv2.imwrite('record/' + dstr + '.reference.png', referenceDataURL)
     cv2.imwrite('record/' + dstr + '.hint.png', hintDataURL)
 
-    rawshape = sketchDataURL.shape;
+    #rawshape = sketchDataURL.shape
     sketch = sketchDataURL[:, :, 0:3]
     raw_sketch = sketch.copy()
     sketch = cv2.cvtColor(sketch,cv2.COLOR_RGB2GRAY)
+    #cv2.imwrite('record/' + dstr + '.gray.png', sketch)
+
+    invGamma = 1.0 / 0.6
+    table = np.array([((i / 255.0) ** invGamma) * 255
+        for i in np.arange(0, 256)]).astype("uint8")
+    sketch = cv2.LUT(sketch, table)
+    #cv2.imwrite('record/' + dstr + '.eqg.png', sketch)
+
     sketch = unet_resize(sketch,28)
     sketch = sketch.astype(np.float)
     sketch = sketch / 255.0
