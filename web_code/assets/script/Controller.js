@@ -410,7 +410,7 @@ cc.Class({
                     cxt.fill();
                 }else{
                     var cxt=HTML_Canvas_hint.getContext("2d");
-                    cxt.clearRect(relativeX-10,spSketchImg.node.height - relativeY-10,20,20);
+                    cxt.clearRect(parseInt(parseFloat(relativeX) / parseFloat(spSketchImg.node.width) * parseFloat(HTML_Canvas_sketch.width)) - 10, parseInt(parseFloat(spSketchImg.node.height - relativeY) / parseFloat(spSketchImg.node.height) * parseFloat(HTML_Canvas_sketch.height)) - 10,20,20);
                 }
                 
                 var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
