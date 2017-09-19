@@ -255,19 +255,19 @@ def do_paint():
 
     sketchDataURL = request.forms.get("sketch")
     sketchDataURL = re.sub('^data:image/.+;base64,', '', sketchDataURL)
-    sketchDataURL = base64.b64decode(sketchDataURL)
+    sketchDataURL = base64.urlsafe_b64decode(sketchDataURL)
     sketchDataURL = np.fromstring(sketchDataURL, dtype=np.uint8)
     sketchDataURL = cv2.imdecode(sketchDataURL, -1)
 
     referenceDataURL = request.forms.get("reference")
     referenceDataURL = re.sub('^data:image/.+;base64,', '', referenceDataURL)
-    referenceDataURL = base64.b64decode(referenceDataURL)
+    referenceDataURL = base64.urlsafe_b64decode(referenceDataURL)
     referenceDataURL = np.fromstring(referenceDataURL, dtype=np.uint8)
     referenceDataURL = cv2.imdecode(referenceDataURL, -1)
 
     hintDataURL = request.forms.get("hint")
     hintDataURL = re.sub('^data:image/.+;base64,', '', hintDataURL)
-    hintDataURL = base64.b64decode(hintDataURL)
+    hintDataURL = base64.urlsafe_b64decode(hintDataURL)
     hintDataURL = np.fromstring(hintDataURL, dtype=np.uint8)
     hintDataURL = cv2.imdecode(hintDataURL, -1)
 
@@ -356,7 +356,7 @@ def do_paint():
 
     cv2.imwrite('record/' + dstr + '.fin.png', fin)
     result, buffer = cv2.imencode(".png", fin)
-    return base64.b64encode(buffer)
+    return base64.urlsafe_b64encode(buffer)
 
 
 def unet_resize(image1,s_size=32):
