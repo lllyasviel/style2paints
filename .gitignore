@@ -107,4 +107,7 @@ ENV/
 .mypy_cache/
 
 server/.idea
+server/record/*.png
+server/game/results/*.png
+
 *.net
