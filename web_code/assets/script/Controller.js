@@ -166,6 +166,7 @@ function loadLocalResult(uri){
 		spResultImg.node.height = parseInt(h);
     }
 	img.src = uri;
+	resultURL = uri;
 }
 
 function loadLocalSketch(uri){
@@ -358,8 +359,7 @@ cc.Class({
         xhr.open("POST", "/paint", true);
         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;");
         xhr.onreadystatechange = function() {
-            resultURL = "data:image/png;base64,"+xhr.responseText;
-            loadLocalResult(resultURL);
+            loadLocalResult(xhr.responseText);
             spBTN.enabled = true;
             spLAB.string = "<u>colorize</u>";
         };
@@ -376,8 +376,7 @@ cc.Class({
         if(resultURL==""){
             return;
         }
-        var w=window.open('about:blank','image');
-        w.document.write("<img src='"+resultURL+"' alt='from canvas'/>");
+        window.open(resultURL);
     },
     onTitle: function(){
         window.open('https://github.com/lllyasviel/style2paints','gitHub');
