@@ -275,22 +275,14 @@ def do_paint():
     cv2.imwrite('record/' + dstr + '.reference.png', referenceDataURL)
     cv2.imwrite('record/' + dstr + '.hint.png', hintDataURL)
 
-    #rawshape = sketchDataURL.shape
-    sketch = sketchDataURL[:, :, 0:3]
-    raw_sketch = sketch.copy()
-    sketch = cv2.cvtColor(sketch,cv2.COLOR_RGB2GRAY)
-    #cv2.imwrite('record/' + dstr + '.gray.png', sketch)
+    raw_sketch = sketchDataURL[:, :, 0:3]
+    raw_sketch = cv2.cvtColor(raw_sketch,cv2.COLOR_RGB2GRAY)
+    cv2.imwrite('record/' + dstr + '.gray.png', raw_sketch)
+    normed_sketch = norm_sketch(raw_sketch)
+    cv2.imwrite('record/' + dstr + '.eqg.png', normed_sketch)
 
-    invGamma = 1.0 / 0.6
-    table = np.array([((i / 255.0) ** invGamma) * 255
-        for i in np.arange(0, 256)]).astype("uint8")
-    sketch = cv2.LUT(sketch, table)
-    #cv2.imwrite('record/' + dstr + '.eqg.png', sketch)
-
-    sketch = unet_resize(sketch,28)
-    sketch = sketch.astype(np.float)
-    sketch = sketch / 255.0
-    sketch = 1 - sketch
+    sketch = unet_resize(normed_sketch, 28).astype(np.float)
+    sketch = 1 - (sketch / 255.0)
     sketch = sketch[None,:,:,None]
 
     reference = referenceDataURL[:, :, 0:3]
@@ -339,17 +331,17 @@ def do_paint():
     })
 
     final = final[0]
-
     final += [103.939, 116.779, 123.68]
     final = final[:, :, ::-1]
-
     final = final.clip(0,255).astype(np.uint8)
 
-    sketch = unet_resize(raw_sketch)
+    sketch = unet_resize(normed_sketch)
+
     final = cv2.resize(final, (sketch.shape[1], sketch.shape[0]), cv2.INTER_LANCZOS4)
     final = cv2.cvtColor(final, cv2.COLOR_RGB2YUV)
     final = final[None, :, :, :]
-    sketch = cv2.cvtColor(sketch, cv2.COLOR_RGB2GRAY)[None, :, :, None]
+
+    sketch = sketch[None, :, :, None]
 
     fed = np.concatenate([sketch, final], axis=3)
     fed = np.transpose(fed, [0, 3, 1, 2])
@@ -383,6 +375,19 @@ def unet_resize(image1,s_size=32):
         _s0 = int(image1.shape[0] * (_s1 / image1.shape[1]))
         _s0 = (_s0 + 32) - (_s0 + 32) % 64
     return cv2.resize(image1, (_s1, _s0),interpolation=cv2.INTER_AREA)
+
+
+def norm_sketch(raw_sketch):
+    tiny_map = cv2.resize(raw_sketch, (64, 64), cv2.INTER_AREA).astype(np.float)
+    tiny_min = np.min(tiny_map)
+    tiny_max = np.max(tiny_map)
+    tiny_range = tiny_max - tiny_min
+    sketch = raw_sketch.astype(np.float)
+    sketch -= tiny_min
+    sketch /= tiny_range
+    sketch = np.power(sketch.clip(0,1), 2)
+    sketch *= 255.0
+    return sketch.clip(0,255).astype(np.uint8)
 
 
 run(host="0.0.0.0", port=8000)
