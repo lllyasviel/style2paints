@@ -3,7 +3,6 @@ tensorflow_GPU_ID = 0
 k_between_tf_and_chainer = 0.5
 
 from bottle import route, run, static_file, request, BaseRequest
-from urllib import parse
 import base64
 import re
 import numpy as np
@@ -252,23 +251,23 @@ def send_static():
 def do_paint():
     print('received')
 
-    dstr = datetime.datetime.now().strftime('%b%d_%H%M%S') + str(np.random.randint(10000,99999))
+    dstr = datetime.datetime.now().strftime('%b%d%H%M%S') + str(np.random.randint(10000,99999))
 
     sketchDataURL = request.forms.get("sketch")
     sketchDataURL = re.sub('^data:image/.+;base64,', '', sketchDataURL)
-    sketchDataURL = base64.b64decode(sketchDataURL)
+    sketchDataURL = base64.urlsafe_b64decode(sketchDataURL)
     sketchDataURL = np.fromstring(sketchDataURL, dtype=np.uint8)
     sketchDataURL = cv2.imdecode(sketchDataURL, -1)
 
     referenceDataURL = request.forms.get("reference")
     referenceDataURL = re.sub('^data:image/.+;base64,', '', referenceDataURL)
-    referenceDataURL = base64.b64decode(referenceDataURL)
+    referenceDataURL = base64.urlsafe_b64decode(referenceDataURL)
     referenceDataURL = np.fromstring(referenceDataURL, dtype=np.uint8)
     referenceDataURL = cv2.imdecode(referenceDataURL, -1)
 
     hintDataURL = request.forms.get("hint")
     hintDataURL = re.sub('^data:image/.+;base64,', '', hintDataURL)
-    hintDataURL = base64.b64decode(hintDataURL)
+    hintDataURL = base64.urlsafe_b64decode(hintDataURL)
     hintDataURL = np.fromstring(hintDataURL, dtype=np.uint8)
     hintDataURL = cv2.imdecode(hintDataURL, -1)
 
@@ -356,8 +355,12 @@ def do_paint():
     fin = cv2.cvtColor(fin, cv2.COLOR_YUV2RGB)
 
     cv2.imwrite('record/' + dstr + '.fin.png', fin)
-    result, buffer = cv2.imencode(".png", fin)
-    return parse.quote(base64.b64encode(buffer))
+
+    result_path = 'results/' + dstr + '.fin.png'
+
+    cv2.imwrite('game/' + result_path, fin)
+
+    return result_path
 
 
 def unet_resize(image1,s_size=32):
