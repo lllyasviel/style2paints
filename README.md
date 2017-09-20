@@ -6,7 +6,7 @@ The AI can paint on a sketch accroding to a given specific color style.
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot.png)
 
-# Example 1
+# Example 1 (Google Search results test)
 
 A content sketch (**the first google image search result of key word 'anime sketch'**) and some style images:
 
@@ -42,7 +42,7 @@ Results:
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled0.png" height = "300"/>
 .
 
-# Example 2
+# Example 2 (western sketch)
 
 A western content sketch and 2 style images:
 
@@ -57,6 +57,54 @@ A western content sketch and 2 style images:
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo2.png"/>
 
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo2.png"/>
+
+# Example 3 (messy sketch)
+
+A messy content sketch and 2 style images:
+
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo3.jpg" height = "300"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo3.jpg" height = "250"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo3.jpg" height = "250"/>
+.
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo3.png"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo3.png"/>
+
+# Example 4 (detailed sketch)
+
+A detailed content sketch and 2 style images:
+
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo5.jpg" height = "300"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo5.jpg" height = "250"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo5.jpg" height = "250"/>
+.
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo5.png"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo5.png"/>
+
+# Example 5 (simple sketch)
+
+A simple content sketch **without shadow rendering** and 2 style images:
+
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo4.jpg" height = "300"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo4.jpg" height = "250"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo4.jpg" height = "250"/>
+.
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo4.png"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo4.png"/>
 
 # Requirement
 
