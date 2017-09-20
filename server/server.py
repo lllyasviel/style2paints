@@ -271,17 +271,60 @@ def do_paint():
     hintDataURL = np.fromstring(hintDataURL, dtype=np.uint8)
     hintDataURL = cv2.imdecode(hintDataURL, -1)
 
+    versionURL = request.forms.get("version")
+    low_level_scale = 28
+    shifter = 2.0
+    up_level = True
+    interpolation = cv2.INTER_AREA
+
+    if versionURL == '1':
+        low_level_scale = 16
+        shifter = 1.3
+        up_level = True
+        interpolation = cv2.INTER_AREA
+
+    if versionURL == '2':
+        low_level_scale = 28
+        shifter = 1.2
+        up_level = True
+        interpolation = cv2.INTER_AREA
+
+    if versionURL == '3':
+        low_level_scale = 48
+        shifter = 1.1
+        up_level = True
+        interpolation = cv2.INTER_LANCZOS4
+
+    if versionURL == '4':
+        low_level_scale = 64
+        shifter = 1.0
+        up_level = False
+        interpolation = cv2.INTER_LANCZOS4
+
     cv2.imwrite('record/' + dstr + '.sketch.png', sketchDataURL)
     cv2.imwrite('record/' + dstr + '.reference.png', referenceDataURL)
     cv2.imwrite('record/' + dstr + '.hint.png', hintDataURL)
 
     raw_sketch = sketchDataURL[:, :, 0:3]
+    raw_sketch_shape = raw_sketch.shape
+
+    shape_x = raw_sketch_shape[0]
+    shape_y = raw_sketch_shape[1]
+    if shape_x > shape_y:
+        new_shape_x = 512.0 / shape_y * shape_x
+        new_shape_y = 512.0
+    else:
+        new_shape_x = 512.0
+        new_shape_y = 512.0 / shape_x * shape_y
+    raw_sketch_shape = (int(new_shape_x),int(new_shape_y))
+
     raw_sketch = cv2.cvtColor(raw_sketch,cv2.COLOR_RGB2GRAY)
     cv2.imwrite('record/' + dstr + '.gray.png', raw_sketch)
     normed_sketch = norm_sketch(raw_sketch)
     cv2.imwrite('record/' + dstr + '.eqg.png', normed_sketch)
 
-    sketch = unet_resize(normed_sketch, 28).astype(np.float)
+    sketch = unet_resize(normed_sketch, low_level_scale, interpolation)
+    sketch = sketch.astype(np.float)
     sketch = 1 - (sketch / 255.0)
     sketch = sketch[None,:,:,None]
 
@@ -296,9 +339,10 @@ def do_paint():
             vhint_s57c64_0, vhint_s29c192_0, vhint_s29c256_0, vhint_s29c320_0, vhint_s15c576_0, vhint_s15c576_1, vhint_s15c576_2, vhint_s15c576_3, vhint_s15c576_4, vhint_s8c1024_0, vhint_s8c1024_1, vhint_s8c1024_2 = google_net.forward(chainer.cuda.to_gpu(reference,chainer_ID))
 
     hint = hintDataURL[:, :, 0:4]
+
     color = hint[:,:,0:3]
     color = cv2.cvtColor(color,cv2.COLOR_RGB2HSV).astype(np.float)
-    color[:,:,1] *=2
+    color[:,:,1] *= shifter
     color = color.clip(0,255).astype(np.uint8)
     color = cv2.cvtColor(color,cv2.COLOR_HSV2RGB)
     hint[:, :, 0:3] = color
@@ -335,35 +379,32 @@ def do_paint():
     final = final[:, :, ::-1]
     final = final.clip(0,255).astype(np.uint8)
 
-    sketch = unet_resize(normed_sketch)
+    if up_level:
+        sketch = unet_resize(normed_sketch)
+        final = cv2.resize(final, (sketch.shape[1], sketch.shape[0]), cv2.INTER_LANCZOS4)
+        final = cv2.cvtColor(final, cv2.COLOR_RGB2YUV)
+        final = final[None, :, :, :]
+        sketch = sketch[None, :, :, None]
+        fed = np.concatenate([sketch, final], axis=3)
+        fed = np.transpose(fed, [0, 3, 1, 2])
+        with chainer.no_backprop_mode():
+            with chainer.using_config('train', False):
+                fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32), chainer_ID))
+        fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
+        fin = np.transpose(fin, [1, 2, 0])
+        fin = cv2.cvtColor(fin, cv2.COLOR_YUV2RGB)
+    else:
+        fin = final
 
-    final = cv2.resize(final, (sketch.shape[1], sketch.shape[0]), cv2.INTER_LANCZOS4)
-    final = cv2.cvtColor(final, cv2.COLOR_RGB2YUV)
-    final = final[None, :, :, :]
-
-    sketch = sketch[None, :, :, None]
-
-    fed = np.concatenate([sketch, final], axis=3)
-    fed = np.transpose(fed, [0, 3, 1, 2])
-
-    with chainer.no_backprop_mode():
-        with chainer.using_config('train', False):
-            fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32),chainer_ID))
-
-    fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
-    fin = np.transpose(fin, [1, 2, 0])
-    fin = cv2.cvtColor(fin, cv2.COLOR_YUV2RGB)
-
+    fin = cv2.resize(fin, (raw_sketch_shape[1], raw_sketch_shape[0]), cv2.INTER_LANCZOS4)
     cv2.imwrite('record/' + dstr + '.fin.png', fin)
-
     result_path = 'results/' + dstr + '.fin.png'
-
     cv2.imwrite('game/' + result_path, fin)
 
     return result_path
 
 
-def unet_resize(image1,s_size=32):
+def unet_resize(image1,s_size=32, interpolation=cv2.INTER_AREA):
     if image1.shape[0] < image1.shape[1]:
         s0 = s_size
         s1 = int(image1.shape[1] * (s_size / image1.shape[0]))
@@ -378,7 +419,7 @@ def unet_resize(image1,s_size=32):
         _s1 = 16 * s1
         _s0 = int(image1.shape[0] * (_s1 / image1.shape[1]))
         _s0 = (_s0 + 32) - (_s0 + 32) % 64
-    return cv2.resize(image1, (_s1, _s0),interpolation=cv2.INTER_AREA)
+    return cv2.resize(image1, (_s1, _s0), interpolation=interpolation)
 
 
 def norm_sketch(raw_sketch):

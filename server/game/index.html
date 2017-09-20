@@ -1,73 +1,54 @@
+<!DOCTYPE html>
 <html>
-
-<head></head>
-
-<body>
+<head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://pingendo.github.io/templates/blank/theme.css" type="text/css">
-  <nav class="navbar navbar-expand-md navbar-light bg-faded">
-    <div class="container">
-      <a class="navbar-brand" href="">Style2Paints</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/lllyasviel/style2paints">Github</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="\full.html">Pure Mode</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/lllyasviel/style2paints">Download</a>
-          </li>
-        </ul>
-        <a class="btn navbar-btn btn-primary" href="\">English</a>
-        <a class="btn navbar-btn btn-default" href="\index-zh.html">简体中文</a>
-        <a class="btn btn-default navbar-btn" href="\index-jp.html">日本語</a>
-      </div>
-    </div>
-  </nav>
-  <div class="py-5  section">
-    <div class="container">
-      <div class="row">
-        <div id="GameDiv" class="col-md-12"> <canvas id="GameCanvas" width="1280" height="720"></canvas>
-          <div id="splash">
-            <div class="progress-bar stripes"> <span style="width: 0%"></span> </div>
-          </div>
-        </div>
-        <script src="src/settings.js" charset="utf-8"></script>
-        <script src="main.js" charset="utf-8"></script>
-      </div>
-    </div>
-  </div>
-  <div class="py-5 section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2 class="text-sm-center text-primary">INSTUCTION</h2>
-          <p class="text-justify my-1">Just upload the sketch and reference image, but keep in mind that the reference image should cover <b>as much as possible details</b> in the sketch. The color-picker can help you get any color <b>from your reference image</b> by clicking it.
-            You can add pointed hints to your sketch using "pen".</p>
-        </div>
-        <div class="col-md-4">
-          <h2 class="text-sm-center text-primary">PREFERENCE</h2>
-          <p class="text-justify my-1">It seems that the AI prefers reference images with <b>white background color</b>. The training dataset is based on anime paints and galgame CGs, thus the AI may be more capable in these field. Remember to <b>chose a right reference image</b>            and it is always helpful to achieve better result.</p>
-        </div>
-        <div class="col-md-4">
-          <h2 class="text-sm-center text-primary">COMMUNITY</h2>
-          <p class="text-justify my-1">We would be happy if you can join our discussion. We use QQ. &nbsp;If you have QQ, you can join the group&nbsp;<i>184467946</i>&nbsp;. For foreigner, our github repo is always avaliable. &nbsp;Or you can reach me at:
-            <br>&nbsp;<i>914847518@qq.com</i></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
-</body>
 
+  <title>style2paint</title>
+
+  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <meta name="viewport"
+        content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1"/>
+
+  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- force webkit on 360 -->
+  <meta name="renderer" content="webkit"/>
+  <meta name="force-rendering" content="webkit"/>
+  <!-- force edge on IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- force full screen on some browser -->
+  <meta name="full-screen" content="yes"/>
+  <meta name="x5-fullscreen" content="true"/>
+  <meta name="360-fullscreen" content="true"/>
+  
+  <!-- force screen orientation on some browser -->
+  <meta name="screen-orientation" content=""/>
+  <meta name="x5-orientation" content="">
+
+  <!--fix fireball/issues/3568 -->
+  <!--<meta name="browsermode" content="application">-->
+  <meta name="x5-page-mode" content="app">
+
+  <!--<link rel="apple-touch-icon" href=".png" />-->
+  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+  <link rel="stylesheet" type="text/css" href="style-mobile.css"/>
+
+</head>
+<body>
+  <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+  <div id="splash">
+    <div class="progress-bar stripes">
+      <span style="width: 0%"></span>
+    </div>
+  </div>
+<script src="src/settings.js" charset="utf-8"></script>
+<script src="main.js" charset="utf-8"></script>
+
+</body>
 </html>

@@ -53,11 +53,3 @@ The paper is accecped by ACPR 2017.
         Journal = {arXiv:1706.03319},
         Year = {2017}
     }
-
-# Acknowledgements
-
-All illustrations and sketches are from the internet and It is hard to mention all the painters.
-
-If you find your painting in the page, you can reach us at 914847518@qq.com. We will convert our sinsere gratefulness.
-
-If you do not like your painting being exhibited above, we will remove them at once.

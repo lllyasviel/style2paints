@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "default_scrollbar_vertical_bg",
+    "texture": "617323dd-11f4-4dd3-8eec-0caf6b3b45b9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      15,
+      30
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      15,
+      30
+    ],
+    "capInsets": [
+      0,
+      7,
+      0,
+      8
+    ]
+  }
+}
