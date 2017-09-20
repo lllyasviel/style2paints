@@ -6,7 +6,7 @@ The AI can paint on a sketch accroding to a given specific color style.
 
 The AI can also reconstruct the color of a finished illustration (unstable).
 
-<a href="https://www.bilibili.com/video/av14443094/" rel="Video"><img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/link.png" alt="Video" width="100%"></a>
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot.png)
 
 # Requirement
 
