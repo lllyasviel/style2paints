@@ -8,7 +8,7 @@ The AI can paint on a sketch accroding to a given specific color style.
 
 # Example 1
 
-A content sketch (the first google image search result of key word *anime sketch*) and some style images:
+A content sketch (**the first google image search result of key word 'anime sketch'**) and some style images:
 
 .
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo1.jpg" height = "300"/>
