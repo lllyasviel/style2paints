@@ -65,14 +65,16 @@ A messy content sketch and 2 style images:
 .
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo3.jpg" height = "300"/>
 .
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo3.jpg" height = "250"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo3.jpg" width = "200"/>
 .
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo3.jpg" height = "250"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo3.jpg" width = "200"/>
 .
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo3.png"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo3.png"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo3.png" width = "350"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo3.png" width = "350"/>
+.
 
 # Example 4 (detailed sketch)
 
@@ -81,14 +83,16 @@ A detailed content sketch and 2 style images:
 .
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo5.jpg" height = "300"/>
 .
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo5.jpg" height = "250"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo5.jpg" width = "200"/>
 .
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo5.jpg" height = "250"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo5.jpg" width = "200"/>
 .
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo5.png"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo5.png"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo5.png" width = "350"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo5.png" width = "350"/>
+.
 
 # Example 5 (simple sketch)
 
@@ -97,14 +101,16 @@ A simple content sketch **without shadow rendering** and 2 style images:
 .
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo4.jpg" height = "300"/>
 .
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo4.jpg" height = "250"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo4.jpg" width = "200"/>
 .
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo4.jpg" height = "250"/>
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo4.jpg" width = "200"/>
 .
 
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo4.png"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo4.png"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo4.png" width = "350"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo4.png" width = "350"/>
+.
 
 # Requirement
 
