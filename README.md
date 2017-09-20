@@ -42,6 +42,22 @@ Results:
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled0.png" height = "300"/>
 .
 
+# Example 2
+
+A western content sketch and 2 style images:
+
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo2.jpg" height = "300"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo2.jpg" height = "300"/>
+.
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo2.jpg" height = "150"/>
+.
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo2.png"/>
+
+<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo2.png"/>
+
 # Requirement
 
     pip install tensorflow_gpu
