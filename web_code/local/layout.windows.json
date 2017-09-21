@@ -6,8 +6,8 @@
       "url": "app://editor/index.html",
       "windowType": "dockable",
       "x": -8,
-      "y": 0,
-      "width": 1924,
+      "y": -8,
+      "width": 1936,
       "height": 1056,
       "layout": {
         "children": [
@@ -99,7 +99,34 @@
         "node-library",
         "timeline"
       ]
-    }
+    },
+    "window-1505969377361": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 454,
+      "y": 107,
+      "width": 885,
+      "height": 739,
+      "layout": {
+        "children": [
+          {
+            "active": 0,
+            "children": [
+              "builder"
+            ],
+            "height": 700,
+            "type": "panel",
+            "width": 869
+          }
+        ],
+        "type": "dock-v"
+      },
+      "panels": [
+        "builder"
+      ]
+    },
+    "worker": {}
   },
   "panels": {
     "builder": {

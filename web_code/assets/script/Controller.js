@@ -34,7 +34,7 @@ var mouseIsDown = false;
 
 var resultURL = "";
 
-var version = 1;
+var version = 2;
 
 function createObjectURL(blob){
     if(window.URL !== undefined)
@@ -406,6 +406,9 @@ cc.Class({
     },
     onTitle: function(){
         window.open('https://github.com/lllyasviel/style2paints','gitHub');
+    },
+    onHelp: function(){
+        window.open('https://github.com/lllyasviel/style2paints/issues/12','gitHub');
     },
     handlePainter: function(){
         painting = false;

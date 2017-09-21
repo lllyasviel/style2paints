@@ -40,7 +40,7 @@ var mouseIsDown = false;
 
 var resultURL = "";
 
-var version = 1;
+var version = 2;
 
 function createObjectURL(blob) {
     if (window.URL !== undefined) return window['URL']['createObjectURL'](blob);else return window['webkitURL']['createObjectURL'](blob);
@@ -387,6 +387,9 @@ cc.Class({
     },
     onTitle: function onTitle() {
         window.open('https://github.com/lllyasviel/style2paints', 'gitHub');
+    },
+    onHelp: function onHelp() {
+        window.open('https://github.com/lllyasviel/style2paints/issues/12', 'gitHub');
     },
     handlePainter: function handlePainter() {
         painting = false;
