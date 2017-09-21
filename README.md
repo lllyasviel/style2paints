@@ -112,7 +112,24 @@ A simple content sketch **without shadow rendering** and 2 style images:
 <img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo4.png" width = "350"/>
 .
 
-# Requirement
+# CPU Server for Beginner
+
+*you need a python 3 environment.*
+
+    pip install tensorflow
+    pip install keras
+    pip install chainer
+    pip install bottle
+    pip install h5py
+    pip install opencv-python
+    git clone https://github.com/lllyasviel/style2paints.git
+    (then download all pretrained models from 'release' page and then put them in 'style2paints/server')
+    cd style2paints/server
+    python server.py cpu
+
+# GPU Server for Reseachers
+
+*you need a CUDA python 3.6 environment.*
 
     pip install tensorflow_gpu
     pip install keras
@@ -121,9 +138,6 @@ A simple content sketch **without shadow rendering** and 2 style images:
     pip install bottle
     pip install h5py
     pip install opencv-python
-
-# Launch Server
-
     git clone https://github.com/lllyasviel/style2paints.git
     (then download all pretrained models from 'release' page and then put them in 'style2paints/server')
     cd style2paints/server

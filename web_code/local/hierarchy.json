@@ -1,7 +1,7 @@
 {
   "item-states": [
     {
-      "folded": false,
+      "folded": true,
       "id": "c7947hMhaxO3Lc9uTImgrPt"
     },
     {
@@ -9,7 +9,7 @@
       "id": "478a5Ai90NIWZYo65ykjXCb"
     },
     {
-      "folded": false,
+      "folded": true,
       "id": "c45cbodgS1L26b71qR4GQ4V"
     },
     {
@@ -37,7 +37,7 @@
       "id": "b751fxfqrZDlL7u0AYM8hQ8"
     },
     {
-      "folded": true,
+      "folded": false,
       "id": "c55e42ylDVLsrpU6bPpnNxs"
     }
   ]

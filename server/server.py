@@ -1,6 +1,8 @@
 chainer_GPU_ID = 0
 tensorflow_GPU_ID = 0
 k_between_tf_and_chainer = 0.5
+import sys
+is_GPU = (len(sys.argv) == 1)
 
 from bottle import route, run, static_file, request, BaseRequest
 import base64
@@ -10,9 +12,7 @@ import tensorflow as tf
 import cv2
 from keras.layers.core import K
 K.set_learning_phase(0)
-import time
 import random
-import os
 import datetime
 from keras.models import Model,load_model
 from keras.layers import Input, Conv2D, MaxPooling2D
@@ -188,11 +188,15 @@ def ini_chainer():
     paintschainer.to_gpu(chainer_ID)
     print('chainer initialized')
 
-chainer_thread = threading.Thread(target=ini_chainer)
-chainer_thread.start()
+if is_GPU:
+    chainer_thread = threading.Thread(target=ini_chainer)
+    chainer_thread.start()
+    session = tf.Session(config=tf.ConfigProto(gpu_options=tf.GPUOptions(visible_device_list=str(tensorflow_GPU_ID),
+                                                                         per_process_gpu_memory_fraction=k_between_tf_and_chainer)))
+    K.set_session(session)
+else:
+    session = K.get_session()
 
-session = tf.Session(config=tf.ConfigProto(gpu_options=tf.GPUOptions(visible_device_list=str(tensorflow_GPU_ID),per_process_gpu_memory_fraction=k_between_tf_and_chainer)))
-K.set_session(session)
 EPS = 1e-12
 lr = 1e-6
 beta1 = 0.5
@@ -334,9 +338,16 @@ def do_paint():
     reference = reference / 255.0
     reference = reference.transpose((2, 0, 1))[None, :, :, :]
 
-    with chainer.no_backprop_mode():
-        with chainer.using_config('train', False):
-            vhint_s57c64_0, vhint_s29c192_0, vhint_s29c256_0, vhint_s29c320_0, vhint_s15c576_0, vhint_s15c576_1, vhint_s15c576_2, vhint_s15c576_3, vhint_s15c576_4, vhint_s8c1024_0, vhint_s8c1024_1, vhint_s8c1024_2 = google_net.forward(chainer.cuda.to_gpu(reference,chainer_ID))
+    if is_GPU:
+        with chainer.no_backprop_mode():
+            with chainer.using_config('train', False):
+                vhint_s57c64_0, vhint_s29c192_0, vhint_s29c256_0, vhint_s29c320_0, vhint_s15c576_0, vhint_s15c576_1, vhint_s15c576_2, vhint_s15c576_3, vhint_s15c576_4, vhint_s8c1024_0, vhint_s8c1024_1, vhint_s8c1024_2 = google_net.forward(
+                    chainer.cuda.to_gpu(reference, chainer_ID))
+    else:
+        with chainer.no_backprop_mode():
+            with chainer.using_config('train', False):
+                vhint_s57c64_0, vhint_s29c192_0, vhint_s29c256_0, vhint_s29c320_0, vhint_s15c576_0, vhint_s15c576_1, vhint_s15c576_2, vhint_s15c576_3, vhint_s15c576_4, vhint_s8c1024_0, vhint_s8c1024_1, vhint_s8c1024_2 = google_net.forward(
+                    reference)
 
     hint = hintDataURL[:, :, 0:4]
 
@@ -357,22 +368,40 @@ def do_paint():
         local_hint[:, :, _] = np.multiply(local_hint[:, :, _], alpha)
     hint = local_hint[None, :, :, :]
 
-    final = session.run(paint_output, feed_dict={
-        sketch_ref_input_448: sketch,
-        local_hint_input_448: hint,
-        hint_s57c64_0: chainer.cuda.to_cpu(vhint_s57c64_0.data)[None],
-        hint_s29c192_0: chainer.cuda.to_cpu(vhint_s29c192_0.data)[None],
-        hint_s29c256_0: chainer.cuda.to_cpu(vhint_s29c256_0.data)[None],
-        hint_s29c320_0: chainer.cuda.to_cpu(vhint_s29c320_0.data)[None],
-        hint_s15c576_0: chainer.cuda.to_cpu(vhint_s15c576_0.data)[None],
-        hint_s15c576_1: chainer.cuda.to_cpu(vhint_s15c576_1.data)[None],
-        hint_s15c576_2: chainer.cuda.to_cpu(vhint_s15c576_2.data)[None],
-        hint_s15c576_3: chainer.cuda.to_cpu(vhint_s15c576_3.data)[None],
-        hint_s15c576_4: chainer.cuda.to_cpu(vhint_s15c576_4.data)[None],
-        hint_s8c1024_0: chainer.cuda.to_cpu(vhint_s8c1024_0.data)[None],
-        hint_s8c1024_1: chainer.cuda.to_cpu(vhint_s8c1024_1.data)[None],
-        hint_s8c1024_2: chainer.cuda.to_cpu(vhint_s8c1024_2.data)[None]
-    })
+    if is_GPU:
+        final = session.run(paint_output, feed_dict={
+            sketch_ref_input_448: sketch,
+            local_hint_input_448: hint,
+            hint_s57c64_0: chainer.cuda.to_cpu(vhint_s57c64_0.data)[None],
+            hint_s29c192_0: chainer.cuda.to_cpu(vhint_s29c192_0.data)[None],
+            hint_s29c256_0: chainer.cuda.to_cpu(vhint_s29c256_0.data)[None],
+            hint_s29c320_0: chainer.cuda.to_cpu(vhint_s29c320_0.data)[None],
+            hint_s15c576_0: chainer.cuda.to_cpu(vhint_s15c576_0.data)[None],
+            hint_s15c576_1: chainer.cuda.to_cpu(vhint_s15c576_1.data)[None],
+            hint_s15c576_2: chainer.cuda.to_cpu(vhint_s15c576_2.data)[None],
+            hint_s15c576_3: chainer.cuda.to_cpu(vhint_s15c576_3.data)[None],
+            hint_s15c576_4: chainer.cuda.to_cpu(vhint_s15c576_4.data)[None],
+            hint_s8c1024_0: chainer.cuda.to_cpu(vhint_s8c1024_0.data)[None],
+            hint_s8c1024_1: chainer.cuda.to_cpu(vhint_s8c1024_1.data)[None],
+            hint_s8c1024_2: chainer.cuda.to_cpu(vhint_s8c1024_2.data)[None]
+        })
+    else:
+        final = session.run(paint_output, feed_dict={
+            sketch_ref_input_448: sketch,
+            local_hint_input_448: hint,
+            hint_s57c64_0: vhint_s57c64_0.data[None],
+            hint_s29c192_0: vhint_s29c192_0.data[None],
+            hint_s29c256_0: vhint_s29c256_0.data[None],
+            hint_s29c320_0: vhint_s29c320_0.data[None],
+            hint_s15c576_0: vhint_s15c576_0.data[None],
+            hint_s15c576_1: vhint_s15c576_1.data[None],
+            hint_s15c576_2: vhint_s15c576_2.data[None],
+            hint_s15c576_3: vhint_s15c576_3.data[None],
+            hint_s15c576_4: vhint_s15c576_4.data[None],
+            hint_s8c1024_0: vhint_s8c1024_0.data[None],
+            hint_s8c1024_1: vhint_s8c1024_1.data[None],
+            hint_s8c1024_2: vhint_s8c1024_2.data[None]
+        })
 
     final = final[0]
     final += [103.939, 116.779, 123.68]
@@ -387,10 +416,16 @@ def do_paint():
         sketch = sketch[None, :, :, None]
         fed = np.concatenate([sketch, final], axis=3)
         fed = np.transpose(fed, [0, 3, 1, 2])
-        with chainer.no_backprop_mode():
-            with chainer.using_config('train', False):
-                fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32), chainer_ID))
-        fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
+        if is_GPU:
+            with chainer.no_backprop_mode():
+                with chainer.using_config('train', False):
+                    fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32), chainer_ID))
+            fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
+        else:
+            with chainer.no_backprop_mode():
+                with chainer.using_config('train', False):
+                    fin = paintschainer.calc(fed.astype(np.float32))
+            fin = fin.data[0].clip(0, 255).astype(np.uint8)
         fin = np.transpose(fin, [1, 2, 0])
         fin = cv2.cvtColor(fin, cv2.COLOR_YUV2RGB)
     else:
