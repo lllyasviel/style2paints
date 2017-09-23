@@ -407,6 +407,7 @@ def do_paint():
     final += [103.939, 116.779, 123.68]
     final = final[:, :, ::-1]
     final = final.clip(0,255).astype(np.uint8)
+    cv2.imwrite('record/' + dstr + '.tiny.png', final)
 
     if up_level:
         sketch = unet_resize(normed_sketch)
