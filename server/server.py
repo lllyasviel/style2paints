@@ -276,6 +276,9 @@ def do_paint():
     hintDataURL = cv2.imdecode(hintDataURL, -1)
 
     versionURL = request.forms.get("version")
+
+    denoiseURL = request.forms.get("denoise")
+
     low_level_scale = 28
     shifter = 2.0
     up_level = True
@@ -334,7 +337,7 @@ def do_paint():
 
     raw_sketch = cv2.cvtColor(raw_sketch,cv2.COLOR_RGB2GRAY)
     cv2.imwrite('record/' + dstr + '.gray.png', raw_sketch)
-    normed_sketch = norm_sketch(raw_sketch)
+    normed_sketch = norm_sketch(raw_sketch,denoiseURL)
     cv2.imwrite('record/' + dstr + '.eqg.png', normed_sketch)
 
     sketch = unet_resize(normed_sketch, low_level_scale, interpolation)
@@ -475,7 +478,7 @@ def unet_resize(image1,s_size=32, interpolation=cv2.INTER_AREA):
     return cv2.resize(image1, (_s1, _s0), interpolation=interpolation)
 
 
-def norm_sketch(raw_sketch):
+def norm_sketch(raw_sketch,denoise):
     tiny_map = cv2.resize(raw_sketch, (64, 64), cv2.INTER_AREA).astype(np.float)
     tiny_min = np.min(tiny_map)
     tiny_max = np.max(tiny_map)
@@ -483,6 +486,8 @@ def norm_sketch(raw_sketch):
     sketch = raw_sketch.astype(np.float)
     sketch -= tiny_min
     sketch /= tiny_range
+    if denoise == 'true':
+        sketch /= 0.9
     sketch = np.power(sketch.clip(0,1), 2)
     sketch *= 255.0
     return sketch.clip(0,255).astype(np.uint8)

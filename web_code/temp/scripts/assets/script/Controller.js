@@ -256,6 +256,9 @@ cc.Class({
         },
         btn: {
             default: null, type: cc.Node
+        },
+        denoise: {
+            default: null, type: cc.Node
         }
     },
 
@@ -375,7 +378,7 @@ cc.Class({
             spBTN.enabled = true;
             spLAB.string = "<u>colorize</u>";
         };
-        xhr.send("sketch=" + encodeURIComponent(sketchDataURL) + "&reference=" + encodeURIComponent(referenceDataURL) + "&hint=" + encodeURIComponent(hintDataURL) + "&version=" + version.toString());
+        xhr.send("sketch=" + encodeURIComponent(sketchDataURL) + "&reference=" + encodeURIComponent(referenceDataURL) + "&hint=" + encodeURIComponent(hintDataURL) + "&version=" + version.toString() + "&denoise=" + this.denoise.getComponent('cc.Toggle').isChecked.toString());
         spBTN.enabled = false;
         spLAB.string = "Waiting";
     },

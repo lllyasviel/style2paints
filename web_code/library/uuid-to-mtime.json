@@ -1,7 +1,7 @@
 {
   "7309e585-26a0-4bd4-9f94-adb036829c1d": {
-    "asset": 1505969301041,
-    "meta": 1505969301062,
+    "asset": 1506191342835,
+    "meta": 1506191342868,
     "relativePath": "main.fire"
   },
   "6c07ccbb-3a81-43ac-bf2a-f6579b2c0c13": {
@@ -10,8 +10,8 @@
     "relativePath": "script"
   },
   "806bc61b-c5c3-4560-aa53-320c3ee7f4d7": {
-    "asset": 1505969133554,
-    "meta": 1505969133700,
+    "asset": 1506190787277,
+    "meta": 1506190787564,
     "relativePath": "script\\Controller.js"
   },
   "ed6ac944-f2f4-4a42-8ad4-11c63096acf9": {

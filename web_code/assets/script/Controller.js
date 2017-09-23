@@ -269,6 +269,9 @@ cc.Class({
         btn:{
             default:null,type:cc.Node
         },
+        denoise:{
+            default:null,type:cc.Node
+        },
     },
     
     onV1: function(){
@@ -393,7 +396,8 @@ cc.Class({
             "sketch="+encodeURIComponent(sketchDataURL)+
             "&reference="+encodeURIComponent(referenceDataURL)+
             "&hint="+encodeURIComponent(hintDataURL)+
-            "&version="+version.toString()
+            "&version="+version.toString()+
+            "&denoise="+this.denoise.getComponent('cc.Toggle').isChecked.toString()
             );
         spBTN.enabled = false;
         spLAB.string = "Waiting";
