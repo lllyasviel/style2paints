@@ -280,30 +280,40 @@ def do_paint():
     shifter = 2.0
     up_level = True
     interpolation = cv2.INTER_AREA
+    high_level_scale = 32
+    high_interpolation = cv2.INTER_AREA
 
     if versionURL == '1':
         low_level_scale = 16
         shifter = 1.3
         up_level = True
         interpolation = cv2.INTER_AREA
+        high_level_scale = 32
+        high_interpolation = cv2.INTER_AREA
 
     if versionURL == '2':
         low_level_scale = 28
         shifter = 1.2
         up_level = True
         interpolation = cv2.INTER_AREA
+        high_level_scale = 32
+        high_interpolation = cv2.INTER_AREA
 
     if versionURL == '3':
         low_level_scale = 48
         shifter = 1.1
         up_level = True
         interpolation = cv2.INTER_LANCZOS4
+        high_level_scale = 64
+        high_interpolation = cv2.INTER_LANCZOS4
 
     if versionURL == '4':
         low_level_scale = 64
         shifter = 1.0
         up_level = False
         interpolation = cv2.INTER_LANCZOS4
+        high_level_scale = 64
+        high_interpolation = cv2.INTER_LANCZOS4
 
     cv2.imwrite('record/' + dstr + '.sketch.png', sketchDataURL)
     cv2.imwrite('record/' + dstr + '.reference.png', referenceDataURL)
@@ -404,13 +414,15 @@ def do_paint():
         })
 
     final = final[0]
+
+    cv2.imwrite('record/' + dstr + '.tiny.png',(final + [103.939, 116.779, 123.68])[:, :, ::-1].clip(0, 255).astype(np.uint8))
+
     final += [103.939, 116.779, 123.68]
     final = final[:, :, ::-1]
     final = final.clip(0,255).astype(np.uint8)
-    cv2.imwrite('record/' + dstr + '.tiny.png', final)
 
     if up_level:
-        sketch = unet_resize(normed_sketch)
+        sketch = unet_resize(normed_sketch,high_level_scale,high_interpolation)
         final = cv2.resize(final, (sketch.shape[1], sketch.shape[0]), cv2.INTER_LANCZOS4)
         final = cv2.cvtColor(final, cv2.COLOR_RGB2YUV)
         final = final[None, :, :, :]
@@ -431,6 +443,11 @@ def do_paint():
         fin = cv2.cvtColor(fin, cv2.COLOR_YUV2RGB)
     else:
         fin = final
+
+    fin = cv2.cvtColor(fin, cv2.COLOR_RGB2HSV).astype(np.float)
+    fin[:, :, 1] /= 0.9
+    fin = fin.clip(0, 255).astype(np.uint8)
+    fin = cv2.cvtColor(fin, cv2.COLOR_HSV2RGB)
 
     fin = cv2.resize(fin, (raw_sketch_shape[1], raw_sketch_shape[0]), cv2.INTER_LANCZOS4)
     cv2.imwrite('record/' + dstr + '.fin.png', fin)
@@ -466,6 +483,7 @@ def norm_sketch(raw_sketch):
     sketch = raw_sketch.astype(np.float)
     sketch -= tiny_min
     sketch /= tiny_range
+    sketch /= 0.9
     sketch = np.power(sketch.clip(0,1), 2)
     sketch *= 255.0
     return sketch.clip(0,255).astype(np.uint8)
