@@ -483,7 +483,6 @@ def norm_sketch(raw_sketch):
     sketch = raw_sketch.astype(np.float)
     sketch -= tiny_min
     sketch /= tiny_range
-    sketch /= 0.9
     sketch = np.power(sketch.clip(0,1), 2)
     sketch *= 255.0
     return sketch.clip(0,255).astype(np.uint8)
