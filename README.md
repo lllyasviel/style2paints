@@ -165,17 +165,6 @@ Models are avaliable in 'release' page.
 
 QQ Group ID: 184467946
 
-# Paper Reference
-
-The paper is accecped by ACPR 2017.
-
-    @article{StyleTansferForAnime,
-        Author = {Lvmin Zhang and Yi Ji and Xin Lin},
-        Title = {Style Transfer for Anime Sketches with Enhanced Residual U-net and Auxiliary Classifier GAN},
-        Journal = {arXiv:1706.03319},
-        Year = {2017}
-    }
-
 ## Acknowledgements
 
 Thanks a lot to TaiZan. This project could not be achived without his great help.
