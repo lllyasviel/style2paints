@@ -259,6 +259,9 @@ cc.Class({
         },
         denoise: {
             default: null, type: cc.Node
+        },
+        welcome: {
+            default: null, type: cc.Node
         }
     },
 
@@ -381,18 +384,13 @@ cc.Class({
         xhr.send("sketch=" + encodeURIComponent(sketchDataURL) + "&reference=" + encodeURIComponent(referenceDataURL) + "&hint=" + encodeURIComponent(hintDataURL) + "&version=" + version.toString() + "&denoise=" + this.denoise.getComponent('cc.Toggle').isChecked.toString());
         spBTN.enabled = false;
         spLAB.string = "Waiting";
+        this.welcome.active = false;
     },
     onDownloadClicked: function onDownloadClicked() {
         if (resultURL == "") {
             return;
         }
         window.open(resultURL);
-    },
-    onTitle: function onTitle() {
-        window.open('https://github.com/lllyasviel/style2paints', 'gitHub');
-    },
-    onHelp: function onHelp() {
-        window.open('https://github.com/lllyasviel/style2paints/issues/12', 'gitHub');
     },
     handlePainter: function handlePainter() {
         painting = false;

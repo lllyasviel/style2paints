@@ -47,7 +47,7 @@
                     ],
                     "height": 699,
                     "type": "panel",
-                    "width": 1112
+                    "width": 964.984375
                   },
                   {
                     "active": 0,
@@ -56,12 +56,12 @@
                     ],
                     "height": 699,
                     "type": "panel",
-                    "width": 236
+                    "width": 204
                   }
                 ],
                 "height": 699,
                 "type": "dock-h",
-                "width": 1351
+                "width": 1172
               },
               {
                 "active": 0,
@@ -71,12 +71,12 @@
                 ],
                 "height": 226,
                 "type": "panel",
-                "width": 1351
+                "width": 1172
               }
             ],
             "height": 928,
             "type": "dock-v",
-            "width": 1351
+            "width": 1172
           },
           {
             "active": 0,
@@ -85,7 +85,7 @@
             ],
             "height": 928,
             "type": "panel",
-            "width": 304
+            "width": 483
           }
         ],
         "type": "dock-h"
@@ -100,43 +100,17 @@
         "timeline"
       ]
     },
-    "window-1506190240363": {
+    "window-1506239375473": {
       "main": false,
       "url": "packages://code-editor/panel/index.html",
       "windowType": "simple",
       "x": 355,
       "y": 158,
-      "width": 1221,
+      "width": 1226,
       "height": 750,
       "layout": null,
       "panels": [
         "code-editor"
-      ]
-    },
-    "window-1506190826571": {
-      "main": false,
-      "url": "unpack://static/window.html",
-      "windowType": "dockable",
-      "x": 454,
-      "y": 107,
-      "width": 885,
-      "height": 739,
-      "layout": {
-        "children": [
-          {
-            "active": 0,
-            "children": [
-              "builder"
-            ],
-            "height": 700,
-            "type": "panel",
-            "width": 869
-          }
-        ],
-        "type": "dock-v"
-      },
-      "panels": [
-        "builder"
       ]
     }
   },
@@ -156,7 +130,7 @@
     "code-editor": {
       "x": 355,
       "y": 158,
-      "width": 1221,
+      "width": 1226,
       "height": 750
     },
     "preferences": {

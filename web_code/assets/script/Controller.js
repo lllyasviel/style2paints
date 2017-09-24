@@ -272,6 +272,9 @@ cc.Class({
         denoise:{
             default:null,type:cc.Node
         },
+        welcome:{
+            default:null,type:cc.Node
+        },
     },
     
     onV1: function(){
@@ -401,18 +404,13 @@ cc.Class({
             );
         spBTN.enabled = false;
         spLAB.string = "Waiting";
+        this.welcome.active = false;
     },
     onDownloadClicked: function(){
         if(resultURL==""){
             return;
         }
         window.open(resultURL);
-    },
-    onTitle: function(){
-        window.open('https://github.com/lllyasviel/style2paints','gitHub');
-    },
-    onHelp: function(){
-        window.open('https://github.com/lllyasviel/style2paints/issues/12','gitHub');
     },
     handlePainter: function(){
         painting = false;
