@@ -20,7 +20,7 @@
                 ],
                 "height": 459,
                 "type": "panel",
-                "width": 253
+                "width": 251.40625
               },
               {
                 "active": 0,
@@ -29,12 +29,12 @@
                 ],
                 "height": 465.984375,
                 "type": "panel",
-                "width": 253
+                "width": 251.40625
               }
             ],
             "height": 928,
             "type": "dock-v",
-            "width": 253
+            "width": 251.40625
           },
           {
             "children": [
@@ -47,7 +47,7 @@
                     ],
                     "height": 699,
                     "type": "panel",
-                    "width": 964.984375
+                    "width": 957.609375
                   },
                   {
                     "active": 0,
@@ -61,7 +61,7 @@
                 ],
                 "height": 699,
                 "type": "dock-h",
-                "width": 1172
+                "width": 1164.625
               },
               {
                 "active": 0,
@@ -71,12 +71,12 @@
                 ],
                 "height": 226,
                 "type": "panel",
-                "width": 1172
+                "width": 1164.625
               }
             ],
             "height": 928,
             "type": "dock-v",
-            "width": 1172
+            "width": 1164.625
           },
           {
             "active": 0,
@@ -85,7 +85,7 @@
             ],
             "height": 928,
             "type": "panel",
-            "width": 483
+            "width": 479.96875
           }
         ],
         "type": "dock-h"
@@ -100,19 +100,33 @@
         "timeline"
       ]
     },
-    "window-1506239375473": {
+    "window-1506248161987": {
       "main": false,
-      "url": "packages://code-editor/panel/index.html",
-      "windowType": "simple",
-      "x": 355,
-      "y": 158,
-      "width": 1226,
-      "height": 750,
-      "layout": null,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 454,
+      "y": 107,
+      "width": 885,
+      "height": 739,
+      "layout": {
+        "children": [
+          {
+            "active": 0,
+            "children": [
+              "builder"
+            ],
+            "height": 700,
+            "type": "panel",
+            "width": 869
+          }
+        ],
+        "type": "dock-v"
+      },
       "panels": [
-        "code-editor"
+        "builder"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "builder": {
