@@ -160,6 +160,9 @@ function loadLocalResult(uri) {
 
         spResultImg.node.width = parseInt(w);
         spResultImg.node.height = parseInt(h);
+
+        spBTN.enabled = true;
+        spLAB.string = "<u>colorize</u>";
     };
     img.src = uri;
     resultURL = uri;
@@ -369,6 +372,9 @@ cc.Class({
             return;
         }
 
+        spResultImg.node.width = 0;
+        spResultImg.node.height = 0;
+
         var hintDataURL = HTML_Canvas_hint.toDataURL("image/png");
         var referenceDataURL = HTML_Canvas_reference.toDataURL("image/png");
         var sketchDataURL = HTML_Canvas_sketch.toDataURL("image/png");
@@ -378,8 +384,6 @@ cc.Class({
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");
         xhr.onreadystatechange = function () {
             loadLocalResult(xhr.responseText);
-            spBTN.enabled = true;
-            spLAB.string = "<u>colorize</u>";
         };
         xhr.send("sketch=" + encodeURIComponent(sketchDataURL) + "&reference=" + encodeURIComponent(referenceDataURL) + "&hint=" + encodeURIComponent(hintDataURL) + "&version=" + version.toString() + "&denoise=" + this.denoise.getComponent('cc.Toggle').isChecked.toString());
         spBTN.enabled = false;
