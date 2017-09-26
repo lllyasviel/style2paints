@@ -124,6 +124,7 @@ A simple content sketch **without shadow rendering** and 2 style images:
     pip install keras
     pip install chainer
     pip install bottle
+    pip install gevent
     pip install h5py
     pip install opencv-python
     git clone https://github.com/lllyasviel/style2paints.git
@@ -140,6 +141,7 @@ A simple content sketch **without shadow rendering** and 2 style images:
     pip install chainer
     pip install cupy
     pip install bottle
+    pip install gevent
     pip install h5py
     pip install opencv-python
     git clone https://github.com/lllyasviel/style2paints.git

@@ -6,7 +6,7 @@
       "url": "app://editor/index.html",
       "windowType": "dockable",
       "x": -8,
-      "y": -8,
+      "y": 0,
       "width": 1932,
       "height": 1056,
       "layout": {
@@ -99,47 +99,7 @@
         "node-library",
         "timeline"
       ]
-    },
-    "window-1506430840354": {
-      "main": false,
-      "url": "packages://code-editor/panel/index.html",
-      "windowType": "simple",
-      "x": 194,
-      "y": 149,
-      "width": 1214,
-      "height": 750,
-      "layout": null,
-      "panels": [
-        "code-editor"
-      ]
-    },
-    "window-1506431279994": {
-      "main": false,
-      "url": "unpack://static/window.html",
-      "windowType": "dockable",
-      "x": 454,
-      "y": 107,
-      "width": 885,
-      "height": 739,
-      "layout": {
-        "children": [
-          {
-            "active": 0,
-            "children": [
-              "builder"
-            ],
-            "height": 700,
-            "type": "panel",
-            "width": 869
-          }
-        ],
-        "type": "dock-v"
-      },
-      "panels": [
-        "builder"
-      ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "builder": {

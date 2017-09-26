@@ -5,7 +5,7 @@ import sys
 is_GPU = (len(sys.argv) == 1)
 
 import time
-
+from gevent import monkey; monkey.patch_all()
 from bottle import route, run, static_file, request, BaseRequest
 import base64
 import re
@@ -109,11 +109,11 @@ def ini_chainer():
     print('chainer initialized')
 
 if is_GPU:
-    chainer_thread = threading.Thread(target=ini_chainer)
-    chainer_thread.start()
     session = tf.Session(config=tf.ConfigProto(gpu_options=tf.GPUOptions(visible_device_list=str(tensorflow_GPU_ID),
                                                                          per_process_gpu_memory_fraction=k_between_tf_and_chainer)))
     K.set_session(session)
+    chainer_thread = threading.Thread(target=ini_chainer)
+    chainer_thread.start()
 else:
     session = K.get_session()
 
@@ -419,5 +419,4 @@ def norm_sketch(raw_sketch,denoise):
     sketch *= 255.0
     return sketch.clip(0,255).astype(np.uint8)
 
-
-run(host="0.0.0.0", port=8000)
+run(host="0.0.0.0", port=8000, server='gevent')
