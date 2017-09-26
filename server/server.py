@@ -433,10 +433,16 @@ def do_paint():
         fed = np.concatenate([sketch, final], axis=3)
         fed = np.transpose(fed, [0, 3, 1, 2])
         if is_GPU:
-            with chainer.no_backprop_mode():
-                with chainer.using_config('train', False):
-                    fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32), chainer_ID))
-            fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
+            try:
+                with chainer.no_backprop_mode():
+                    with chainer.using_config('train', False):
+                        fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32), chainer_ID))
+                fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
+            except Exception:
+                with chainer.no_backprop_mode():
+                    with chainer.using_config('train', False):
+                        fin = paintschainer.calc(fed.astype(np.float32))
+                fin = fin.data[0].clip(0, 255).astype(np.uint8)
         else:
             with chainer.no_backprop_mode():
                 with chainer.using_config('train', False):

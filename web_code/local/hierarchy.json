@@ -5,7 +5,7 @@
       "id": "c7947hMhaxO3Lc9uTImgrPt"
     },
     {
-      "folded": true,
+      "folded": false,
       "id": "478a5Ai90NIWZYo65ykjXCb"
     },
     {
@@ -13,8 +13,12 @@
       "id": "c45cbodgS1L26b71qR4GQ4V"
     },
     {
-      "folded": true,
+      "folded": false,
       "id": "a80b6rqLrBAxYfIe80Gkv/M"
+    },
+    {
+      "folded": false,
+      "id": "98ab9bGVB5GzpV31Sjn89t5"
     },
     {
       "folded": false,
@@ -37,16 +41,12 @@
       "id": "b751fxfqrZDlL7u0AYM8hQ8"
     },
     {
-      "folded": true,
+      "folded": false,
       "id": "c55e42ylDVLsrpU6bPpnNxs"
     },
     {
-      "folded": true,
-      "id": "7aa5fkr+EVPwaLHWJl0PzG8"
-    },
-    {
       "folded": false,
-      "id": "98ab9bGVB5GzpV31Sjn89t5"
+      "id": "7aa5fkr+EVPwaLHWJl0PzG8"
     }
   ]
 }
