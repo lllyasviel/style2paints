@@ -151,9 +151,9 @@ A simple content sketch **without shadow rendering** and 2 style images:
 
 Models are avaliable in 'release' page.
 
-1. base_generator.net            all rights reserved 2017 style2paints
-2. paintschainer.net             from [paintschainer](https://github.com/pfnet/PaintsChainer)
-3. google_net.net                from [nico-opendata](https://nico-opendata.jp/en/demo/tag/index.html)
+1. base_generator.net -> all rights reserved 2017 style2paints
+2. style2paints.net -> all rights reserved 2017 style2paints
+3. google_net.net -> from [nico-opendata](https://nico-opendata.jp/en/demo/tag/index.html)
 
 # Training Datasets
 

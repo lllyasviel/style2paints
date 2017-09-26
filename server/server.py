@@ -1,8 +1,10 @@
 chainer_GPU_ID = 0
 tensorflow_GPU_ID = 0
-k_between_tf_and_chainer = 0.5
+k_between_tf_and_chainer = 0.8
 import sys
 is_GPU = (len(sys.argv) == 1)
+
+import time
 
 from bottle import route, run, static_file, request, BaseRequest
 import base64
@@ -14,8 +16,7 @@ from keras.layers.core import K
 K.set_learning_phase(0)
 import random
 import datetime
-from keras.models import Model,load_model
-from keras.layers import Input, Conv2D, MaxPooling2D
+from keras.models import load_model
 import threading
 
 seed = random.randint(0, 2**31 - 1)
@@ -99,93 +100,12 @@ class GoogLeNet(chainer.Chain):
         hint_s8c1024_2 = F.reshape(F.average_pooling_2d(h, 8), (1024,))
 
         return hint_s57c64_0,hint_s29c192_0,hint_s29c256_0,hint_s29c320_0,hint_s15c576_0,hint_s15c576_1,hint_s15c576_2,hint_s15c576_3,hint_s15c576_4,hint_s8c1024_0,hint_s8c1024_1,hint_s8c1024_2
-class UNET(chainer.Chain):
-
-    def __init__(self):
-        super(UNET, self).__init__(
-            c0=L.Convolution2D(4, 32, 3, 1, 1),
-            c1=L.Convolution2D(32, 64, 4, 2, 1),
-            c2=L.Convolution2D(64, 64, 3, 1, 1),
-            c3=L.Convolution2D(64, 128, 4, 2, 1),
-            c4=L.Convolution2D(128, 128, 3, 1, 1),
-            c5=L.Convolution2D(128, 256, 4, 2, 1),
-            c6=L.Convolution2D(256, 256, 3, 1, 1),
-            c7=L.Convolution2D(256, 512, 4, 2, 1),
-            c8=L.Convolution2D(512, 512, 3, 1, 1),
-
-            dc8=L.Deconvolution2D(1024, 512, 4, 2, 1),
-            dc7=L.Convolution2D(512, 256, 3, 1, 1),
-            dc6=L.Deconvolution2D(512, 256, 4, 2, 1),
-            dc5=L.Convolution2D(256, 128, 3, 1, 1),
-            dc4=L.Deconvolution2D(256, 128, 4, 2, 1),
-            dc3=L.Convolution2D(128, 64, 3, 1, 1),
-            dc2=L.Deconvolution2D(128, 64, 4, 2, 1),
-            dc1=L.Convolution2D(64, 32, 3, 1, 1),
-            dc0=L.Convolution2D(64, 3, 3, 1, 1),
-
-            bnc0=L.BatchNormalization(32),
-            bnc1=L.BatchNormalization(64),
-            bnc2=L.BatchNormalization(64),
-            bnc3=L.BatchNormalization(128),
-            bnc4=L.BatchNormalization(128),
-            bnc5=L.BatchNormalization(256),
-            bnc6=L.BatchNormalization(256),
-            bnc7=L.BatchNormalization(512),
-            bnc8=L.BatchNormalization(512),
-
-            bnd8=L.BatchNormalization(512),
-            bnd7=L.BatchNormalization(256),
-            bnd6=L.BatchNormalization(256),
-            bnd5=L.BatchNormalization(128),
-            bnd4=L.BatchNormalization(128),
-            bnd3=L.BatchNormalization(64),
-            bnd2=L.BatchNormalization(64),
-            bnd1=L.BatchNormalization(32)
-            # l = L.Linear(3*3*256, 2)'
-        )
-
-    def calc(self, x):
-        e0 = F.relu(self.bnc0(self.c0(x)))
-        e1 = F.relu(self.bnc1(self.c1(e0)))
-        e2 = F.relu(self.bnc2(self.c2(e1)))
-        del e1
-        e3 = F.relu(self.bnc3(self.c3(e2)))
-        e4 = F.relu(self.bnc4(self.c4(e3)))
-        del e3
-        e5 = F.relu(self.bnc5(self.c5(e4)))
-        e6 = F.relu(self.bnc6(self.c6(e5)))
-        del e5
-        e7 = F.relu(self.bnc7(self.c7(e6)))
-        e8 = F.relu(self.bnc8(self.c8(e7)))
-
-        d8 = F.relu(self.bnd8(self.dc8(F.concat([e7, e8]))))
-        del e7, e8
-        d7 = F.relu(self.bnd7(self.dc7(d8)))
-        del d8
-        d6 = F.relu(self.bnd6(self.dc6(F.concat([e6, d7]))))
-        del d7, e6
-        d5 = F.relu(self.bnd5(self.dc5(d6)))
-        del d6
-        d4 = F.relu(self.bnd4(self.dc4(F.concat([e4, d5]))))
-        del d5, e4
-        d3 = F.relu(self.bnd3(self.dc3(d4)))
-        del d4
-        d2 = F.relu(self.bnd2(self.dc2(F.concat([e2, d3]))))
-        del d3, e2
-        d1 = F.relu(self.bnd1(self.dc1(d2)))
-        del d2
-        d0 = self.dc0(F.concat([e0, d1]))
-
-        return d0
 google_net = GoogLeNet()
-paintschainer = UNET()
 chainer.serializers.load_npz('google_net.net', google_net)
-chainer.serializers.load_npz('paintschainer.net', paintschainer)
 
 def ini_chainer():
-    chainer.cuda.get_device(chainer_ID).use()
+    chainer.cuda.get_device_from_id(chainer_ID).use()
     google_net.to_gpu(chainer_ID)
-    paintschainer.to_gpu(chainer_ID)
     print('chainer initialized')
 
 if is_GPU:
@@ -201,11 +121,15 @@ EPS = 1e-12
 lr = 1e-6
 beta1 = 0.5
 
-with tf.variable_scope("generator"):
-    base_generator = load_model('base_generator.net')
+base_generator = load_model('base_generator.net')
+style2paints = load_model('style2paints.net')
 
 sketch_ref_input_448 = tf.placeholder(dtype=tf.float32, shape=(None, None, None, 1))
 local_hint_input_448 = tf.placeholder(dtype=tf.float32, shape=(None, None, None, 3))
+
+combined_input_448 = tf.concat([sketch_ref_input_448,local_hint_input_448], axis=3)
+combined_output = style2paints(combined_input_448)
+
 hint_s57c64_0 = tf.placeholder(dtype=tf.float32, shape=(None, 64))
 hint_s29c192_0 = tf.placeholder(dtype=tf.float32, shape=(None, 192))
 hint_s29c256_0 = tf.placeholder(dtype=tf.float32, shape=(None, 256))
@@ -239,7 +163,7 @@ local_drag_output, global_drag_output, paint_output = base_generator([
 session.run(tf.global_variables_initializer())
 
 base_generator.load_weights('base_generator.net')
-
+style2paints.load_weights('style2paints.net')
 
 @route('/<filename:path>')
 def send_static(filename):
@@ -351,6 +275,8 @@ def do_paint():
     reference = reference / 255.0
     reference = reference.transpose((2, 0, 1))[None, :, :, :]
 
+    t = time.time()
+
     if is_GPU:
         with chainer.no_backprop_mode():
             with chainer.using_config('train', False):
@@ -361,6 +287,8 @@ def do_paint():
             with chainer.using_config('train', False):
                 vhint_s57c64_0, vhint_s29c192_0, vhint_s29c256_0, vhint_s29c320_0, vhint_s15c576_0, vhint_s15c576_1, vhint_s15c576_2, vhint_s15c576_3, vhint_s15c576_4, vhint_s8c1024_0, vhint_s8c1024_1, vhint_s8c1024_2 = google_net.forward(
                     reference)
+
+    print(time.time() - t)
 
     hint = hintDataURL[:, :, 0:4]
 
@@ -380,6 +308,8 @@ def do_paint():
     for _ in range(3):
         local_hint[:, :, _] = np.multiply(local_hint[:, :, _], alpha)
     hint = local_hint[None, :, :, :]
+
+    t = time.time()
 
     if is_GPU:
         final = session.run(paint_output, feed_dict={
@@ -416,6 +346,8 @@ def do_paint():
             hint_s8c1024_2: vhint_s8c1024_2.data[None]
         })
 
+    print(time.time() - t)
+
     final = final[0]
 
     cv2.imwrite('record/' + dstr + '.tiny.png',(final + [103.939, 116.779, 123.68])[:, :, ::-1].clip(0, 255).astype(np.uint8))
@@ -424,34 +356,23 @@ def do_paint():
     final = final[:, :, ::-1]
     final = final.clip(0,255).astype(np.uint8)
 
+    t = time.time()
+
     if up_level:
         sketch = unet_resize(normed_sketch,high_level_scale,high_interpolation)
         final = cv2.resize(final, (sketch.shape[1], sketch.shape[0]), cv2.INTER_LANCZOS4)
         final = cv2.cvtColor(final, cv2.COLOR_RGB2YUV)
         final = final[None, :, :, :]
         sketch = sketch[None, :, :, None]
-        fed = np.concatenate([sketch, final], axis=3)
-        fed = np.transpose(fed, [0, 3, 1, 2])
-        if is_GPU:
-            try:
-                with chainer.no_backprop_mode():
-                    with chainer.using_config('train', False):
-                        fin = paintschainer.calc(chainer.cuda.to_gpu(fed.astype(np.float32), chainer_ID))
-                fin = chainer.cuda.to_cpu(fin.data)[0].clip(0, 255).astype(np.uint8)
-            except Exception:
-                with chainer.no_backprop_mode():
-                    with chainer.using_config('train', False):
-                        fin = paintschainer.calc(fed.astype(np.float32))
-                fin = fin.data[0].clip(0, 255).astype(np.uint8)
-        else:
-            with chainer.no_backprop_mode():
-                with chainer.using_config('train', False):
-                    fin = paintschainer.calc(fed.astype(np.float32))
-            fin = fin.data[0].clip(0, 255).astype(np.uint8)
-        fin = np.transpose(fin, [1, 2, 0])
+        fin = session.run(combined_output,feed_dict={
+            sketch_ref_input_448: sketch,
+            local_hint_input_448: final
+        })[0].clip(0,255).astype(np.uint8)
         fin = cv2.cvtColor(fin, cv2.COLOR_YUV2RGB)
     else:
         fin = final
+
+    print(time.time() - t)
 
     fin = cv2.cvtColor(fin, cv2.COLOR_RGB2HSV).astype(np.float)
     fin[:, :, 1] /= 0.9
