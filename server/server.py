@@ -2,7 +2,7 @@ chainer_GPU_ID = 0
 tensorflow_GPU_ID = 0
 k_between_tf_and_chainer = 0.8
 import sys
-is_GPU = False # (len(sys.argv) == 1)
+is_GPU = (len(sys.argv) == 1)
 
 import time
 from gevent import monkey; monkey.patch_all()
