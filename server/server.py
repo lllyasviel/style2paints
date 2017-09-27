@@ -2,7 +2,7 @@ chainer_GPU_ID = 0
 tensorflow_GPU_ID = 0
 k_between_tf_and_chainer = 0.8
 import sys
-is_GPU = (len(sys.argv) == 1)
+is_GPU = False # (len(sys.argv) == 1)
 
 import time
 from gevent import monkey; monkey.patch_all()
@@ -191,14 +191,20 @@ def do_paint():
         cv2.imwrite('record/' + dstr + '.sketch.png', sketchDataURL)
     else:
         dstr = sketchID
-        sketchDataURL = cv2.imread('record/' + dstr + '.sketch.png')
+        sketchDataURL = cv2.imread('record/' + dstr + '.sketch.png', cv2.IMREAD_UNCHANGED)
 
-    referenceDataURL = request.forms.get("reference")
-    referenceDataURL = re.sub('^data:image/.+;base64,', '', referenceDataURL)
-    referenceDataURL = base64.urlsafe_b64decode(referenceDataURL)
-    referenceDataURL = np.fromstring(referenceDataURL, dtype=np.uint8)
-    referenceDataURL = cv2.imdecode(referenceDataURL, -1)
-    cv2.imwrite('record/' + dstr + '_' + str(np.random.randint(100, 999)) + '.reference.png', referenceDataURL)
+    referenceID = request.forms.get("referenceID")
+
+    if referenceID == 'new':
+        referenceDataURL = request.forms.get("reference")
+        referenceDataURL = re.sub('^data:image/.+;base64,', '', referenceDataURL)
+        referenceDataURL = base64.urlsafe_b64decode(referenceDataURL)
+        referenceDataURL = np.fromstring(referenceDataURL, dtype=np.uint8)
+        referenceDataURL = cv2.imdecode(referenceDataURL, -1)
+        referenceID = str(np.random.randint(100, 999))
+        cv2.imwrite('record/' + dstr + '_' + referenceID + '.reference.png', referenceDataURL)
+    else:
+        referenceDataURL = cv2.imread('record/' + dstr + '_' + referenceID + '.reference.png', cv2.IMREAD_UNCHANGED)
 
     hintDataURL = request.forms.get("hint")
     hintDataURL = re.sub('^data:image/.+;base64,', '', hintDataURL)
@@ -353,7 +359,7 @@ def do_paint():
     final += [103.939, 116.779, 123.68]
     final = final[:, :, ::-1]
     final = final.clip(0,255).astype(np.uint8)
-    
+
     t = time.time()
 
     if up_level:
@@ -382,7 +388,7 @@ def do_paint():
     result_path = 'results/' + dstr + '.jpg'
     cv2.imwrite('game/' + result_path, fin)
 
-    return dstr
+    return dstr + '*' + referenceID
 
 
 def from_png_to_jpg(map):

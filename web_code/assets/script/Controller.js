@@ -33,7 +33,8 @@ var isPen = true;
 var mouseIsDown = false;
 
 var sketchID = "new";
-var tempSketchID = "new";
+var referenceID = "new";
+var tempID;
 
 var resultURL = "";
 
@@ -118,6 +119,7 @@ function loadLocalReference(uri){
         referenceNodeTexture._pixels = tempCanvas_200.getContext("2d").getImageData(0, 0, tempCanvas_200.width, tempCanvas_200.height).data;
 		
 		hasRef = true;
+		referenceID = "new";
     }
 	img.src = uri;
 }
@@ -173,11 +175,17 @@ function loadLocalResult(uri){
 		spBTN.enabled = true;
         spLAB.string = "<u>colorize</u>";
         
-        sketchID = tempSketchID;
+        sketchID = tempID[0];
+        referenceID = tempID[1];
     }
-    tempSketchID = uri
-    resultURL = "results/" + tempSketchID + ".jpg";
-	img.src = resultURL;
+    tempID = uri.split("*");
+    if(tempID.length==2){
+        resultURL = "results/" + tempID[0] + ".jpg?t=" + Math.random().toString();
+	    img.src = resultURL;
+    }else{
+        spBTN.enabled = true;
+        spLAB.string = "<u>colorize</u>";
+    }
 }
 
 function loadLocalSketch(uri){
@@ -257,6 +265,7 @@ function loadLocalSketch(uri){
 		
 		hasSketch = true;
 		sketchID = "new";
+		referenceID = "new";
     }
 	img.src = uri;
 }
@@ -421,6 +430,9 @@ cc.Class({
         if(sketchID!="new"){
             sketchDataURL = "null";
         }
+        if(referenceID!="new"){
+            referenceDataURL = "null";
+        }
         xhr.send
             (
             "sketch="+encodeURIComponent(sketchDataURL)+
@@ -428,7 +440,8 @@ cc.Class({
             "&hint="+encodeURIComponent(hintDataURL)+
             "&version="+version.toString()+
             "&denoise="+this.denoise.getComponent('cc.Toggle').isChecked.toString()+
-            "&sketchID="+sketchID
+            "&sketchID="+sketchID+
+            "&referenceID="+referenceID
             );
         spBTN.enabled = false;
         spLAB.string = "Waiting";
