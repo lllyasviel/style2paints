@@ -109,5 +109,7 @@ ENV/
 server/.idea
 server/record/*.png
 server/game/results/*.png
+server/record/*.jpg
+server/game/results/*.jpg
 
 *.net
