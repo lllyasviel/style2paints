@@ -1,6 +1,8 @@
 # STYLE2PAINTS
 
-[ZhiHu](https://zhuanlan.zhihu.com/p/29331219)  [BiliBili](https://www.bilibili.com/video/av14443094/)  [GithubPage](https://lllyasviel.github.io/)  [TempDemo](http://52.80.94.56:8000/)
+[ZhiHu](https://zhuanlan.zhihu.com/p/29331219)  [BiliBili](https://www.bilibili.com/video/av14443094/)  [GithubPage](https://lllyasviel.github.io/)
+
+Temp demo: [https://style2paints.github.io/](https://style2paints.github.io/)
 
 The AI can paint on a sketch accroding to a given specific color style.
 
