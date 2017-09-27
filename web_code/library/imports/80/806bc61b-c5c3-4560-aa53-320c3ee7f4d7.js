@@ -2,7 +2,7 @@
 cc._RF.push(module, '806bcYbxcNFYKpTMgw+5/TX', 'Controller');
 // script/Controller.js
 
-'use strict';
+"use strict";
 
 var spSketchImg;
 var spRefereneImg;
@@ -37,6 +37,9 @@ var HTML_Canvas_hint;
 var isPen = true;
 
 var mouseIsDown = false;
+
+var sketchID = "new";
+var tempSketchID = "new";
 
 var resultURL = "";
 
@@ -163,9 +166,12 @@ function loadLocalResult(uri) {
 
         spBTN.enabled = true;
         spLAB.string = "<u>colorize</u>";
+
+        sketchID = tempSketchID;
     };
-    img.src = uri;
-    resultURL = uri;
+    tempSketchID = uri;
+    resultURL = "results/" + tempSketchID + ".jpg";
+    img.src = resultURL;
 }
 
 function loadLocalSketch(uri) {
@@ -184,6 +190,19 @@ function loadLocalSketch(uri) {
 
         var w = parseFloat(this.width);
         var h = parseFloat(this.height);
+
+        if (h < w) {
+            if (h > 1024) {
+                w = 1024.0 / h * w;
+                h = 1024.0;
+            }
+        } else {
+            if (w > 1024) {
+                h = 1024.0 / w * h;
+                w = 1024.0;
+            }
+        }
+
         HTML_Canvas_sketch.width = parseInt(w);
         HTML_Canvas_sketch.height = parseInt(h);
 
@@ -225,6 +244,7 @@ function loadLocalSketch(uri) {
         sketchNodeTexture.handleLoadedTexture();
 
         hasSketch = true;
+        sketchID = "new";
     };
     img.src = uri;
 }
@@ -385,7 +405,10 @@ cc.Class({
         xhr.onreadystatechange = function () {
             loadLocalResult(xhr.responseText);
         };
-        xhr.send("sketch=" + encodeURIComponent(sketchDataURL) + "&reference=" + encodeURIComponent(referenceDataURL) + "&hint=" + encodeURIComponent(hintDataURL) + "&version=" + version.toString() + "&denoise=" + this.denoise.getComponent('cc.Toggle').isChecked.toString());
+        if (sketchID != "new") {
+            sketchDataURL = "null";
+        }
+        xhr.send("sketch=" + encodeURIComponent(sketchDataURL) + "&reference=" + encodeURIComponent(referenceDataURL) + "&hint=" + encodeURIComponent(hintDataURL) + "&version=" + version.toString() + "&denoise=" + this.denoise.getComponent('cc.Toggle').isChecked.toString() + "&sketchID=" + sketchID);
         spBTN.enabled = false;
         spLAB.string = "Waiting";
         this.welcome.active = false;

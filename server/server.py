@@ -179,28 +179,35 @@ def send_static():
 def do_paint():
     print('received')
 
-    dstr = datetime.datetime.now().strftime('%b%d%H%M%S') + str(np.random.randint(10000,99999))
+    sketchID = request.forms.get("sketchID")
 
-    sketchDataURL = request.forms.get("sketch")
-    sketchDataURL = re.sub('^data:image/.+;base64,', '', sketchDataURL)
-    sketchDataURL = base64.urlsafe_b64decode(sketchDataURL)
-    sketchDataURL = np.fromstring(sketchDataURL, dtype=np.uint8)
-    sketchDataURL = cv2.imdecode(sketchDataURL, -1)
+    if sketchID == 'new':
+        dstr = datetime.datetime.now().strftime('%b_%d_%H_%M_%S') + '__' + str(np.random.randint(100, 999))
+        sketchDataURL = request.forms.get("sketch")
+        sketchDataURL = re.sub('^data:image/.+;base64,', '', sketchDataURL)
+        sketchDataURL = base64.urlsafe_b64decode(sketchDataURL)
+        sketchDataURL = np.fromstring(sketchDataURL, dtype=np.uint8)
+        sketchDataURL = cv2.imdecode(sketchDataURL, -1)
+        cv2.imwrite('record/' + dstr + '.sketch.png', sketchDataURL)
+    else:
+        dstr = sketchID
+        sketchDataURL = cv2.imread('record/' + dstr + '.sketch.png')
 
     referenceDataURL = request.forms.get("reference")
     referenceDataURL = re.sub('^data:image/.+;base64,', '', referenceDataURL)
     referenceDataURL = base64.urlsafe_b64decode(referenceDataURL)
     referenceDataURL = np.fromstring(referenceDataURL, dtype=np.uint8)
     referenceDataURL = cv2.imdecode(referenceDataURL, -1)
+    cv2.imwrite('record/' + dstr + '_' + str(np.random.randint(100, 999)) + '.reference.png', referenceDataURL)
 
     hintDataURL = request.forms.get("hint")
     hintDataURL = re.sub('^data:image/.+;base64,', '', hintDataURL)
     hintDataURL = base64.urlsafe_b64decode(hintDataURL)
     hintDataURL = np.fromstring(hintDataURL, dtype=np.uint8)
     hintDataURL = cv2.imdecode(hintDataURL, -1)
+    cv2.imwrite('record/' + dstr + '_' + str(np.random.randint(100, 999)) + '.hint.png', hintDataURL)
 
     versionURL = request.forms.get("version")
-
     denoiseURL = request.forms.get("denoise")
 
     low_level_scale = 28
@@ -242,11 +249,7 @@ def do_paint():
         high_level_scale = 64
         high_interpolation = cv2.INTER_LANCZOS4
 
-    cv2.imwrite('record/' + dstr + '.sketch.png', sketchDataURL)
-    cv2.imwrite('record/' + dstr + '.reference.png', referenceDataURL)
-    cv2.imwrite('record/' + dstr + '.hint.png', hintDataURL)
-
-    raw_sketch = sketchDataURL[:, :, 0:3]
+    raw_sketch = from_png_to_jpg(sketchDataURL)
     raw_sketch_shape = raw_sketch.shape
 
     shape_x = raw_sketch_shape[0]
@@ -260,16 +263,14 @@ def do_paint():
     raw_sketch_shape = (int(new_shape_x),int(new_shape_y))
 
     raw_sketch = cv2.cvtColor(raw_sketch,cv2.COLOR_RGB2GRAY)
-    cv2.imwrite('record/' + dstr + '.gray.png', raw_sketch)
     normed_sketch = norm_sketch(raw_sketch,denoiseURL)
-    cv2.imwrite('record/' + dstr + '.eqg.png', normed_sketch)
 
     sketch = unet_resize(normed_sketch, low_level_scale, interpolation)
     sketch = sketch.astype(np.float)
     sketch = 1 - (sketch / 255.0)
     sketch = sketch[None,:,:,None]
 
-    reference = referenceDataURL[:, :, 0:3]
+    reference = from_png_to_jpg(referenceDataURL)
     reference = cv2.resize(reference, (224,224), interpolation=cv2.INTER_AREA)
     reference = reference.astype(np.float32)
     reference = reference / 255.0
@@ -349,13 +350,10 @@ def do_paint():
     print(time.time() - t)
 
     final = final[0]
-
-    cv2.imwrite('record/' + dstr + '.tiny.png',(final + [103.939, 116.779, 123.68])[:, :, ::-1].clip(0, 255).astype(np.uint8))
-
     final += [103.939, 116.779, 123.68]
     final = final[:, :, ::-1]
     final = final.clip(0,255).astype(np.uint8)
-
+    
     t = time.time()
 
     if up_level:
@@ -380,11 +378,19 @@ def do_paint():
     fin = cv2.cvtColor(fin, cv2.COLOR_HSV2RGB)
 
     fin = cv2.resize(fin, (raw_sketch_shape[1], raw_sketch_shape[0]), cv2.INTER_LANCZOS4)
-    cv2.imwrite('record/' + dstr + '.fin.png', fin)
-    result_path = 'results/' + dstr + '.fin.png'
+    cv2.imwrite('record/' + dstr + '.fin.jpg', fin)
+    result_path = 'results/' + dstr + '.jpg'
     cv2.imwrite('game/' + result_path, fin)
 
-    return result_path
+    return dstr
+
+
+def from_png_to_jpg(map):
+    color = map[:, :, 0:3].astype(np.float) / 255.0
+    alpha = map[:, :, 3:4].astype(np.float) / 255.0
+    reversed_color = 1 - color
+    final_color = (255.0 - reversed_color * alpha * 255.0).clip(0,255).astype(np.uint8)
+    return final_color
 
 
 def unet_resize(image1,s_size=32, interpolation=cv2.INTER_AREA):
