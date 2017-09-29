@@ -129,6 +129,7 @@ A simple content sketch **without shadow rendering** and 2 style images:
     pip install gevent
     pip install h5py
     pip install opencv-python
+    pip install chainer
     git clone https://github.com/lllyasviel/style2paints.git
     (then download all pretrained models from 'release' page and then put them in 'style2paints/server')
     cd style2paints/server
@@ -146,6 +147,7 @@ A simple content sketch **without shadow rendering** and 2 style images:
     pip install gevent
     pip install h5py
     pip install opencv-python
+    pip install chainer
     git clone https://github.com/lllyasviel/style2paints.git
     (then download all pretrained models from 'release' page and then put them in 'style2paints/server')
     cd style2paints/server
