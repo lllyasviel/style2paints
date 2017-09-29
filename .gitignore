@@ -1,5 +1,5 @@
 #Generated Files
-server/record
+
 
 #Editor settings
 settings.json
@@ -107,9 +107,12 @@ ENV/
 .mypy_cache/
 
 server/.idea
-server/record/*.png
-server/game/results/*.png
 server/record/*.jpg
+server/record/*.png
 server/game/results/*.jpg
+server/game/results/*.png
+web_code/library/imports
+web_code/build
+web_code/temp
 
 *.net
