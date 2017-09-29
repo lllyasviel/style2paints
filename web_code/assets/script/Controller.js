@@ -182,9 +182,6 @@ function loadLocalResult(uri){
     if(tempID.length==2){
         resultURL = "results/" + tempID[0] + ".jpg?t=" + Math.random().toString();
 	    img.src = resultURL;
-    }else{
-        spBTN.enabled = true;
-        spLAB.string = "<u>colorize</u>";
     }
 }
 
