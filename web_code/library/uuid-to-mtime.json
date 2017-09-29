@@ -1,22 +1,22 @@
 {
   "7309e585-26a0-4bd4-9f94-adb036829c1d": {
-    "asset": 1506248159336,
-    "meta": 1506248159360,
+    "asset": 1506675214211,
+    "meta": 1506675214251,
     "relativePath": "main.fire"
   },
   "6c07ccbb-3a81-43ac-bf2a-f6579b2c0c13": {
-    "asset": 1506236529427,
-    "meta": 1506236840690,
+    "asset": 1506615188285,
+    "meta": 1506674615572,
     "relativePath": "script"
   },
   "806bc61b-c5c3-4560-aa53-320c3ee7f4d7": {
-    "asset": 1506506100451,
-    "meta": 1506506100758,
+    "asset": 1506615188285,
+    "meta": 1506674616052,
     "relativePath": "script\\Controller.js"
   },
   "ed6ac944-f2f4-4a42-8ad4-11c63096acf9": {
-    "asset": 1505720846473,
-    "meta": 1505720922672,
+    "asset": 1506615442507,
+    "meta": 1506674616062,
     "relativePath": "texture"
   },
   "03a76326-44a2-4275-9e40-b230a3eec1cd": {

@@ -47,7 +47,7 @@
                     ],
                     "height": 699,
                     "type": "panel",
-                    "width": 962
+                    "width": 1074.984375
                   },
                   {
                     "active": 0,
@@ -56,12 +56,12 @@
                     ],
                     "height": 699,
                     "type": "panel",
-                    "width": 205
+                    "width": 229
                   }
                 ],
                 "height": 699,
                 "type": "dock-h",
-                "width": 1170
+                "width": 1307
               },
               {
                 "active": 0,
@@ -71,12 +71,12 @@
                 ],
                 "height": 226,
                 "type": "panel",
-                "width": 1170
+                "width": 1307
               }
             ],
             "height": 928,
             "type": "dock-v",
-            "width": 1170
+            "width": 1307
           },
           {
             "active": 0,
@@ -85,7 +85,7 @@
             ],
             "height": 928,
             "type": "panel",
-            "width": 482
+            "width": 345
           }
         ],
         "type": "dock-h"
@@ -99,11 +99,37 @@
         "node-library",
         "timeline"
       ]
+    },
+    "window-1506675217833": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 575,
+      "y": 132,
+      "width": 885,
+      "height": 739,
+      "layout": {
+        "children": [
+          {
+            "active": 0,
+            "children": [
+              "builder"
+            ],
+            "height": 700,
+            "type": "panel",
+            "width": 869
+          }
+        ],
+        "type": "dock-v"
+      },
+      "panels": [
+        "builder"
+      ]
     }
   },
   "panels": {
     "builder": {
-      "x": 824,
+      "x": 575,
       "y": 132,
       "width": 885,
       "height": 739
