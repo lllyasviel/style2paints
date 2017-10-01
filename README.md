@@ -171,4 +171,4 @@ QQ Group ID: 184467946
 
 ## Acknowledgements
 
-Thanks a lot to TaiZan. This project could not be achived without his great help.
+Thanks a lot to TaiZan. This project could not be achieved without his great help.
