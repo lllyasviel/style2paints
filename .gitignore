@@ -114,5 +114,6 @@ server/game/results/*.png
 web_code/library/imports
 web_code/build
 web_code/temp
+local/*
 
 *.net
