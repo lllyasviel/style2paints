@@ -1,6 +1,6 @@
 A reliable anime style transfer has been chasing by the whole ACG related ML community for more than 2 years.
 
-We are very excited now because maybe we solved the problem 30 minutes ago.
+We are very excited now because maybe we solved the problem 30 minutes ago, just by adding some toggles to style2paints, and the results are amazing.
 
 You can try it directly at **style2paints.github.io**.
 
