@@ -6,6 +6,8 @@ APP: [https://style2paints.github.io/](https://style2paints.github.io/)
 
 The AI can paint on a sketch accroding to a given specific color style.
 
+The AI can transfer illustrations' style.
+
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot.png)
 
 ![web_preview2](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot2.png)
