@@ -10,6 +10,10 @@ The AI can paint on a sketch accroding to a given specific color style.
 
 ![web_preview2](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot2.png)
 
+![web_preview3](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot3.png)
+
+![web_preview4](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot4.png)
+
 # Tuitions
 
 [tuition 001](https://www.bilibili.com/video/av15014229/)
