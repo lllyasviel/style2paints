@@ -10,6 +10,8 @@ Or you can try with your own images, but keep in mind that your content images s
 
 Just click *upSketch* for content image and *upReference* for style image, **do not forget to click V4 (or V3 in some cases) and the SX toggle**.
 
+I mean **do not forget to click V4 (or V3 in some cases) and the SX toggle**.
+
 Maybe the method is unstable in some cases, but look here:
 
 ![st1](https://raw.githubusercontent.com/lllyasviel/style2paints/master/images_in_style_transfer/results/1.png)
