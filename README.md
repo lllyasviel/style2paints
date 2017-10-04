@@ -1,4 +1,4 @@
-# STYLE2PAINTS
+# You have just found STYLE2PAINTS
 
 [GithubPage](https://lllyasviel.github.io/) [GithubPageChinese](https://lllyasviel.github.io/chinese)
 
