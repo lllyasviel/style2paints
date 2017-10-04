@@ -1,6 +1,6 @@
 # You have just found STYLE2PAINTS
 
-[GithubPage](https://lllyasviel.github.io/) [GithubPageChinese](https://lllyasviel.github.io/chinese)
+[GithubPage](https://lllyasviel.github.io/) [GithubPageChinese](https://lllyasviel.github.io/chinese) [StyleTransfer](https://github.com/lllyasviel/style2paints/blob/master/AnimeStyleTransfer.md)
 
 APP: [https://style2paints.github.io/](https://style2paints.github.io/)
 
