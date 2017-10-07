@@ -16,7 +16,7 @@ PaintsTransfer: [http://paintstransfer.com/](http://paintstransfer.com/)
 
 :pushpin:[GithubPage](https://lllyasviel.github.io/) :pushpin:[GithubPageChinese](https://lllyasviel.github.io/chinese) :pushpin:[StyleTransfer](https://github.com/lllyasviel/style2paints/blob/master/AnimeStyleTransfer.md)
 
-APP: [https://style2paints.github.io/](https://style2paints.github.io/)
+*The previous version is now at 52.80.94.56:8000*
 
 The AI can paint on a sketch accroding to a given specific color style.
 
