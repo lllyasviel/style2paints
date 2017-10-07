@@ -7,6 +7,10 @@ cc.Class({
         for (var i = 0; i < tests.length; i++) {
             tests[i].chinese_shift();
         }
+        tests = this.getComponentsInChildren("interLabelraw");
+        for (var i = 0; i < tests.length; i++) {
+            tests[i].chinese_shift();
+        }
     },
 
     japanese: function () {
@@ -15,11 +19,19 @@ cc.Class({
         for (var i = 0; i < tests.length; i++) {
             tests[i].japanese_shift();
         }
+        tests = this.getComponentsInChildren("interLabelraw");
+        for (var i = 0; i < tests.length; i++) {
+            tests[i].japanese_shift();
+        }
     },
 
     english: function () {
         console.log("english");
         var tests = this.getComponentsInChildren("interLabel");
+        for (var i = 0; i < tests.length; i++) {
+            tests[i].english_shift();
+        }
+        tests = this.getComponentsInChildren("interLabelraw");
         for (var i = 0; i < tests.length; i++) {
             tests[i].english_shift();
         }

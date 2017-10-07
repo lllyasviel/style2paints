@@ -51,6 +51,9 @@ var sketch_h = 10;
 
 var white_result;
 
+var spQuickBTN;
+var spWaiting;
+
 function createObjectURL(blob){
     if(window.URL !== undefined)
         return window['URL']['createObjectURL'](blob);
@@ -209,6 +212,8 @@ function loadLocalSketch(uri){
 		sketchID = "new";
         referenceID = "new";
         spResultImg.spriteFrame.setTexture(white_result);
+
+        spQuickBTN.opacity = 255;
     }
 	img.src = uri;
 }
@@ -245,6 +250,12 @@ cc.Class({
             default:null,type:cc.Node
         },
         view: {
+            default: null, type: cc.Node
+        },
+        quickBTN: {
+            default: null, type: cc.Node
+        },
+        waiting: {
             default: null, type: cc.Node
         },
         loading: {
@@ -340,6 +351,12 @@ cc.Class({
         
         HTML_Canvas_sketch = document.createElement("canvas");
         HTML_Canvas_sketch.id = "HTML_Canvas_sketch";
+
+        spQuickBTN = this.quickBTN;
+        spWaiting = this.waiting;
+
+        this.quickBTN.opacity = 0;
+        this.waiting.opacity = 0;
         
         loaded = true;
         
@@ -371,7 +388,10 @@ cc.Class({
         if(!hasSketch){
             return;
         }
-        
+
+        this.waiting.opacity = 255;
+        this.quickBTN.opacity = 0;
+
         var hintDataURL = HTML_Canvas_hint.toDataURL("image/png");
         var referenceDataURL = HTML_Canvas_reference.toDataURL("image/png");
         var sketchDataURL = HTML_Canvas_sketch.toDataURL("image/png");
@@ -523,6 +543,8 @@ cc.Class({
                     spLAB.string = temp_btn_str;
                     sketchID = tempID[0];
                     referenceID = tempID[1];
+                    this.waiting.opacity = 0;
+                    this.quickBTN.opacity = 255;
                 }
             }
         }
