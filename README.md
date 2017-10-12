@@ -18,7 +18,7 @@ PaintsTransfer: [http://paintstransfer.com/](http://paintstransfer.com/)
 
 *The previous version is now at 52.80.94.56:8000*
 
-The AI can paint on a sketch accroding to a given specific color style.
+The AI can paint on a sketch according to a given specific color style.
 
 The AI can transfer illustrations' style.
 
@@ -177,7 +177,7 @@ A simple content sketch **without shadow rendering** and 2 style images:
 
 # Model
 
-Models are avaliable in 'release' page.
+Models are available in 'release' page.
 
 1. base_generator.net -> all rights reserved 2017 style2paints
 2. style2paints.net -> all rights reserved 2017 style2paints
