@@ -1,6 +1,8 @@
 # Lastest News
 
-**Our new UI is under construction now. You can try it directly!**
+**Style2paints V2 is coming soon with better color!**
+
+**Our new UI (Style2paints V1) is under construction now. You can try it directly!**
 
 PaintsTransfer: [http://paintstransfer.com/](http://paintstransfer.com/)
 
