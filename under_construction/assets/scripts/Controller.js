@@ -181,13 +181,12 @@ function loadLocalSketch(uri) {
         HTML_Canvas_sketch.width = parseInt(w);
         HTML_Canvas_sketch.height = parseInt(h);
 
-        if (w > h) {
-            w = 512.0 / h * w;
-            h = 512.0;
-        }
-        else {
-            h = 512.0 / w * h;
-            w = 512.0;
+        if (h < w) {
+            w = 1024.0 / h * w;
+            h = 1024.0;
+        } else {
+            h = 1024.0 / w * h;
+            w = 1024.0;
         }
 
         HTML_Canvas_hint.width = parseInt(w);
@@ -452,12 +451,11 @@ cc.Class({
                 var cxt = HTML_Canvas_hint.getContext("2d");
 
                 if (isPen) {
-                    var pen = 2;
                     cxt.beginPath();
-                    cxt.arc(parseInt(parseFloat(relativeX) / parseFloat(spHintNode.width) * parseFloat(HTML_Canvas_hint.width)), parseInt(parseFloat(spHintNode.height - relativeY) / parseFloat(spHintNode.height) * parseFloat(HTML_Canvas_hint.height)), pen, 0, Math.PI * 2, true);
+                    cxt.fillRect(parseInt(parseFloat(relativeX) / parseFloat(spHintNode.width) * parseFloat(HTML_Canvas_hint.width)) - 2, parseInt(parseFloat(spHintNode.height - relativeY) / parseFloat(spHintNode.height) * parseFloat(HTML_Canvas_hint.height)) - 2, 5, 5);
                     cxt.closePath();
                     var color = spColorImg.node.color
-                    cxt.fillStyle = 'rgba(' + color.r.toString() + ',' + color.g.toString() + ',' + color.b.toString() + ',0.618)';
+                    cxt.fillStyle = 'rgba(' + color.r.toString() + ',' + color.g.toString() + ',' + color.b.toString() + ',1.0)';
                     cxt.fill();
                 } else {
                     var cxt = HTML_Canvas_hint.getContext("2d");

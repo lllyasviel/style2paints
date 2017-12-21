@@ -3552,7 +3552,7 @@
     },
     "_children": [],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 100
@@ -3681,7 +3681,7 @@
         "__id__": 103
       }
     ],
-    "_N$isChecked": true
+    "_N$isChecked": false
   },
   {
     "__type__": "cc.ToggleGroup",
@@ -3699,7 +3699,7 @@
       "__id__": 2
     },
     "component": "Controller",
-    "handler": "onQualityFirst",
+    "handler": "onStabilityFirst",
     "customEventData": ""
   },
   {
@@ -3934,7 +3934,7 @@
     },
     "_children": [],
     "_tag": -1,
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 111
@@ -4063,7 +4063,7 @@
         "__id__": 113
       }
     ],
-    "_N$isChecked": false
+    "_N$isChecked": true
   },
   {
     "__type__": "cc.ClickEvent",
@@ -4071,7 +4071,7 @@
       "__id__": 2
     },
     "component": "Controller",
-    "handler": "onStabilityFirst",
+    "handler": "onQualityFirst",
     "customEventData": ""
   },
   {
