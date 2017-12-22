@@ -564,6 +564,7 @@ cc.Class({
             "&sketchID=" + sketchID +
             "&referenceID=" + referenceID
             );
+        console.log("sended");
     },
     onDownloadClicked: function () {
         if (resultURL == "") {
