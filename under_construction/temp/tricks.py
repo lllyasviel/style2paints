@@ -81,9 +81,9 @@ def m_resize(x, m):
     return y
 
 
-def s_enhance(x):
+def s_enhance(x, k):
     p = cv2.cvtColor(x, cv2.COLOR_RGB2HSV).astype(np.float)
-    p[:, :, 1] *= 2
+    p[:, :, 1] *= k
     p = p.clip(0, 255).astype(np.uint8)
     return cv2.cvtColor(p, cv2.COLOR_HSV2RGB).clip(0, 255)
 

@@ -23,6 +23,7 @@ var finalY = 0;
 
 var hasSketch = false;
 var hasRef = false;
+var hasHint = false;
 
 var HTML_Canvas_sketch;
 var HTML_Canvas_reference;
@@ -58,6 +59,7 @@ var white_result;
 
 var spQuickBTN;
 var spWaiting;
+var spWelcome;
 
 function createObjectURL(blob) {
     if (window.URL !== undefined)
@@ -74,7 +76,7 @@ function onRefereneFileSelected(evt) {
     loadLocalReference(createObjectURL(evt.target.files[0]));
 }
 
-function loadLocalReference(uri) {
+function loadLocalReference(uri, clearHints = true) {
     var tempDiv = document.getElementById("tempDivReference");
     if (tempDiv === null) {
         var tempDiv = document.createElement("div");
@@ -87,54 +89,56 @@ function loadLocalReference(uri) {
     }
     var img = document.getElementById('imgheadReference');
     img.onload = function () {
+        if (this.complete) {
+            var w_224 = parseFloat(this.width);
+            var h_224 = parseFloat(this.height);
+            if (w_224 > h_224) {
+                w_224 = 224.0 / h_224 * w_224;
+                h_224 = 224.0;
+            }
+            else {
+                h_224 = 224.0 / w_224 * h_224;
+                w_224 = 224.0;
+            }
 
-        var w_224 = parseFloat(this.width);
-        var h_224 = parseFloat(this.height);
-        if (w_224 > h_224) {
-            w_224 = 224.0 / h_224 * w_224;
-            h_224 = 224.0;
+            var w_380 = parseFloat(this.width);
+            var h_380 = parseFloat(this.height);
+            if (w_380 < h_380) {
+                w_380 = 380.0 / h_380 * w_380;
+                h_380 = 380.0;
+            }
+            else {
+                h_380 = 380.0 / w_380 * h_380;
+                w_380 = 380.0;
+            }
+
+            spRefereneImg.node.width = parseInt(w_380);
+            spRefereneImg.node.height = parseInt(h_380);
+            HTML_Canvas_reference.width = parseInt(w_224);
+            HTML_Canvas_reference.height = parseInt(h_224);
+
+            HTML_Canvas_reference.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_reference.width, HTML_Canvas_reference.height);
+            var referenceNodeTexture = spRefereneImg.spriteFrame.getTexture();
+
+            referenceNodeTexture.initWithElement(HTML_Canvas_reference);
+            referenceNodeTexture.handleLoadedTexture();
+
+            var tempCanvas_200 = document.createElement("canvas");
+            tempCanvas_200.width = parseInt(w_380);
+            tempCanvas_200.height = parseInt(h_380);
+            tempCanvas_200.getContext("2d").drawImage(this, 0, 0, tempCanvas_200.width, tempCanvas_200.height);
+            referenceNodeTexture._pixels = tempCanvas_200.getContext("2d").getImageData(0, 0, tempCanvas_200.width, tempCanvas_200.height).data;
+
+            if (clearHints) {
+                HTML_Canvas_hint.getContext("2d").clearRect(0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
+                var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+                hintNodeTexture.initWithElement(HTML_Canvas_hint);
+                hintNodeTexture.handleLoadedTexture();
+            }
+
+            hasRef = true;
+            referenceID = "new";
         }
-        else {
-            h_224 = 224.0 / w_224 * h_224;
-            w_224 = 224.0;
-        }
-
-        var w_380 = parseFloat(this.width);
-        var h_380 = parseFloat(this.height);
-        if (w_380 < h_380) {
-            w_380 = 380.0 / h_380 * w_380;
-            h_380 = 380.0;
-        }
-        else {
-            h_380 = 380.0 / w_380 * h_380;
-            w_380 = 380.0;
-        }
-
-        spRefereneImg.node.width = parseInt(w_380);
-        spRefereneImg.node.height = parseInt(h_380);
-        HTML_Canvas_reference.width = parseInt(w_224);
-        HTML_Canvas_reference.height = parseInt(h_224);
-
-        HTML_Canvas_reference.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_reference.width, HTML_Canvas_reference.height);
-        HTML_Canvas_hint.getContext("2d").clearRect(0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
-
-        var referenceNodeTexture = spRefereneImg.spriteFrame.getTexture();
-        var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
-
-        hintNodeTexture.initWithElement(HTML_Canvas_hint);
-        hintNodeTexture.handleLoadedTexture();
-
-        referenceNodeTexture.initWithElement(HTML_Canvas_reference);
-        referenceNodeTexture.handleLoadedTexture();
-
-        var tempCanvas_200 = document.createElement("canvas");
-        tempCanvas_200.width = parseInt(w_380);
-        tempCanvas_200.height = parseInt(h_380);
-        tempCanvas_200.getContext("2d").drawImage(this, 0, 0, tempCanvas_200.width, tempCanvas_200.height);
-        referenceNodeTexture._pixels = tempCanvas_200.getContext("2d").getImageData(0, 0, tempCanvas_200.width, tempCanvas_200.height).data;
-
-        hasRef = true;
-        referenceID = "new";
     }
     img.src = uri;
 }
@@ -149,7 +153,52 @@ function loadLocalResult(uri) {
     }
 }
 
-function loadLocalSketch(uri) {
+var needColorize = false;
+
+function loadSample(contentURL, styleURL, hintURL) {
+    needColorize = true;
+    hasHint = false;
+    hasRef = false;
+    hasSketch = false;
+    loadLocalSketch(contentURL, false);
+    loadLocalReference(styleURL, false);
+    loadLocalHint(hintURL);
+    spWelcome.active = false;
+}
+
+function loadLocalHint(uri) {
+    var tempDiv = document.getElementById("tempDivHint");
+    if (tempDiv === null) {
+        var tempDiv = document.createElement("div");
+        document.body.appendChild(tempDiv);
+        tempDiv.style.position = "absolute";
+        tempDiv.id = "tempDivHint";
+        tempDiv.innerHTML = '<img id=imgheadHint>';
+        tempDiv.style.display = 'none';
+        tempDiv.style.visibility = "hidden";
+    }
+    var img = document.getElementById('imgheadHint');
+    img.onload = function () {
+        if (this.complete) {
+            var w = parseFloat(this.width);
+            var h = parseFloat(this.height);
+
+            HTML_Canvas_hint.width = parseInt(w);
+            HTML_Canvas_hint.height = parseInt(h);
+            HTML_Canvas_hint.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
+
+            var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+            hintNodeTex.initWithElement(HTML_Canvas_hint);
+            hintNodeTex.handleLoadedTexture(true);
+
+
+            hasHint = true;
+        }
+    }
+    img.src = uri;
+}
+
+function loadLocalSketch(uri, clearHints=true) {
     var tempDiv = document.getElementById("tempDivSketch");
     if (tempDiv === null) {
         var tempDiv = document.createElement("div");
@@ -162,56 +211,56 @@ function loadLocalSketch(uri) {
     }
     var img = document.getElementById('imgheadSketch');
     img.onload = function () {
+        if (this.complete) {
+            var w = parseFloat(this.width);
+            var h = parseFloat(this.height);
 
-        var w = parseFloat(this.width);
-        var h = parseFloat(this.height);
-
-        if (h < w) {
-            if (h > 1024) {
-                w = 1024.0 / h * w;
-                h = 1024.0;
+            if (h < w) {
+                if (h > 1024) {
+                    w = 1024.0 / h * w;
+                    h = 1024.0;
+                }
+            } else {
+                if (w > 1024) {
+                    h = 1024.0 / w * h;
+                    w = 1024.0;
+                }
             }
-        } else {
-            if (w > 1024) {
-                h = 1024.0 / w * h;
-                w = 1024.0;
+
+            HTML_Canvas_sketch.width = parseInt(w);
+            HTML_Canvas_sketch.height = parseInt(h);
+
+            sketch_w = parseFloat(this.width);
+            sketch_h = parseFloat(this.height);
+
+            HTML_Canvas_sketch.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_sketch.width, HTML_Canvas_sketch.height);
+            var sketchNodeTexture = spSketchImg.spriteFrame.getTexture();
+            sketchNodeTexture.initWithElement(HTML_Canvas_sketch);
+            sketchNodeTexture.handleLoadedTexture();
+
+            if (clearHints) {
+                if (h < w) {
+                    w = 1024.0 / h * w;
+                    h = 1024.0;
+                } else {
+                    h = 1024.0 / w * h;
+                    w = 1024.0;
+                }
+                HTML_Canvas_hint.width = parseInt(w);
+                HTML_Canvas_hint.height = parseInt(h);
+                HTML_Canvas_hint.getContext("2d").clearRect(0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
+                var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+                hintNodeTexture.initWithElement(HTML_Canvas_hint);
+                hintNodeTexture.handleLoadedTexture();
             }
+
+            hasSketch = true;
+            sketchID = "new";
+            referenceID = "new";
+            spResultImg.spriteFrame.setTexture(white_result);
+
+            spQuickBTN.opacity = 255;
         }
-
-        HTML_Canvas_sketch.width = parseInt(w);
-        HTML_Canvas_sketch.height = parseInt(h);
-
-        if (h < w) {
-            w = 1024.0 / h * w;
-            h = 1024.0;
-        } else {
-            h = 1024.0 / w * h;
-            w = 1024.0;
-        }
-
-        HTML_Canvas_hint.width = parseInt(w);
-        HTML_Canvas_hint.height = parseInt(h);
-
-        sketch_w = parseFloat(this.width);
-        sketch_h = parseFloat(this.height);
-
-        HTML_Canvas_sketch.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_sketch.width, HTML_Canvas_sketch.height);
-        HTML_Canvas_hint.getContext("2d").clearRect(0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
-
-        var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
-        hintNodeTexture.initWithElement(HTML_Canvas_hint);
-        hintNodeTexture.handleLoadedTexture();
-
-        var sketchNodeTexture = spSketchImg.spriteFrame.getTexture();
-        sketchNodeTexture.initWithElement(HTML_Canvas_sketch);
-        sketchNodeTexture.handleLoadedTexture();
-
-        hasSketch = true;
-        sketchID = "new";
-        referenceID = "new";
-        spResultImg.spriteFrame.setTexture(white_result);
-
-        spQuickBTN.opacity = 255;
     }
     img.src = uri;
 }
@@ -256,6 +305,30 @@ cc.Class({
         waiting: {
             default: null, type: cc.Node
         },
+        welcome: {
+            default: null, type: cc.Node
+        },
+        nodeSketchDenoising: {
+            default: null, type: cc.Node
+        },
+        nodeResultDenoising: {
+            default: null, type: cc.Node
+        },
+        nodeOpColorize: {
+            default: null, type: cc.Node
+        },
+        nodeOpRender: {
+            default: null, type: cc.Node
+        },
+        nodeOpTransfer: {
+            default: null, type: cc.Node
+        },
+        nodeStability: {
+            default: null, type: cc.Node
+        },
+        nodeQuality: {
+            default: null, type: cc.Node
+        },
         loading: {
             default: "", type: cc.String
         },
@@ -279,6 +352,30 @@ cc.Class({
 
     onOpTransfer: function () {
         method = "transfer";
+    },
+
+    onSample: function (event, customEventData) {
+        var info = event.target.getComponent('sampler');
+        sketchDenoise = info.sketchDenoise;
+        resultDenoise = info.resultDenoise;
+        method = info.method;
+        algrithom = info.algrithom;
+        this.nodeSketchDenoising.getComponent('cc.Toggle').isChecked = (sketchDenoise == 'true');
+        this.nodeResultDenoising.getComponent('cc.Toggle').isChecked = (resultDenoise == 'true');
+        this.nodeOpColorize.getComponent('cc.Toggle').isChecked = (method == 'colorize');
+        this.nodeOpRender.getComponent('cc.Toggle').isChecked = (method == 'render');
+        this.nodeOpTransfer.getComponent('cc.Toggle').isChecked = (method == 'transfer');
+        this.nodeQuality.getComponent('cc.Toggle').isChecked = (algrithom == 'quality');
+        this.nodeStability.getComponent('cc.Toggle').isChecked = (algrithom == 'stability');
+        loadSample(info.contentURL, info.styleURL, info.hintURL);
+    },
+
+    onWelcome: function () {
+        if (spWelcome.active == false) {
+            spWelcome.active = true;
+        } else if (hasSketch) {
+            spWelcome.active = false;
+        }
     },
 
     onSketchDenoising: function (toggle, customEventData) {
@@ -356,6 +453,7 @@ cc.Class({
 
         spQuickBTN = this.quickBTN;
         spWaiting = this.waiting;
+        spWelcome = this.welcome;
 
         this.quickBTN.opacity = 0;
         this.waiting.opacity = 0;
@@ -486,7 +584,7 @@ cc.Class({
                         this.flag.y = relativeY - spRefereneImg.node.height / 2;
                         finalX = relativeX;
                         finalY = relativeY;
-                        isPen = true;
+                        //isPen = true;
                     }
                 }
             } else {
@@ -535,6 +633,7 @@ cc.Class({
         spResultImg.node.width = parseInt(w);
         spResultImg.node.height = parseInt(h);
 
+
         if (spBTN.enabled == false) {
             if (resultTexture != null) {
                 if (resultTexture.isLoaded()) {
@@ -546,6 +645,13 @@ cc.Class({
                     this.waiting.opacity = 0;
                     this.quickBTN.opacity = 255;
                 }
+            }
+        }
+
+        if (needColorize) {
+            if (hasSketch && hasRef && hasHint) {
+                needColorize = false;
+                this.onColorizeClicked();
             }
         }
     },

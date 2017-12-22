@@ -74,8 +74,9 @@ def do_paint():
 
     t = time.time()
     sketch = from_png_to_jpg(sketchDataURL)
-    global_hint = k_resize(x=s_enhance(from_png_to_jpg(referenceDataURL)), k=14)
+    global_hint = k_resize(x=s_enhance(from_png_to_jpg(referenceDataURL), 2.0), k=14)
     local_hint = hintDataURL
+    local_hint[:, :, 0:3] = s_enhance(local_hint[:, :, 0:3], 1.5)
     raw_shape = sketch.shape
 
     norm_path = 'record/' + dstr + '_' + sketch_config + '.norm.jpg'
