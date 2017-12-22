@@ -1,5 +1,7 @@
 # Lastest News
 
+**We will release style2paints II at 2017.12.29~2017.12.31. We will present our results for you at reddit/twitter/zhihu/bilibili/youtube/facebook/tieba at same time.**
+
 **Style2paints V2 is coming soon with better color!**
 
 **Our new UI (Style2paints V1) is under construction now. You can try it directly!**
