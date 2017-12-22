@@ -147,6 +147,26 @@ function loadLocalReference(uri, clearHints = true) {
 
 var resultTexture = null;
 
+function clearAll() {
+
+    HTML_Canvas_hint.getContext("2d").clearRect(0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
+    var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+    hintNodeTexture.initWithElement(HTML_Canvas_hint);
+    hintNodeTexture.handleLoadedTexture();
+
+    HTML_Canvas_reference.getContext("2d").clearRect(0, 0, HTML_Canvas_reference.width, HTML_Canvas_reference.height);
+    var referenceNodeTexture = spRefereneImg.spriteFrame.getTexture();
+    referenceNodeTexture.initWithElement(HTML_Canvas_reference);
+    referenceNodeTexture.handleLoadedTexture();
+
+    HTML_Canvas_sketch.getContext("2d").clearRect(0, 0, HTML_Canvas_sketch.width, HTML_Canvas_sketch.height);
+    var sketchNodeTexture = spSketchImg.spriteFrame.getTexture();
+    sketchNodeTexture.initWithElement(HTML_Canvas_sketch);
+    sketchNodeTexture.handleLoadedTexture();
+
+    spResultImg.spriteFrame.setTexture(white_result);
+}
+
 function loadLocalResult(uri) {
     tempID = uri.split("*");
     if (tempID.length == 2) {
@@ -362,6 +382,7 @@ cc.Class({
             return;
         }
         this.disableAll();
+        clearAll();
         var info = event.target.getComponent('sampler');
         sketchDenoise = info.sketchDenoise;
         resultDenoise = info.resultDenoise;
