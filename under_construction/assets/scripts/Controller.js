@@ -50,7 +50,7 @@ var denoiseV = 0;
 
 var view_node;
 
-var temp_btn_str;
+var temp_btn_str = "";
 
 var sketch_w = 10;
 var sketch_h = 10;
@@ -60,6 +60,8 @@ var white_result;
 var spQuickBTN;
 var spWaiting;
 var spWelcome;
+
+var isPainting = false;
 
 function createObjectURL(blob) {
     if (window.URL !== undefined)
@@ -356,6 +358,10 @@ cc.Class({
     },
 
     onSample: function (event, customEventData) {
+        if (isPainting) {
+            return;
+        }
+        this.disableAll();
         var info = event.target.getComponent('sampler');
         sketchDenoise = info.sketchDenoise;
         resultDenoise = info.resultDenoise;
@@ -372,6 +378,9 @@ cc.Class({
     },
 
     onWelcome: function () {
+        if (isPainting) {
+            return;
+        }
         if (spWelcome.active == false) {
             spWelcome.active = true;
         } else if (hasSketch) {
@@ -464,9 +473,15 @@ cc.Class({
     },
 
     onSketchClicked: function () {
+        if (isPainting) {
+            return;
+        }
         fileInputForSketch.click();
     },
     onRefenceClicked: function () {
+        if (isPainting) {
+            return;
+        }
         fileInputForReferene.click();
     },
     onPenClicked: function () {
@@ -482,6 +497,17 @@ cc.Class({
         hintNodeTex.initWithElement(HTML_Canvas_hint);
         hintNodeTex.handleLoadedTexture();
     },
+    disableAll: function () {
+        isPainting = true;
+        this.waiting.opacity = 255;
+        this.quickBTN.opacity = 0;
+        spBTN.enabled = false;
+        resultTexture = null;
+        if (temp_btn_str == "") {
+            temp_btn_str = spLAB.string;
+        }
+        spLAB.string = this.loading;
+    },
     onColorizeClicked: function () {
         if (!hasRef) {
             return;
@@ -489,14 +515,10 @@ cc.Class({
         if (!hasSketch) {
             return;
         }
-
-        this.waiting.opacity = 255;
-        this.quickBTN.opacity = 0;
-
+        this.disableAll();
         var hintDataURL = HTML_Canvas_hint.toDataURL("image/png");
         var referenceDataURL = HTML_Canvas_reference.toDataURL("image/png");
         var sketchDataURL = HTML_Canvas_sketch.toDataURL("image/png");
-
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/paint", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");
@@ -521,10 +543,6 @@ cc.Class({
             "&sketchID=" + sketchID +
             "&referenceID=" + referenceID
             );
-        spBTN.enabled = false;
-        resultTexture = null;
-        temp_btn_str = spLAB.string;
-        spLAB.string = this.loading;
     },
     onDownloadClicked: function () {
         if (resultURL == "") {
@@ -641,10 +659,12 @@ cc.Class({
                     spResultImg.spriteFrame.setTexture(resultTexture);
                     spBTN.enabled = true;
                     spLAB.string = temp_btn_str;
+                    temp_btn_str = "";
                     sketchID = tempID[0];
                     referenceID = tempID[1];
                     this.waiting.opacity = 0;
                     this.quickBTN.opacity = 255;
+                    isPainting = false;
                 }
             }
         }

@@ -2,7 +2,10 @@ import os
 import time
 from tricks import *
 from ai import *
-# from gevent import monkey; monkey.patch_all()
+from config import *
+if productive:
+    from gevent import monkey
+    monkey.patch_all()
 from bottle import route, run, static_file, request, BaseRequest
 import base64
 import re
@@ -125,4 +128,7 @@ def do_paint():
     return dstr + '*' + referenceID
 
 
-run(host="0.0.0.0", port=8000)
+if productive:
+    run(host="0.0.0.0", port=80, server='gevent')
+else:
+    run(host="0.0.0.0", port=8000)
