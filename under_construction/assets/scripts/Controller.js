@@ -260,6 +260,7 @@ function loadLocalSketch(uri, clearHints=true) {
             spResultImg.spriteFrame.setTexture(white_result);
 
             spQuickBTN.opacity = 255;
+            spWelcome.active = false;
         }
     }
     img.src = uri;
