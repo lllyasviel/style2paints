@@ -2,13 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        contentURL: {
-            default: "", type: cc.String
-        },
-        styleURL: {
-            default: "", type: cc.String
-        },
-        hintURL: {
+        URLID: {
             default: "", type: cc.String
         },
         sketchDenoise: {

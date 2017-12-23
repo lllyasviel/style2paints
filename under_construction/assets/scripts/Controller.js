@@ -177,18 +177,25 @@ function loadLocalResult(uri) {
 
 var needColorize = false;
 
-function loadSample(contentURL, styleURL, hintURL) {
+function loadSample(URLID) {
     needColorize = true;
     hasHint = false;
     hasRef = false;
     hasSketch = false;
-    loadLocalSketch(contentURL, false);
-    loadLocalReference(styleURL, false);
-    loadLocalHint(hintURL);
+    loadLocalSketch("samples\\" + URLID + "\\content.png", false);
+    loadLocalReference("samples\\" + URLID + "\\style.png", false);
+    loadLocalHint("samples\\" + URLID + "\\hint.png");
+    resultURL = "samples\\" + URLID + "\\result.png";
     spWelcome.active = false;
 }
 
 function loadLocalHint(uri) {
+
+    HTML_Canvas_hint.getContext("2d").clearRect(0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
+    var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+    hintNodeTexture.initWithElement(HTML_Canvas_hint);
+    hintNodeTexture.handleLoadedTexture();
+
     var tempDiv = document.getElementById("tempDivHint");
     if (tempDiv === null) {
         var tempDiv = document.createElement("div");
@@ -199,6 +206,7 @@ function loadLocalHint(uri) {
         tempDiv.style.display = 'none';
         tempDiv.style.visibility = "hidden";
     }
+
     var img = document.getElementById('imgheadHint');
     img.onload = function () {
         if (this.complete) {
@@ -395,7 +403,7 @@ cc.Class({
         this.nodeOpTransfer.getComponent('cc.Toggle').isChecked = (method == 'transfer');
         this.nodeQuality.getComponent('cc.Toggle').isChecked = (algrithom == 'quality');
         this.nodeStability.getComponent('cc.Toggle').isChecked = (algrithom == 'stability');
-        loadSample(info.contentURL, info.styleURL, info.hintURL);
+        loadSample(info.URLID);
     },
 
     onWelcome: function () {
@@ -530,6 +538,9 @@ cc.Class({
         spLAB.string = this.loading;
     },
     onColorizeClicked: function () {
+        if (isPainting) {
+            return;
+        }
         if (!hasRef) {
             return;
         }
@@ -694,7 +705,8 @@ cc.Class({
         if (needColorize) {
             if (hasSketch && hasRef && hasHint) {
                 needColorize = false;
-                this.onColorizeClicked();
+                tempID = new Array("new", "new");
+                resultTexture = cc.textureCache.addImage(resultURL);
             }
         }
     },
