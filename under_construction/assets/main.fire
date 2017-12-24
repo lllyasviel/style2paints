@@ -1904,7 +1904,7 @@
     },
     "_enabled": true,
     "chinese": "※ 下载结果",
-    "japanese": "※ ダウンロード結果",
+    "japanese": "※ 結果ダウンロード",
     "english": "※ download result"
   },
   {
@@ -7325,7 +7325,7 @@
     },
     "_enabled": true,
     "chinese": "油库所PaintsTransferV2!\n为了让您更好的学会使用本工具，我们为您精心准备了以下这些案例。\n您只需要点击其中一个例子就可以查看效果了，不需要任何的专业知识和操作经验。\n当然，您也可以直接在左边上传自己的线稿，如果你已经很熟悉操作方法的话，\n特别是操作提示点的方法，这很重要。",
-    "japanese": "PaintsTransferV2へようこそ！\n私たちのソフトウェアをより良く使用するために、いくつかの典型的な例を以下のように慎重に準備しました。\n結果を確認するには、これらのサンプルの1つをクリックするだけで、\n専門的な知識やスキルは必要ありません。\nもし私たちのツールに精通しているなら、あなたは必ず自分のスケッチを左側にアップロードすることができますが、\nヒントが重要であることに注意してください。",
+    "japanese": "PaintsTransferV2へようこそ！\nこのツールの学習に役立つよう、次の例を丁寧に準備しました。\nプロフェッショナルな知識や操作経験がなくても、例をクリックするとエフェクトを見ることができます。\nもちろん、操作方法に精通している場合（特にキューポイントを操作する場合）は、\n自分のドラフトを直接左にアップロードすることもできます。",
     "english": "Welcome to PaintsTransferV2!\nTo make a better use of our software, we carefully prepared some typical examples as follow.\nYou only need to click one of these sample to check the result, \nand you are not required to have any professional knowledge or skills.\nIf you are familiar with our tools, you can surely upload your own sketches on the left, \nbut keep in mind that the pointed hints are critical."
   },
   {
