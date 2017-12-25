@@ -194,7 +194,7 @@ function loadLocalHint(uri) {
     HTML_Canvas_hint.getContext("2d").clearRect(0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
     var hintNodeTexture = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
     hintNodeTexture.initWithElement(HTML_Canvas_hint);
-    hintNodeTexture.handleLoadedTexture();
+    hintNodeTexture.handleLoadedTexture(true);
 
     var tempDiv = document.getElementById("tempDivHint");
     if (tempDiv === null) {
@@ -210,19 +210,21 @@ function loadLocalHint(uri) {
     var img = document.getElementById('imgheadHint');
     img.onload = function () {
         if (this.complete) {
-            var w = parseFloat(this.width);
-            var h = parseFloat(this.height);
+            setTimeout(function () {
+                var w = parseFloat(img.width);
+                var h = parseFloat(img.height);
 
-            HTML_Canvas_hint.width = parseInt(w);
-            HTML_Canvas_hint.height = parseInt(h);
-            HTML_Canvas_hint.getContext("2d").drawImage(this, 0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
+                HTML_Canvas_hint.width = parseInt(w);
+                HTML_Canvas_hint.height = parseInt(h);
+                HTML_Canvas_hint.getContext("2d").drawImage(img, 0, 0, HTML_Canvas_hint.width, HTML_Canvas_hint.height);
 
-            var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
-            hintNodeTex.initWithElement(HTML_Canvas_hint);
-            hintNodeTex.handleLoadedTexture(true);
+                var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
+                hintNodeTex.initWithElement(HTML_Canvas_hint);
+                hintNodeTex.handleLoadedTexture(true);
 
 
-            hasHint = true;
+                hasHint = true;
+            }, 500);
         }
     }
     img.src = uri;
