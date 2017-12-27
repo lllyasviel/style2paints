@@ -8,16 +8,40 @@
         window._CCSettings = undefined;
 
         if ( !settings.debug ) {
-            // retrieve minified raw assets
+            var uuids = settings.uuids;
+
             var rawAssets = settings.rawAssets;
             var assetTypes = settings.assetTypes;
+            var realRawAssets = settings.rawAssets = {};
             for (var mount in rawAssets) {
                 var entries = rawAssets[mount];
-                for (var uuid in entries) {
-                    var entry = entries[uuid];
+                var realEntries = realRawAssets[mount] = {};
+                for (var id in entries) {
+                    var entry = entries[id];
                     var type = entry[1];
+                    // retrieve minified raw asset
                     if (typeof type === 'number') {
                         entry[1] = assetTypes[type];
+                    }
+                    // retrieve uuid
+                    realEntries[uuids[id] || id] = entry;
+                }
+            }
+
+            var scenes = settings.scenes;
+            for (var i = 0; i < scenes.length; ++i) {
+                var scene = scenes[i];
+                if (typeof scene.uuid === 'number') {
+                    scene.uuid = uuids[scene.uuid];
+                }
+            }
+
+            var packedAssets = settings.packedAssets;
+            for (var packId in packedAssets) {
+                var packedIds = packedAssets[packId];
+                for (var j = 0; j < packedIds.length; ++j) {
+                    if (typeof packedIds[j] === 'number') {
+                        packedIds[j] = uuids[packedIds[j]];
                     }
                 }
             }
@@ -75,19 +99,21 @@
                 );
             }
 
-            // Limit downloading max concurrent task to 2, 
+            // Limit downloading max concurrent task to 2,
             // more tasks simultaneously may cause performance draw back on some android system / brwosers.
             // You can adjust the number based on your own test result, you have to set it before any loading process to take effect.
             if (cc.sys.isBrowser && cc.sys.os === cc.sys.OS_ANDROID) {
                 cc.macro.DOWNLOAD_MAX_CONCURRENT = 2;
             }
 
+
             // init assets
             cc.AssetLibrary.init({
                 libraryPath: 'res/import',
                 rawAssetsBase: 'res/raw-',
                 rawAssets: settings.rawAssets,
-                packedAssets: settings.packedAssets
+                packedAssets: settings.packedAssets,
+                md5AssetsMap: settings.md5AssetsMap
             });
 
             var launchScene = settings.launchScene;
@@ -161,6 +187,7 @@
         var engineLoaded = function () {
             document.body.removeChild(cocos2d);
             cocos2d.removeEventListener('load', engineLoaded, false);
+            window.eruda && eruda.init();
             boot();
         };
         cocos2d.addEventListener('load', engineLoaded, false);
