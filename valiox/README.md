@@ -1,22 +1,22 @@
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p01.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p01.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p02.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p02.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p03.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p03.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p04.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p04.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p05.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p05.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p06.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p06.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p07.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p07.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p08.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p08.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p09.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p09.jpg)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p10.png)
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p10.jpg)
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/001.png)
 
