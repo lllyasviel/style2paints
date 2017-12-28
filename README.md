@@ -8,9 +8,9 @@ The AI can paint on a sketch according to a given specific color style.
 
 The AI can transfer illustrations' style.
 
-# Tuitions
+# Tutorial
 
-[Tuition001(BiliBili)](https://www.bilibili.com/video/av17537429/)
+[Tutorial001(BiliBili)](https://www.bilibili.com/video/av17537429/)
 
 # Screenshots
 
