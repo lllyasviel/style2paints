@@ -1,3 +1,14 @@
+Valiox's opinion:
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/000.png)
+
+Valiox's link:
+
+https://imgur.com/a/Sd9UO
+
+
+Our result:
+
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p01.jpg)
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/valiox/p02.jpg)
