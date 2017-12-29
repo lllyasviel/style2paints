@@ -2,7 +2,7 @@
 
 **First of all, why not spend 5 minutes to try it yourself!**
 
-[WebAPP: PaintsTransfer](https://paintstransfer.com)
+[WebAPP: PaintsTransfer](http://paintstransfer.com)
 
 The AI can paint on a sketch according to a given specific color style.
 
