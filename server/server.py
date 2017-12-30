@@ -13,6 +13,13 @@ import cv2
 import datetime
 
 BaseRequest.MEMFILE_MAX = 10000 * 1000
+pather_text = open('game/fin.html').read()
+
+
+@route('/fin/<path>')
+def show_wiki_page(path):
+    return pather_text.replace('<path>', path.replace('$', '/'))
+
 
 @route('/<filename:path>')
 def send_static(filename):

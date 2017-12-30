@@ -63,6 +63,11 @@ var spWelcome;
 
 var isPainting = false;
 
+String.prototype.replaceAll = function (search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
 function createObjectURL(blob) {
     if (window.URL !== undefined)
         return window['URL']['createObjectURL'](blob);
@@ -583,7 +588,14 @@ cc.Class({
         if (resultURL == "") {
             return;
         }
-        window.open(resultURL);
+        window.open('fin/' + resultURL.replaceAll("/", "$").replaceAll("\\", "$"));
+    },
+    onTweet: function () {
+        if (resultURL == "") {
+            return;
+        }
+        var turl = encodeURI('http://paintstransfer.com/fin/' + resultURL.replaceAll("/", "$").replaceAll("\\", "$"));
+        window.open('https://twitter.com/intent/tweet?url=<path>&hashtags=PaintsTransfer&original_referer=<path>'.replaceAll("<path>", turl));
     },
     handlePainter: function () {
         painting = false;
