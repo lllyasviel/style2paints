@@ -594,6 +594,9 @@ cc.Class({
         if (resultURL == "") {
             return;
         }
+        tempID = new Array("new", "new");
+        sketchID = tempID[0];
+        referenceID = tempID[1];
         var turl = encodeURI('http://paintstransfer.com/fin/' + resultURL.replaceAll("/", "$").replaceAll("\\", "$"));
         window.open('https://twitter.com/intent/tweet?url=<path>&hashtags=PaintsTransfer&original_referer=<path>'.replaceAll("<path>", turl));
     },
