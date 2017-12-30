@@ -598,7 +598,7 @@ cc.Class({
         sketchID = tempID[0];
         referenceID = tempID[1];
         var turl = encodeURI('http://paintstransfer.com/fin/' + resultURL.replaceAll("/", "$").replaceAll("\\", "$"));
-        window.open('https://twitter.com/intent/tweet?url=<path>&hashtags=PaintsTransfer&original_referer=<path>'.replaceAll("<path>", turl));
+        window.open('https://twitter.com/intent/tweet?url=<path>&hashtags=PaintsTransfer&text=<text>'.replaceAll("<path>", turl).replaceAll("<text>", encodeURI("paintstransfer.com")));
     },
     handlePainter: function () {
         painting = false;
