@@ -62,7 +62,7 @@ ALL COMMERCIAL USE IS PROHIBITED!
 
 ALL RESEARCH USE IS ALSO PROHIBITED!
 
-(If you are writing a paper and need a comparison, you can use the online demo to get results, in absense with these pretrained models.)
+(If you are writing a paper and need a comparison, you can use the online demo to get results, in absense of these pretrained models.)
 
 # Training Datasets
 
