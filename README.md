@@ -8,6 +8,8 @@ The AI can paint on a sketch according to a given specific color style.
 
 The AI can transfer illustrations' style.
 
+*News: We will release STYLE2PAINTS 2.1 soon.*
+
 # Tutorial
 
 [Tutorial001(BiliBili)](https://www.bilibili.com/video/av17537429/)
