@@ -56,7 +56,13 @@ The AI can transfer illustrations' style.
 
 Models are available in **releases** page.
 
-Currently, we reserve all rights about all these models.
+Currently, we reserve all rights about all these models. The only thing you can do with these models is to play with it on your PC.
+
+ALL COMMERCIAL USE IS PROHIBITED!
+
+ALL RESEARCH USE IS ALSO PROHIBITED!
+
+(If you are writing a paper and need a comparison, you can use the online demo to get results, in absense with these pretrained models.)
 
 # Training Datasets
 
