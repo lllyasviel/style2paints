@@ -60,7 +60,10 @@ def do_paint():
         referenceID = str(np.random.randint(100, 999))
         cv2.imwrite('record/' + dstr + '_' + referenceID + '.reference.png', referenceDataURL)
     else:
-        referenceDataURL = cv2.imread('record/' + dstr + '_' + referenceID + '.reference.png', cv2.IMREAD_UNCHANGED)
+        if referenceID == 'no':
+            referenceDataURL = None
+        else:
+            referenceDataURL = cv2.imread('record/' + dstr + '_' + referenceID + '.reference.png', cv2.IMREAD_UNCHANGED)
 
     hintDataURL = request.forms.get("hint")
     hintDataURL = re.sub('^data:image/.+;base64,', '', hintDataURL)
@@ -77,17 +80,25 @@ def do_paint():
 
     sketch_config = sketchDenoise + '_' + algrithom + '_' + method
 
+    print('sketchID: ' + sketchID)
+    print('referenceID: ' + referenceID)
     print('sketchDenoise: ' + sketchDenoise)
     print('resultDenoise: ' + resultDenoise)
     print('algrithom: ' + algrithom)
     print('method: ' + method)
 
     t = time.time()
+
     sketch = from_png_to_jpg(sketchDataURL)
-    global_hint = k_resize(x=s_enhance(from_png_to_jpg(referenceDataURL), 2.0), k=14)
-    local_hint = hintDataURL
-    local_hint[:, :, 0:3] = s_enhance(local_hint[:, :, 0:3], 1.5)
     raw_shape = sketch.shape
+
+    local_hint = hintDataURL
+
+    if referenceDataURL is not None:
+        global_hint = k_resize(x=s_enhance(from_png_to_jpg(referenceDataURL), 2.0), k=14)
+        local_hint[:, :, 0:3] = s_enhance(local_hint[:, :, 0:3], 1.5)
+    else:
+        global_hint = None
 
     norm_path = 'record/' + dstr + '_' + sketch_config + '.norm.jpg'
     if os.path.exists(norm_path):
@@ -112,6 +123,12 @@ def do_paint():
         else:
             sketch = cv2.cvtColor(sketch, cv2.COLOR_RGB2GRAY)
         cv2.imwrite(norm_path, sketch)
+
+    if global_hint is None:
+        tiny_sketch = sk_resize(sketch, 32)
+        global_hint = k_resize(go_tail(go_dull(tiny_sketch, n_resize(k8_down_hints(local_hint), tiny_sketch.shape)), False), 14)
+        cv2.imwrite('record/' + dstr + '.dull.jpg', global_hint)
+
     print('process: ' + str(time.time() - t))
 
     t = time.time()

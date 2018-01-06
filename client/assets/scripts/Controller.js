@@ -83,7 +83,7 @@ function onRefereneFileSelected(evt) {
     loadLocalReference(createObjectURL(evt.target.files[0]));
 }
 
-function loadLocalReference(uri, clearHints = true) {
+function loadLocalReference(uri, clearHints = true, flag = "new") {
     var tempDiv = document.getElementById("tempDivReference");
     if (tempDiv === null) {
         var tempDiv = document.createElement("div");
@@ -144,7 +144,7 @@ function loadLocalReference(uri, clearHints = true) {
             }
 
             hasRef = true;
-            referenceID = "new";
+            referenceID = flag;
         }
     }
     img.src = uri;
@@ -182,13 +182,17 @@ function loadLocalResult(uri) {
 
 var needColorize = false;
 
-function loadSample(URLID) {
+function loadSample(URLID, toRef) {
     needColorize = true;
     hasHint = false;
     hasRef = false;
     hasSketch = false;
     loadLocalSketch("samples\\" + URLID + "\\content.png", false);
-    loadLocalReference("samples\\" + URLID + "\\style.png", false);
+    if (toRef) {
+        loadLocalReference("samples\\" + URLID + "\\style.png", false);
+    } else {
+        loadLocalReference("color.png", false, "no");
+    }
     loadLocalHint("samples\\" + URLID + "\\hint.png");
     resultURL = "samples\\" + URLID + "\\result.png";
     spWelcome.active = false;
@@ -293,7 +297,9 @@ function loadLocalSketch(uri, clearHints=true) {
 
             hasSketch = true;
             sketchID = "new";
-            referenceID = "new";
+            if (referenceID != "no" && referenceID != "new") {
+                referenceID = "new";
+            }
             spResultImg.spriteFrame.setTexture(white_result);
 
             spQuickBTN.opacity = 255;
@@ -410,7 +416,7 @@ cc.Class({
         this.nodeOpTransfer.getComponent('cc.Toggle').isChecked = (method == 'transfer');
         this.nodeQuality.getComponent('cc.Toggle').isChecked = (algrithom == 'quality');
         this.nodeStability.getComponent('cc.Toggle').isChecked = (algrithom == 'stability');
-        loadSample(info.URLID);
+        loadSample(info.URLID, info.hasRef);
     },
 
     onWelcome: function () {
@@ -506,6 +512,8 @@ cc.Class({
 
         loaded = true;
 
+        setTimeout(this.onNoRefClicked, 500);
+
     },
 
     onSketchClicked: function () {
@@ -532,6 +540,13 @@ cc.Class({
         var hintNodeTex = spHintNode.getComponent('cc.Sprite').spriteFrame.getTexture();
         hintNodeTex.initWithElement(HTML_Canvas_hint);
         hintNodeTex.handleLoadedTexture();
+    },
+    onNoRefClicked: function () {
+        if (isPainting) {
+            return;
+        }
+        loadLocalReference("color.png", false, "no");
+        this.onClearClicked();
     },
     disableAll: function () {
         isPainting = true;
@@ -594,7 +609,11 @@ cc.Class({
         if (resultURL == "") {
             return;
         }
-        tempID = new Array("new", "new");
+        if (referenceID == "no") {
+            tempID = new Array("new", "no");
+        } else {
+            tempID = new Array("new", "new");
+        }
         sketchID = tempID[0];
         referenceID = tempID[1];
         var turl = encodeURI('http://paintstransfer.com/fin/' + resultURL.replaceAll("/", "$").replaceAll("\\", "$"));
@@ -722,7 +741,11 @@ cc.Class({
         if (needColorize) {
             if (hasSketch && hasRef && hasHint) {
                 needColorize = false;
-                tempID = new Array("new", "new");
+                if (referenceID == "no") {
+                    tempID = new Array("new", "no");
+                } else {
+                    tempID = new Array("new", "new");
+                }
                 resultTexture = cc.textureCache.addImage(resultURL);
             }
         }

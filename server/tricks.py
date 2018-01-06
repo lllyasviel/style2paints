@@ -36,6 +36,31 @@ def k_resize(x, k):
     return y
 
 
+def sk_resize(x, k):
+    if x.shape[0] < x.shape[1]:
+        s0 = k
+        s1 = int(x.shape[1] * (k / x.shape[0]))
+        s1 = s1 - s1 % 16
+        _s0 = 4 * s0
+        _s1 = int(x.shape[1] * (_s0 / x.shape[0]))
+        _s1 = (_s1 + 8) - (_s1 + 8) % 16
+    else:
+        s1 = k
+        s0 = int(x.shape[0] * (k / x.shape[1]))
+        s0 = s0 - s0 % 16
+        _s1 = 4 * s1
+        _s0 = int(x.shape[0] * (_s1 / x.shape[1]))
+        _s0 = (_s0 + 8) - (_s0 + 8) % 16
+    new_min = min(_s1, _s0)
+    raw_min = min(x.shape[0], x.shape[1])
+    if new_min < raw_min:
+        interpolation = cv2.INTER_AREA
+    else:
+        interpolation = cv2.INTER_LANCZOS4
+    y = cv2.resize(x, (_s1, _s0), interpolation=interpolation)
+    return y
+
+
 def d_resize(x, d):
     new_min = min(d[1], d[0])
     raw_min = min(x.shape[0], x.shape[1])
@@ -44,6 +69,11 @@ def d_resize(x, d):
     else:
         interpolation = cv2.INTER_LANCZOS4
     y = cv2.resize(x, (d[1], d[0]), interpolation=interpolation)
+    return y
+
+
+def n_resize(x, d):
+    y = cv2.resize(x, (d[1], d[0]), interpolation=cv2.INTER_NEAREST)
     return y
 
 
@@ -98,5 +128,15 @@ def k_down_hints(x):
     RGB = RGB * A / 255.0
     RGB = block_reduce(RGB, (2, 2, 1), np.max)
     A = block_reduce(A, (2, 2, 1), np.max)
+    y = np.concatenate([RGB, A], axis=2)
+    return y
+
+
+def k8_down_hints(x):
+    RGB = x[:, :, 0:3].astype(np.float)
+    A = x[:, :, 3:4].astype(np.float)
+    RGB = RGB * A / 255.0
+    RGB = block_reduce(RGB, (8, 8, 1), np.max)
+    A = block_reduce(A, (8, 8, 1), np.max)
     y = np.concatenate([RGB, A], axis=2)
     return y

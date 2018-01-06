@@ -1,4 +1,4 @@
-# Welcome to STYLE2PAINTS 2.0 !
+# Welcome to STYLE2PAINTS 2.1 !
 
 **First of all, why not spend 5 minutes to try it yourself!**
 
@@ -6,9 +6,9 @@
 
 The AI can paint on a sketch according to a given specific color style.
 
-The AI can transfer illustrations' style.
+The AI can create its own color style to paint on a sketch.
 
-*News: We will release STYLE2PAINTS 2.1 soon.*
+The AI can transfer illustrations' style.
 
 # Tutorial
 
@@ -21,6 +21,8 @@ The AI can transfer illustrations' style.
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/002.png)
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/003.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/011.png)
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/004.png)
 
@@ -38,7 +40,7 @@ The AI can transfer illustrations' style.
 
 # Launch Server
 
-*you need a python 3.5/3.6 environment.*
+*you need a python 3.5/3.6 GPU environment with cuda.*
 
     pip install tensorflow_gpu
     pip install keras
@@ -47,22 +49,15 @@ The AI can transfer illustrations' style.
     pip install h5py
     pip install opencv-python
     pip install scikit-image
-    git clone https://github.com/lllyasviel/style2paints.git
-    (then download all pretrained models from 'release' page and then decompress them to 'style2paints/server')
+    git lfs clone https://github.com/lllyasviel/style2paints.git
     cd style2paints/server
     python server.py
 
 # Models
 
-Models are available in **releases** page.
+Models are available via Git-LFS.
 
-Currently, we reserve all rights about all these models. The only thing you can do with these models is to play with it on your PC.
-
-ALL COMMERCIAL USE IS PROHIBITED!
-
-ALL RESEARCH USE IS ALSO PROHIBITED!
-
-(If you are writing a paper and need a comparison, you can use the online demo to get results, in absense of these pretrained models.)
+Currently, we reserve all rights about all these models. 
 
 # Training Datasets
 

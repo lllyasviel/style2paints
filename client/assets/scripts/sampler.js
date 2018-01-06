@@ -17,6 +17,9 @@ cc.Class({
         algrithom: {
             default: "", type: cc.String
         },
+        hasRef: {
+            default: true, type: cc.Boolean
+        },
     }
 
 });
