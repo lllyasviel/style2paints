@@ -46,7 +46,11 @@ The AI can transfer illustrations' style.
 
 **We are the most creative anime colorization AI without your hints!**
 
-*All results below are achieved without any reference image or human hints.*
+*All results below are achieved* **WITHOUT** *any reference image or human hints.*
+
+**IMPORTANT: Here the only inputs is one sketch. **
+
+**IMPORTANT: NO human hint and NO reference is involved!**
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/012.png)
 
