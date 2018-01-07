@@ -59,6 +59,21 @@ Models are available via Git-LFS.
 
 Currently, we reserve all rights about all these models. 
 
+If Git-LFS is broken, consider Google Drive: (But We are not sure files are up-to-date in Google Drive.)
+
+    https://drive.google.com/open?id=1fWi4wmNj-xr-nCzuWMsN2rcm0249_Aem
+    
+Current model list of 8 neural networks:
+
+    base_head.net
+    dull_head.net
+    gate_head.net
+    line_head.net
+    base_neck.net
+    clear_tail.net
+    noise_tail.net
+    base_reader.net
+
 # Training Datasets
 
 1. The recommended training dataset of illustrations is the 400k images from [nico-opendata](https://nico-opendata.jp/en/seigadata/index.html)
