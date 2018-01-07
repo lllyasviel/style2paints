@@ -49,17 +49,16 @@ The AI can transfer illustrations' style.
     pip install h5py
     pip install opencv-python
     pip install scikit-image
-    git lfs clone https://github.com/lllyasviel/style2paints.git
-    cd style2paints/server
+    git clone https://github.com/lllyasviel/style2paints.git
+    (Then you need to download all models from our Google Drive and put these into 'server' folder.)
+    cd style2paints/server
     python server.py
 
 # Models
 
-Models are available via Git-LFS.
-
 Currently, we reserve all rights about all these models. 
 
-If Git-LFS is broken, consider Google Drive: (But We are not sure files are up-to-date in Google Drive.)
+We use Google Drive to upload models:
 
     https://drive.google.com/open?id=1fWi4wmNj-xr-nCzuWMsN2rcm0249_Aem
     
