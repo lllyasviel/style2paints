@@ -1,4 +1,4 @@
-# Welcome to STYLE2PAINTS 2.1 !
+# Welcome to STYLE2PAINTS 2.1, the best anime colorization AI!
 
 **First of all, why not spend 5 minutes to try it yourself!**
 
