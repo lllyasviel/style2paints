@@ -43,6 +43,7 @@ session = keras.backend.get_session()
 
 with tf.device(strg0):
     dull_head = load_model('dull_head.net')
+    gate_head = load_model('gate_head.net')
     line_head = load_model('line_head.net')
     noise_tail = load_model('noise_tail.net')
     clear_tail = load_model('clear_tail.net')
@@ -65,7 +66,7 @@ with tf.device(strg0):
     dull_yuv = RGB2YUV(ip4[:, :, :, 0:3])
     dull_alpha = tf.where(x=tf.zeros_like(ip4[:, :, :, 3:4]), y=tf.ones_like(ip4[:, :, :, 3:4]), condition=tf.less(ip4[:, :, :, 3:4], 128))
     dull_hint = dull_alpha * dull_yuv + (1 - dull_alpha) * dull_place
-    dull_head_op = YUV2RGB(dull_head(tf.concat([ip1, dull_hint], axis=3)))
+    dull_head_op = YUV2RGB(gate_head(tf.concat([dull_head(tf.concat([ip1, dull_hint], axis=3))[:, :, :, 0:1], dull_hint], axis=3)))
     line_head_op = line_head(RGB2YUV(ip3)) * 255.0
     noise_tail_op = noise_tail(tf.pad(ip3 / 255.0, [[0, 0], [3, 3], [3, 3], [0, 0]], 'REFLECT'))[:, 3:-3, 3:-3, :] * 255.0
     clear_tail_op = clear_tail(tf.pad(ip3 / 255.0, [[0, 0], [3, 3], [3, 3], [0, 0]], 'REFLECT'))[:, 3:-3, 3:-3, :] * 255.0
@@ -93,6 +94,7 @@ with tf.device(strg1):
 session.run(tf.global_variables_initializer())
 
 dull_head.load_weights('dull_head.net')
+gate_head.load_weights('gate_head.net')
 line_head.load_weights('line_head.net')
 base_head.load_weights('base_head.net')
 base_neck.load_weights('base_neck.net')
