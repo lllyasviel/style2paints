@@ -14,7 +14,11 @@ The AI can transfer illustrations' style.
 
 [Tutorial001(BiliBili)](https://www.bilibili.com/video/av17537429/)
 
-# Screenshots
+# Results with Hints
+
+**We are the most accurate anime colorization AI to obey your hints!**
+
+*All results below are achieved with one reference image and some human hints.*
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/001.png)
 
@@ -37,6 +41,30 @@ The AI can transfer illustrations' style.
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/009.png)
 
 ![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/010.png)
+
+# Results without Hints
+
+**We are the most creative anime colorization AI without your hints!**
+
+*All results below are achieved without any reference image or human hints.*
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/012.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/013.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/014.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/015.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/016.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/017.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/018.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/019.png)
+
+![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/020.png)
 
 # Launch Server
 
@@ -62,7 +90,7 @@ We use Google Drive to upload models:
 
     https://drive.google.com/open?id=1fWi4wmNj-xr-nCzuWMsN2rcm0249_Aem
     
-Current model list of 8 neural networks:
+Current model list of the 8 neural networks:
 
     base_head.net
     dull_head.net
