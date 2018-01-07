@@ -195,7 +195,6 @@ function loadSample(URLID, toRef) {
     }
     loadLocalHint("samples\\" + URLID + "\\hint.png");
     resultURL = "samples\\" + URLID + "\\result.png";
-    spWelcome.active = false;
 }
 
 function loadLocalHint(uri) {
@@ -512,7 +511,7 @@ cc.Class({
 
         loaded = true;
 
-        setTimeout(this.onNoRefClicked, 500);
+        setTimeout(function () { loadLocalReference("color.png", false, "no"); }, 500);
 
     },
 
@@ -547,9 +546,12 @@ cc.Class({
         }
         loadLocalReference("color.png", false, "no");
         this.onClearClicked();
+        referenceID = "no";
+        this.onColorizeClicked();
     },
     disableAll: function () {
         isPainting = true;
+        spWelcome.active = false;
         this.waiting.opacity = 255;
         this.quickBTN.opacity = 0;
         spBTN.enabled = false;

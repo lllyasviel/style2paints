@@ -6168,7 +6168,7 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
+      "r": 255,
       "g": 0,
       "b": 0,
       "a": 255
@@ -6181,7 +6181,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 232.22,
+      "width": 276.22,
       "height": 44
     },
     "_rotationX": 0,
@@ -6208,7 +6208,7 @@
       "__id__": 177
     },
     "_enabled": true,
-    "_N$string": "※ 参照除去",
+    "_N$string": "※ 限制解除！",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 44,
     "_N$font": null,
@@ -6252,7 +6252,7 @@
     "_N$enableAutoGrayEffect": false,
     "_N$normalColor": {
       "__type__": "cc.Color",
-      "r": 0,
+      "r": 255,
       "g": 0,
       "b": 0,
       "a": 255
@@ -6287,9 +6287,9 @@
       "__id__": 177
     },
     "_enabled": true,
-    "chinese": "※ 删除参考图",
-    "japanese": "※ 参照除去",
-    "english": "※ delete reference"
+    "chinese": "※ 限制解除！",
+    "japanese": "※ リミッター解除！",
+    "english": "※ Limiter Removal!"
   },
   {
     "__type__": "cc.Sprite",
