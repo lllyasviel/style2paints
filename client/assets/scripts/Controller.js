@@ -191,7 +191,7 @@ function loadSample(URLID, toRef) {
     if (toRef) {
         loadLocalReference("samples\\" + URLID + "\\style.png", false);
     } else {
-        loadLocalReference("color.png", false, "no");
+        loadLocalReference("res\\raw-assets\\texture\\ref.png", false, "no");
     }
     loadLocalHint("samples\\" + URLID + "\\hint.png");
     resultURL = "samples\\" + URLID + "\\result.png";
@@ -511,7 +511,7 @@ cc.Class({
 
         loaded = true;
 
-        setTimeout(function () { loadLocalReference("color.png", false, "no"); }, 500);
+        setTimeout(function () { loadLocalReference("res\\raw-assets\\texture\\ref.png", false, "no"); }, 500);
 
     },
 
@@ -544,7 +544,7 @@ cc.Class({
         if (isPainting) {
             return;
         }
-        loadLocalReference("color.png", false, "no");
+        loadLocalReference("res\\raw-assets\\texture\\ref.png", false, "no");
         this.onClearClicked();
         referenceID = "no";
         this.onColorizeClicked();
