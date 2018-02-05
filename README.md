@@ -1,4 +1,4 @@
-# STYLE2PAINTS 2.1: the Best Anime Colorization AI!
+﻿# STYLE2PAINTS 2.1: the Best Anime Colorization AI!
 
 **First of all, why not spend 5 minutes to try it yourself!**
 
@@ -9,6 +9,12 @@ The AI can paint on a sketch according to a given specific color style.
 The AI can create its own color style to paint on a sketch.
 
 The AI can transfer illustrations' style.
+
+# News
+
+We added the *super accurate pencil*, and the original pencil tool is replaced by *brush*.
+
+The problem of over colorization in non-reference mode is fixed when you use the *super accurate pencil*, and the color spreading of *super accurate pencil* is limited to a relative small degree.
 
 # Tutorial
 
