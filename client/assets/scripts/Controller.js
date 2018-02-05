@@ -63,6 +63,9 @@ var spWelcome;
 
 var isPainting = false;
 
+var p_offset = 2;
+var p_width = 5;
+
 String.prototype.replaceAll = function (search, replacement) {
     var target = this;
     return target.split(search).join(replacement);
@@ -511,7 +514,7 @@ cc.Class({
 
         loaded = true;
 
-        setTimeout(function () { loadLocalReference("res\\raw-assets\\texture\\ref.png", false, "no"); }, 500);
+        setTimeout(function () { loadLocalReference("res\\raw-assets\\texture\\ref.png", false, "no"); }, 1000);
 
     },
 
@@ -529,6 +532,13 @@ cc.Class({
     },
     onPenClicked: function () {
         isPen = true;
+        p_offset = 1;
+        p_width = 3;
+    },
+    onBrushClicked: function () {
+        isPen = true;
+        p_offset = 2;
+        p_width = 5;
     },
     onEraserClicked: function () {
         isPen = false;
@@ -640,7 +650,7 @@ cc.Class({
 
                 if (isPen) {
                     cxt.beginPath();
-                    cxt.fillRect(parseInt(parseFloat(relativeX) / parseFloat(spHintNode.width) * parseFloat(HTML_Canvas_hint.width)) - 2, parseInt(parseFloat(spHintNode.height - relativeY) / parseFloat(spHintNode.height) * parseFloat(HTML_Canvas_hint.height)) - 2, 5, 5);
+                    cxt.fillRect(parseInt(parseFloat(relativeX) / parseFloat(spHintNode.width) * parseFloat(HTML_Canvas_hint.width)) - p_offset, parseInt(parseFloat(spHintNode.height - relativeY) / parseFloat(spHintNode.height) * parseFloat(HTML_Canvas_hint.height)) - p_offset, p_width, p_width);
                     cxt.closePath();
                     var color = spColorImg.node.color
                     cxt.fillStyle = 'rgba(' + color.r.toString() + ',' + color.g.toString() + ',' + color.b.toString() + ',1.0)';

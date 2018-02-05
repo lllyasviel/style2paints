@@ -136,7 +136,9 @@ def k8_down_hints(x):
     RGB = x[:, :, 0:3].astype(np.float)
     A = x[:, :, 3:4].astype(np.float)
     RGB = RGB * A / 255.0
-    RGB = block_reduce(RGB, (8, 8, 1), np.max)
-    A = block_reduce(A, (8, 8, 1), np.max)
+    RGB = block_reduce(RGB, (4, 4, 1), np.min)
+    RGB = block_reduce(RGB, (2, 2, 1), np.max)
+    A = block_reduce(A, (4, 4, 1), np.min)
+    A = block_reduce(A, (2, 2, 1), np.max)
     y = np.concatenate([RGB, A], axis=2)
     return y
