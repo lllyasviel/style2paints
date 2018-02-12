@@ -10,11 +10,11 @@ The AI can create its own color style to paint on a sketch.
 
 The AI can transfer illustrations' style.
 
-# News
+# Latest News
 
-We added the *super accurate pencil*, and the original pencil tool is replaced by *brush*.
+2018.2.12 - PaintsTransfer 3.0 will be released in 2018.04.25-2018.05.15. We will use a totally non-residual very deep model.
 
-The problem of over colorization in non-reference mode is fixed when you use the *super accurate pencil*, and the color spreading of *super accurate pencil* is limited to a relative small degree.
+2018.2.3 - We added the *super accurate pencil*, and the original pencil tool is replaced by *brush*. The problem of over colorization in non-reference mode is fixed when you use the *super accurate pencil*, and the color spreading of *super accurate pencil* is limited to a relative small degree.
 
 # Tutorial
 
