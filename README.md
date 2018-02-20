@@ -1,4 +1,4 @@
-# STYLE2PAINTS 2.1: the Best Anime Colorization AI!
+# STYLE2PAINTS 2.1 （finding server now）
 
 ~First of all, why not spend 5 minutes to try it yourself!~
 
