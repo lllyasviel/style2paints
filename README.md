@@ -2,9 +2,9 @@
 
 ~First of all, why not spend 5 minutes to try it yourself!~
 
-~[WebAPP: PaintsTransfer](http://paintstransfer.com)~
+~http://paintstransfer.com~
 
-**Our server is shutdown because of some financial problems. We will rebuild the server soon. **
+**Our server is shutdown because of some financial problems. We will rebuild the server soon.**
 
 The AI can paint on a sketch according to a given specific color style.
 
