@@ -14,6 +14,15 @@ The AI can transfer illustrations' style.
 
 # Latest News
 
+2018.4.6 - A bad news: We have developed paintstransfer V3, but it is defeated by V2. Theoretically, the deeper V3 should be better than V2 but our user studies show that V2 is still the best painter. 
+
+*The consequence is:*
+
+    50% possibility: We will combine some good part of unfinished V3 into V2 and release V2.5. 
+                     And V3 will not be released.
+    50% possibility: We will improve V3 and release V3.
+
+
 2018.2.12 - PaintsTransfer 3.0 will be released in 2018.04.25-2018.05.15. We will use a totally non-residual very deep model.
 
 2018.2.3 - We added the *super accurate pencil*, and the original pencil tool is replaced by *brush*. The problem of over colorization in non-reference mode is fixed when you use the *super accurate pencil*, and the color spreading of *super accurate pencil* is limited to a relative small degree.
