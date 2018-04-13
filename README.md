@@ -1,10 +1,10 @@
-# STYLE2PAINTS 2.1 （finding server now）
+# STYLE2PAINTS 2.1
 
 ~First of all, why not spend 5 minutes to try it yourself!~
 
 ~http://paintstransfer.com~
 
-**Our server is shutdown because of some financial problems. We will rebuild the server soon.**
+**Our server will be ok before 2018.4.15.**
 
 The AI can paint on a sketch according to a given specific color style.
 
@@ -13,6 +13,10 @@ The AI can create its own color style to paint on a sketch.
 The AI can transfer illustrations' style.
 
 # Latest News
+
+2018.4.13 - A good news: PaintsTransfer V3 is decided to be released at 2018.04.28-2018.04.30. Have a magical day!
+
+2018.4.13 - A good news: We finally get the server. PaintsTransfer V2 will be avaliable again before 2018.04.13.
 
 2018.4.6 - A bad news: We have developed paintstransfer V3, but it is defeated by V2. Theoretically, the deeper V3 should be better than V2 but our user studies show that V2 is still the best painter. 
 
