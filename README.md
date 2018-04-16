@@ -4,7 +4,7 @@
 
 ~http://paintstransfer.com~
 
-**Our server will be ok before 2018.4.15.**
+**Our server will be ok when PaintsTransfer V3 released.**
 
 The AI can paint on a sketch according to a given specific color style.
 
