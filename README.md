@@ -14,6 +14,13 @@ The AI can transfer illustrations' style.
 
 # Latest News
 
+2018.4.16 - We changed our time schedule:
+
+    1. PaintsTransfer V2 demo will not be avaliable online anymore.
+    2. PaintsTransfer V3 can do all what V2 can do (in theory).
+    3. PaintsTransfer V3 will be renamed into PaintsTransfer-Gaussteria V1.0.
+    4. PaintsTransfer-Gaussteria will be released at 2018.04.28 23:59 CST.
+
 2018.4.13 - A good news: PaintsTransfer V3 is decided to be released at 2018.04.28-2018.04.30. Have a magical day!
 
 2018.4.13 - A good news: We finally get the server. PaintsTransfer V2 will be avaliable again before 2018.04.13.
