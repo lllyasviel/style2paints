@@ -1,3 +1,21 @@
+# COUNTDOWN
+
+## ~2018.4.21 -> 7 days before PaintsTransfer V3~
+
+## ~2018.4.22 -> 6 days before PaintsTransfer V3~
+
+## 2018.4.23 -> 5 days before PaintsTransfer V3
+
+## 2018.4.24 -> 4 days before PaintsTransfer V3
+
+## 2018.4.25 -> 3 days before PaintsTransfer V3
+
+## 2018.4.26 -> 2 days before PaintsTransfer V3
+
+## 2018.4.27 -> 1 days before PaintsTransfer V3
+
+## 2018.4.28 - PaintsTransfer V3 !!!
+
 # STYLE2PAINTS 2.1
 
 ~First of all, why not spend 5 minutes to try it yourself!~
