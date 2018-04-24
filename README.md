@@ -16,6 +16,10 @@
 
 ## 2018.4.28 - PaintsTransfer V3 !!!
 
+    2018.04.28 23:59 CST. This github page will be updated.
+    2018.04.29 00:00 - 02:00 CST. Server will be OK.
+    2018.04.30 - 2018.05.02 We will have a post on reddit.
+
 # STYLE2PAINTS 2.1
 
 ~First of all, why not spend 5 minutes to try it yourself!~
