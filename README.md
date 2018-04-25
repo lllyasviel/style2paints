@@ -1,12 +1,8 @@
 # COUNTDOWN
 
-## ~2018.4.21 -> 7 days before PaintsTransfer V3~
-
-## ~2018.4.22 -> 6 days before PaintsTransfer V3~
-
 ## ~2018.4.23 -> 5 days before PaintsTransfer V3~
 
-## 2018.4.24 -> 4 days before PaintsTransfer V3
+## ~2018.4.24 -> 4 days before PaintsTransfer V3~
 
 ## 2018.4.25 -> 3 days before PaintsTransfer V3
 
