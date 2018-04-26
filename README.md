@@ -1,14 +1,4 @@
-# COUNTDOWN
-
-## ~2018.4.24 -> 4 days before PaintsTransfer V3~
-
-## ~2018.4.25 -> 3 days before PaintsTransfer V3~
-
-## ~2018.4.26 -> 2 days before PaintsTransfer V3~
-
-## 2018.4.27 -> 1 days before PaintsTransfer V3
-
-## 2018.4.28 - PaintsTransfer V3 !!!
+# PaintsTransfer V3 will be released in 24 hours
 
 **NEW** Time schedule:
 
