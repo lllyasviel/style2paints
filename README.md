@@ -10,11 +10,11 @@
 
 ## 2018.4.28 - PaintsTransfer V3 !!!
 
-Time schedule:
+**NEW** Time schedule:
 
-    2018.04.28 23:59 CST. This github page will be updated.
-    2018.04.29 00:00 - 02:00 CST. Server will be OK.
-    2018.04.30 - 2018.05.02 We will have a post on reddit.
+    2018.04.28 00:00 CST. This github page will be updated.
+    2018.04.28 00:30 - 02:00 CST. Server will be OK.
+    2018.04.28 - 2018.05.02 We will have a post on reddit.
 
 # STYLE2PAINTS 2.1
 
