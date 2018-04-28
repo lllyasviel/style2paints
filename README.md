@@ -119,7 +119,7 @@ Ok, here we present a best-practice color list for you:
 
 ![display4](https://raw.githubusercontent.com/lrisviel/markdown/master/github/display4.jpg?t=233)
 
-# You can use reference images like PaintsTransferV2.0
+# You can still use reference images in V3, just like in PaintsTransferV1 or V2.
 
 You can still upload your reference, but keep in mind that you need to **drag** the "stylizing rate" slider.
 
