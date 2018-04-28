@@ -62,6 +62,9 @@ cc.Class({
         welcome_node: {
             default: null, type: cc.Node
         },
+        logo_node: {
+            default: null, type: cc.Node
+        },
     },
 
     on_slider: function () {
@@ -78,6 +81,11 @@ cc.Class({
             return;
         }
         window.controller.welcome_node.active = !window.controller.welcome_node.active;
+        window.controller.logo_node.active = window.controller.welcome_node.active;
+    },
+
+    on_start: function () {
+        window.controller.logo_node.active = false;
     },
 
     onGithub: function () {
@@ -497,9 +505,9 @@ cc.Class({
                     let node = cc.instantiate(window.controller.default_sample);
                     node.name = all_sample_list[i];
                     node.parent = window.controller.sample_container;
-                    let line = parseInt(i / 4);
-                    let wi = parseInt(i % 4);
-                    node.setPosition(32 + line * 160, -28 - wi * 148);
+                    let line = parseInt(i % 13);
+                    let wi = parseInt(i / 13);
+                    node.setPosition(28 + line * 165, -28 - wi * 150);
                     let frame = new cc.SpriteFrame();
                     let tex = cc.textureCache.addImage(window.server_url + "/samples/" + all_sample_list[i] + '/icon.sample.jpg')
                     frame.setTexture(tex);
