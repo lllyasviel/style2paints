@@ -39,6 +39,14 @@ Contents below may include:
 
 **You have been warned.**
 
+# Video Tutorials
+
+[3 minutes fast painting PaintsTransfer 001](https://youtu.be/FBP9JuthyOQ)
+
+[3 minutes fast painting PaintsTransfer 002](https://youtu.be/G8aKt5PO77M)
+
+[3 minutes fast painting PaintsTransfer 003](https://youtu.be/Ul3kBlmM3JA)
+
 # New Feature: The Geometric Color Anchor
 
 **This github page contains many gif and png images, and it is a better choice to wait your browser before reading it.**
