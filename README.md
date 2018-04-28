@@ -469,8 +469,6 @@ Or we want to see a method to do image to image translation like this:
 
 # Launch Server
 
-**All codes will be avaliable in several days.**
-
 *you need a python 3.5/3.6 GPU environment with cuda.*
 
     pip install tensorflow_gpu
