@@ -129,6 +129,10 @@ Here is an example with reference image:
 
 *We do NOT recommend you to paint in this way, because it is hard to find suitable reference images.*
 
+Anyway, I selected some good reference images for you:
+
+https://github.com/lllyasviel/lllyasviel.github.io/raw/master/default_references.zip
+
 # New Feature: The Controlable Shading
 
 Let's begin with one of the promotion sketch of our friend paintschainer *(paintschainer.preferred.tech)*. 
