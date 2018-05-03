@@ -41,11 +41,13 @@ Contents below may include:
 
 # Video Tutorials
 
-[3 minutes fast painting PaintsTransfer 001](https://youtu.be/FBP9JuthyOQ)
+[How to get high quality paintings from line arts in paintstransfer (for non-artists)](https://youtu.be/mxytrHdIyhA)
 
-[3 minutes fast painting PaintsTransfer 002](https://youtu.be/G8aKt5PO77M)
+[How to use PaintsTransfer 002 - basic usages](https://youtu.be/-EfECQNBQZs)
 
-[3 minutes fast painting PaintsTransfer 003](https://youtu.be/Ul3kBlmM3JA)
+[How to use PaintsTransfer 003 - Use reference images](https://youtu.be/0X0bavJNojc)
+
+[How to use PaintsTransfer 004 - Advanced example and shading](https://youtu.be/mOjdHPzibfs)
 
 # New Feature: The Geometric Color Anchor
 
