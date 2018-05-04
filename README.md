@@ -41,13 +41,7 @@ Contents below may include:
 
 # Video Tutorials
 
-[How to get high quality paintings from line arts in paintstransfer (for non-artists)](https://youtu.be/mxytrHdIyhA)
-
-[How to use PaintsTransfer 002 - basic usages](https://youtu.be/-EfECQNBQZs)
-
-[How to use PaintsTransfer 003 - Use reference images](https://youtu.be/0X0bavJNojc)
-
-[How to use PaintsTransfer 004 - Advanced example and shading](https://youtu.be/mOjdHPzibfs)
+[How to get high quality paintings from line sketches in PaintsTransfer (for non-artist)](https://youtu.be/u8bvHDDstlY)
 
 # New Feature: The Geometric Color Anchor
 
