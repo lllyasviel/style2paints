@@ -26,7 +26,7 @@ We focus on interactivity, possibility and creativity.
 
 ## An Overview
 
-![glance](https://raw.githubusercontent.com/lrisviel/markdown/master/github/glance.jpg)
+![glance](https://github.com/lllyasviel/style2paints/raw/master/temps/glance.jpg)
 
 ## SEX OR VIOLENCE WARNING
 
