@@ -39,10 +39,6 @@ Contents below may include:
 
 **You have been warned.**
 
-# Video Tutorials
-
-[How to get high quality paintings from line sketches in PaintsTransfer (for non-artist)](https://youtu.be/u8bvHDDstlY)
-
 # New Feature: The Geometric Color Anchor
 
 **This github page contains many gif and png images, and it is a better choice to wait your browser before reading it.**
@@ -440,6 +436,10 @@ Then we will appreciate it very much, because it remains a BIG problem how we ca
 Or we want to see a method to do image to image translation like this:
 
 ![impos](https://raw.githubusercontent.com/lrisviel/markdown/master/github/impos.jpg)
+
+# Video Tutorials
+
+[How to get high quality paintings from line sketches in PaintsTransfer (for non-artist)](https://youtu.be/u8bvHDDstlY)
 
 # Latest News
 
