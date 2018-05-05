@@ -191,6 +191,24 @@ And some other similar results:
 
 ![sbl1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sbl1.jpg)
 
+# Some Other Results of Male or Landscapes
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/001.jpg)
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/002.jpg)
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/003.jpg)
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/004.jpg)
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/005.jpg)
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/006.jpg)
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/007.jpg)
+
+![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/008.jpg)
+
 ## How can I get these skin rendering on my own sketch?
 
 Because our software is designed for professional use, you need to know what is skin color first. It is easy:
