@@ -191,7 +191,7 @@ And some other similar results:
 
 ![sbl1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sbl1.jpg)
 
-# Some Other Results of Male or Landscapes
+# Some Other Results of Male
 
 ![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/001.jpg)
 
@@ -201,11 +201,15 @@ And some other similar results:
 
 ![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/004.jpg)
 
+# Some Other Results of Special Style
+
 ![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/005.jpg)
 
 ![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/006.jpg)
 
 ![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/007.jpg)
+
+# Or landscapes
 
 ![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/008.jpg)
 
