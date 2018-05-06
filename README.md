@@ -28,6 +28,18 @@ We focus on interactivity, possibility and creativity.
 
 ![glance](https://github.com/lllyasviel/style2paints/raw/master/temps/glance.jpg)
 
+# Colorize Line Arts In 3 minutes
+
+[3 minutes fast colorization in PaintsTransfer 002](https://youtu.be/FBP9JuthyOQ) (YouTube)
+
+[3 minutes fast colorization in PaintsTransfer 002](https://youtu.be/G8aKt5PO77M) (YouTube)
+
+[3 minutes fast colorization in PaintsTransfer 003](https://youtu.be/Ul3kBlmM3JA) (YouTube)
+
+[3 minutes fast colorization in PaintsTransfer 004](https://youtu.be/k4nnK-LgW7E) (YouTube)
+
+[3 minutes fast colorization in PaintsTransfer 001 - 003](https://www.bilibili.com/video/av22709469/) (BiliBili搬运) (NOT official)
+
 ## SEX OR VIOLENCE WARNING
 
 Contents below may include:
