@@ -287,7 +287,7 @@ Then, you may change the overall color. In my case, I use 7 color anchors, like 
 
 ![as2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/as2.jpg?t=1)
 
-Then, you see that color anchors will **NOT** directly influence the final color. We only use color anchor to suggest the neural network to **create a color atmosphere**. In the image above, I put two pink color anchors on the wings and one color anchor on the shose, but these objects are still white in final results. Here is an example:
+Then, you see that color anchors will **NOT** directly influence the final color. We only use color anchor to suggest the neural network to **create a color atmosphere**. In the image above, I put two pink color anchors on the wings and one color anchor on the shoes, but these objects are still white in final results. Here is an example:
 
 ![ane](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ane.jpg?t=y)
 
@@ -309,7 +309,7 @@ OK. Still very easy, just put white color on the skirt. This is important becaus
 
 ![ds5](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds5.jpg?t=1)
 
-OK. The shose and leg color are checked. Then we add color to the skin:
+OK. The shoes and leg color are checked. Then we add color to the skin:
 
 <img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds6.jpg" height = "500" />
 
