@@ -331,7 +331,7 @@ Another similar result in the same way:
 
 **NOTICE!! This feature is NOT stable currently !!**
 
-If you upload a finished painting and shift to the re-colorization mode, the software will give you a sketch extracted from the painting and it will paint on the new sketch again, obying your hints.
+If you upload a finished painting and shift to the re-colorization mode, the software will give you a sketch extracted from the painting and it will paint on the new sketch again, obeying your hints.
 
 Here is an example:
 
