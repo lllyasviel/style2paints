@@ -291,7 +291,7 @@ Then, you see that color anchors will **NOT** directly influence the final color
 
 ![ane](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ane.jpg?t=y)
 
-Then, we come to the important step: We need to make sure of these color. We need to tell the neural network what we really need.
+Then, we come to the important step: We need to make sure of these colors. We need to tell the neural network what we really need.
 
 First of all, we make sure of the pink wings:
 
