@@ -1,1 +1,8 @@
 ## net file in lfs
+
+## client generated files
+client/build
+client/library
+client/local
+client/settings
+client/temp

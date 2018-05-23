@@ -1,0 +1,80 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "arrowDown",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1,
+  "sample": 2,
+  "speed": 4,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "down": {
+        "comps": {
+          "cc.Widget": {
+            "bottom": [
+              {
+                "frame": 0,
+                "value": 0,
+                "curve": "cubicOut"
+              },
+              {
+                "frame": 1,
+                "value": -800,
+                "curve": "cubicIn"
+              }
+            ]
+          }
+        }
+      },
+      "tools": {
+        "comps": {
+          "cc.Widget": {
+            "verticalCenter": [
+              {
+                "frame": 0,
+                "value": -0.0515625,
+                "curve": "cubicOut"
+              },
+              {
+                "frame": 1,
+                "value": -0.46197916666666666,
+                "curve": "cubicIn"
+              }
+            ]
+          }
+        },
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -180,
+              "curve": "cubicOut"
+            },
+            {
+              "frame": 1,
+              "value": 0,
+              "curve": "cubicIn"
+            }
+          ]
+        }
+      },
+      "down/color_panel": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255,
+              "curve": "cubicOut"
+            },
+            {
+              "frame": 1,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

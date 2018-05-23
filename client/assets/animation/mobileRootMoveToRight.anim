@@ -1,0 +1,73 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "mobileRootMoveToRight",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1,
+  "sample": 2,
+  "speed": 4,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {},
+    "paths": {
+      "btn_process": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -180,
+              "curve": "cubicOut"
+            },
+            {
+              "frame": 1,
+              "value": 0,
+              "curve": "cubicIn"
+            }
+          ]
+        },
+        "comps": {
+          "cc.Widget": {
+            "right": [
+              {
+                "frame": 0,
+                "value": 0.4325,
+                "curve": "cubicOut"
+              },
+              {
+                "frame": 1,
+                "value": 0.5
+              }
+            ]
+          }
+        }
+      }
+    },
+    "comps": {
+      "cc.Widget": {
+        "left": [
+          {
+            "frame": 0,
+            "value": -1,
+            "curve": "cubicOut"
+          },
+          {
+            "frame": 1,
+            "value": 0
+          }
+        ],
+        "right": [
+          {
+            "frame": 0,
+            "value": 0,
+            "curve": "cubicOut"
+          },
+          {
+            "frame": 1,
+            "value": -1
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

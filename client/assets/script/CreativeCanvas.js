@@ -21,6 +21,7 @@ module.exports = (function CreativeCanvas(name){
 
     self.points_XYRGBR = [];
     self.cache = [];
+    self.redo_cache = [];
 
     self.in_drag = false;
     self.in_paint = false;
@@ -38,13 +39,35 @@ module.exports = (function CreativeCanvas(name){
             points_XYRGBR_clone.push(point_clone);
         }
         self.cache.push(points_XYRGBR_clone);
+        window.undoNode && (window.undoNode.interactable = true);
     };
 
     self.undo = function(){
-        if(self.cache.length > 0){
+            if(self.cache.length > 0) {
+                let points_XYRGBR_clone = [];
+            for(let point of self.points_XYRGBR){
+                let point_clone = [];
+                for(let x of point){
+                    point_clone.push(x);
+                }
+                points_XYRGBR_clone.push(point_clone);
+            }
+            self.redo_cache.push(points_XYRGBR_clone);
             let item = self.cache.pop();
             self.points_XYRGBR = item;
             self.finish();
+            if (!this.cache.length && window.undoNode) window.undoNode.interactable = false;
+            window.redoNode && (window.redoNode.interactable = true);
+        }
+    };
+
+    self.redo = function(){
+        if(self.redo_cache.length > 0) {
+            self.add_log();
+            let item = self.redo_cache.pop();
+            self.points_XYRGBR = item;
+            self.finish();
+            if (!self.redo_cache.length && window.redoNode) window.redoNode.interactable = false;
         }
     };
 

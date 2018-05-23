@@ -15,7 +15,11 @@ module.exports = (function FileSelector(){
     self.url = "";
 
     self.fake_callback = function (evt) {
-
+        let reader = new FileReader();
+        reader.readAsDataURL(evt.target.files[0]);
+        reader.onload = function() {
+            window[window.currentImg] = this.result;
+        }
         if (window.URL !== undefined)
             self.url = window['URL']['createObjectURL'](evt.target.files[0]);
         else

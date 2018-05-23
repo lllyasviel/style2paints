@@ -14,10 +14,16 @@ cc.Class({
         colorSelectedNode: {
             default: null, type: cc.Node
         },
+        leftNode: {
+            default: null, type: cc.Node
+        },
         sketchL1Node: {
             default: null, type: cc.Node
         },
         sketchL2Node: {
+            default: null, type: cc.Node
+        },
+        midNode: {
             default: null, type: cc.Node
         },
         hintL1Node: {
@@ -27,6 +33,9 @@ cc.Class({
             default: null, type: cc.Node
         },
         hintL3Node: {
+            default: null, type: cc.Node
+        },
+        rightNode: {
             default: null, type: cc.Node
         },
         resultNode: {
@@ -65,6 +74,12 @@ cc.Class({
         logo_node: {
             default: null, type: cc.Node
         },
+        undo_node: {
+            default: null, type: cc.Button
+        },
+        redo_node: {
+            default: null, type: cc.Button
+        },
     },
 
     on_slider: function () {
@@ -93,6 +108,7 @@ cc.Class({
     },
 
     load_reference_url: function (url, call_back=null) {
+        if (url.substr(0,4) == 'http') window.referenceImg = url;
         window.referenceImageLoader.load_url(url,function (image) {
 
             let raw_zize = [image.width, image.height];
@@ -110,6 +126,8 @@ cc.Class({
     },
 
     load_sketch_url: function (url, call_back=null) {
+        if (url.substr(0,4) == 'http') window.srcImg = url;
+        window.firstUpdateThis = true;
         window.sketchImageLoader.load_url(url,function (image) {
             let canvas_size = window.regulator.maxRegulate([image.width, image.height], 1024);
             window.sketchL1Sprite.spriteFrame = window.sketchImageCanvas.load_image(image, canvas_size[0], canvas_size[1]);
@@ -150,6 +168,7 @@ cc.Class({
             return;
         }
         window.fileSelector.activate(function (url) {
+            window.currentImg = 'referenceImg';
             window.controller.load_reference_url(url, function () {
                 window.hasReference = true;
             });
@@ -163,7 +182,14 @@ cc.Class({
         if(window.result_id == 'new'){
             return;
         }
-        window.open(window.server_url + '/rooms/' + window.current_room + '/result.' + window.result_id + '.jpg');
+        if (!window.resultDownload) {
+            window.resultDownload = document.createElement('a');
+            window.resultDownload.visible = false;
+            window.resultDownload.download = 'result.jpg';
+            document.body.appendChild(window.resultDownload);
+        }
+        window.resultDownload.href = window.server_url + '/rooms/' + window.current_room + '/result.' + window.result_id + '.jpg';
+        window.resultDownload.click();
     },
 
     requireResult: function(){
@@ -230,6 +256,9 @@ cc.Class({
                 hasReference: window.hasReference
             }))
         );
+        xhr.onerror = function() {
+            alert('Network Request. You might need to contact with the author.')
+        }
         console.log('request sended');
     },
 
@@ -308,6 +337,7 @@ cc.Class({
             return;
         }
         window.fileSelector.activate(function (url) {
+            window.currentImg = 'srcImg';
             window.controller.onClearClicked();
             window.creativeCanvas.cache = [];
             window.current_room = 'new';
@@ -319,8 +349,15 @@ cc.Class({
 
     onLoad: function () {
 
-        window.server_url = 'http://127.0.0.1:8000';
-        window.server_url = '';
+        if (!window.server_url) {
+            window.server_url = 'http://127.0.0.1:8000';
+            window.server_url = '';
+        }
+
+        window.undoNode = this.undo_node;
+        window.redoNode = this.redo_node;
+        window.undoNode && (window.undoNode.interactable = false);
+        window.redoNode && (window.redoNode.interactable = false);
 
         window.controller = this;
         window.regulator = require('./SizeRegulator');
@@ -333,12 +370,16 @@ cc.Class({
         window.paletteNode = this.paletteNode;
         window.paletteSprite = this.paletteNode.getComponent('cc.Sprite');
 
+        window.leftNode = this.leftNode;
+        window.touchGesture = require('./TouchGesture')(window.leftNode);
+
         window.sketchL1Node = this.sketchL1Node;
         window.sketchL1Sprite = this.sketchL1Node.getComponent('cc.Sprite');
 
         window.sketchL2Node = this.sketchL2Node;
         window.sketchL2Sprite = this.sketchL2Node.getComponent('cc.Sprite');
 
+        window.midNode = this.midNode;
         window.hintL1Node = this.hintL1Node;
         window.hintL1Sprite = this.hintL1Node.getComponent('cc.Sprite');
 
@@ -348,6 +389,7 @@ cc.Class({
         window.hintL3Node = this.hintL3Node;
         window.hintL3Sprite = this.hintL3Node.getComponent('cc.Sprite');
 
+        window.rightNode = this.rightNode;
         window.resultNode = this.resultNode;
         window.resultSprite = this.resultNode.getComponent('cc.Sprite');
 
@@ -382,24 +424,38 @@ cc.Class({
         setTimeout(this.delayed_initialization, 1000);
 
         window.sensitiveNodes = [];
+        window.sensitiveNodes.push(window.sketchL2Node);
+        window.sensitiveNodes.push(window.resultNode);
         window.sensitiveNodes.push(window.referenceNode);
         window.sensitiveNodes.push(window.paletteNode);
         window.sensitiveNodes.push(window.hintL1Node);
-        window.sensitiveNodes.push(window.sketchL2Node);
-        window.sensitiveNodes.push(window.resultNode);
 
-        this.node.on("mousemove", function (event) {
+        let move_event = event => {
             window.mousePosition = event.getLocation();
 
             window.currentSensitiveNode = null;
 
-            for(let item of window.sensitiveNodes){
-                let cur_position = item.convertToWorldSpace(item.position);
-                let beginX = cur_position.x;
-                let beginY = cur_position.y;
-                let mouseRelativeX = window.mousePosition.x - beginX;
-                let mouseRelativeY = window.mousePosition.y - beginY;
-                if(mouseRelativeX > 0 && mouseRelativeY > 0 && mouseRelativeX < item.width && mouseRelativeY < item.height){
+            for (let item of window.sensitiveNodes) {
+                if (!item.active) continue;
+                let mouseRelativeX, mouseRelativeY;
+                if (item === window.sketchL2Node && cc.sys.isMobile) {
+                    let p = cc.p(this.node.width/2 + item.x - item.width/2, this.node.height/2 + item.y - item.height/2);
+                    let centerP = cc.p(this.node.width/2 + item.x, this.node.height/2 + item.y);
+                    let rotatedP = cc.pRotateByAngle(p, centerP, cc.degreesToRadians(-item.rotation));
+                    let mouseRelative = cc.p(window.mousePosition.x, window.mousePosition.y);
+                    mouseRelative = cc.pRotateByAngle(mouseRelative, rotatedP, cc.degreesToRadians(item.rotation));
+                    centerP = cc.p(item.width/2, item.height/2);
+                    mouseRelative.subSelf(rotatedP).subSelf(centerP).divSelf(item.scale).addSelf(centerP);
+                    mouseRelativeX = mouseRelative.x;
+                    mouseRelativeY = mouseRelative.y;
+                } else {
+                    let cur_position = item.convertToWorldSpace(item.position);
+                    let beginX = cur_position.x;
+                    let beginY = cur_position.y;
+                    mouseRelativeX = window.mousePosition.x - beginX;
+                    mouseRelativeY = window.mousePosition.y - beginY;
+                }
+                if (mouseRelativeX > 0 && mouseRelativeY > 0 && mouseRelativeX < item.width && mouseRelativeY < item.height) {
                     window.currentSensitiveNode = item;
                     window.mouseRelativeX = mouseRelativeX / item.width;
                     window.mouseRelativeY = mouseRelativeY / item.height;
@@ -407,17 +463,77 @@ cc.Class({
             }
 
             window.controller.onMouseMove();
-        });
 
-        this.node.on("mousedown", function (event) {
-            window.mouseIsDown = true;
-            window.controller.onMouseDown()
-        });
+        }
 
-        this.node.on("mouseup", function (event) {
-            window.mouseIsDown = false;
-            window.controller.onMouseUp()
-        });
+        if (!cc.sys.isMobile) {
+
+            this.node.on("mousemove", function (event) {
+                move_event(event);
+            });
+    
+            this.node.on("mousedown", function (event) {
+                window.mouseIsDown = true;
+                window.controller.onMouseDown();
+            });
+    
+            this.node.on("mouseup", function (event) {
+                window.mouseIsDown = false;
+                window.controller.onMouseUp();
+            });
+            
+        } else {
+
+            let multiTouch = 0;
+            let startEvent;
+
+            this.node.on("touchmove", function (event) {
+                let touches = event.getTouches();
+                if (touches.length >= 2) {
+                    multiTouch+=4;
+                } else {
+                    if (!multiTouch) {
+                        setTimeout(()=>{
+                            startEvent && move_event(startEvent);
+                            !multiTouch && window.controller.onMouseDown();
+                            multiTouch--;
+                            setTimeout(()=>{
+                                move_event(event);
+                            }, 100);
+                        })
+                    } else if (multiTouch < 0) {
+                        move_event(event);
+                    }
+                }
+            });
+    
+            this.node.on("touchstart", function (event) {
+                multiTouch ? (startEvent = 0) : (startEvent = event);
+                window.mouseIsDown = true;
+            });
+    
+            this.node.on("touchend", function (event) {
+                if (!multiTouch) {
+                    if (startEvent) {
+                        move_event(startEvent);
+                        window.controller.onMouseDown();
+                        startEvent = 0;
+                        setTimeout(()=>{
+                            multiTouch = 0;
+                            window.mouseIsDown = false;
+                            window.controller.onMouseUp();
+                        },100);
+                    } else {
+                        multiTouch = 0;
+                    }
+                    return;
+                }
+                multiTouch = 0;
+                window.mouseIsDown = false;
+                window.controller.onMouseUp();
+            });
+
+        }
 
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, function (event) {
             if(event.keyCode==cc.KEY.z){
@@ -501,13 +617,23 @@ cc.Class({
             if (xhr.readyState==4 && xhr.status==200)
             {
                 let all_sample_list = JSON.parse(xhr.responseText);
+
+                let img_width = window.controller.default_sample.width + 28;
+                let img_height = window.controller.default_sample.height + 14;
+                let maxLineWidth = window.controller.sample_container.width - 28;
+                let line = 0;
+                let wi = 0;
+                
                 for(let i in all_sample_list){
                     let node = cc.instantiate(window.controller.default_sample);
                     node.name = all_sample_list[i];
                     node.parent = window.controller.sample_container;
-                    let line = parseInt(i % 13);
-                    let wi = parseInt(i / 13);
-                    node.setPosition(28 + line * 165, -28 - wi * 150);
+                    if ((line+1) * img_width > maxLineWidth) {
+                        line = 0;
+                        wi += 1;
+                    }
+                    node.setPosition(28 + line * img_width, -28 - wi * img_height);
+                    line++;
                     let frame = new cc.SpriteFrame();
                     let tex = cc.textureCache.addImage(window.server_url + "/samples/" + all_sample_list[i] + '/icon.sample.jpg')
                     frame.setTexture(tex);
@@ -595,6 +721,8 @@ cc.Class({
         if(window.currentSensitiveNode != null){
             if(window.currentSensitiveNode.name == window.sketchL2Node.name){
                 window.creativeCanvas.add_log();
+                window.creativeCanvas.redo_cache = [];
+                window.redoNode && (window.redoNode.interactable = false);
                 window.creativeCanvas.refresh_current_point_index(1);
                 if(window.creativeCanvas.current_index > -1){
                     if(window.current_condition==window.CONDITION_ERASER){
@@ -663,7 +791,7 @@ cc.Class({
 
     onMouseMove: function () {
         if(window.currentSensitiveNode != null){
-            document.body.style.cursor = 'crosshair';
+            cc._canvas.style.cursor = 'crosshair';
             if(window.currentSensitiveNode.name == window.referenceNode.name){
                 window.colorPreviewNode.color = window.referenceImageCanvas.get_color(window.mouseRelativeX, window.mouseRelativeY);
             }
@@ -688,37 +816,38 @@ cc.Class({
                         window.creativeCanvas.finish();
                     }else{
                         if(window.current_condition==window.CONDITION_ERASER){
-                            document.body.style.cursor = 'pointer';
+                            cc._canvas.style.cursor = 'pointer';
                         }else{
-                            document.body.style.cursor = 'move';
+                            cc._canvas.style.cursor = 'move';
                         }
                     }
                 }
             }
         }else{
             window.colorPreviewNode.color = window.colorSelectedNode.color;
-            document.body.style.cursor = 'default';
+            cc._canvas.style.cursor = 'default';
         }
     },
 
     update: function (dt) {
 
         let raw_shape = [window.sketchImageCanvas.canvas.width, window.sketchImageCanvas.canvas.height];
-        let max_area = [this.node.width /3, this.node.height - 200];
-        let result_size = window.regulator.areaRegulate(raw_shape, max_area);
+        let left_size = window.regulator.areaRegulate(raw_shape, [window.leftNode.width, window.leftNode.height]);
+        let mid_size = window.regulator.areaRegulate(raw_shape, [window.midNode.width, window.midNode.height]);
+        let right_size = window.regulator.areaRegulate(raw_shape, [window.rightNode.width, window.rightNode.height]);
 
-        window.sketchL1Node.width = result_size[0];
-        window.sketchL1Node.height = result_size[1];
-        window.sketchL2Node.width = result_size[0];
-        window.sketchL2Node.height = result_size[1];
-        window.hintL1Node.width = result_size[0];
-        window.hintL1Node.height = result_size[1];
-        window.hintL2Node.width = result_size[0];
-        window.hintL2Node.height = result_size[1];
-        window.hintL3Node.width = result_size[0];
-        window.hintL3Node.height = result_size[1];
-        window.resultNode.width = result_size[0];
-        window.resultNode.height = result_size[1];
+        window.sketchL1Node.width = left_size[0];
+        window.sketchL1Node.height = left_size[1];
+        window.sketchL2Node.width = left_size[0];
+        window.sketchL2Node.height = left_size[1];
+        window.hintL1Node.width = mid_size[0];
+        window.hintL1Node.height = mid_size[1];
+        window.hintL2Node.width = mid_size[0];
+        window.hintL2Node.height = mid_size[1];
+        window.hintL3Node.width = mid_size[0];
+        window.hintL3Node.height = mid_size[1];
+        window.resultNode.width = right_size[0];
+        window.resultNode.height = right_size[1];
 
         window.creativeCanvas.update_drag();
 
@@ -753,5 +882,150 @@ cc.Class({
         window.creativeCanvas.points_XYRGBR = [];
         window.creativeCanvas.finish();
     },
+
+    on_blank_start: function() {
+        window.controller.logo_node.active = false;
+        window.controller.welcome_node.active = false;
+    },
+
+    undo() {
+        window.creativeCanvas.undo();
+    },
+
+    redo() {
+        window.creativeCanvas.redo();
+    },
+
+    saveJson() {
+        let urlObject = window.URL || window.webkitURL || window;
+        let data = {
+            alpha: window.current_referenceAlpha,
+            points: window.creativeCanvas.points_XYRGBR,
+            method: window.current_method,
+            lineColor: [window.lcolor.r, window.lcolor.g, window.lcolor.b],
+            line: window.controller.line_enabled.isChecked,
+            hasReference: window.hasReference,
+            srcImg: window.srcImg,
+            referenceImg: window.referenceImg ? window.referenceImg : ''
+        };
+        let export_blob = new Blob([JSON.stringify(data)]);
+        if(!window.save_link) {
+            window.save_link = document.createElement('a');
+            window.save_link.visible = false;
+            document.body.appendChild(window.save_link);
+        }
+        window.save_link.href = urlObject.createObjectURL(export_blob);
+        let fileName = window.fileSelector.html_obj.value.replace(/\\/g, '/');
+        fileName = window.fileSelector.html_obj.fake_value ? window.fileSelector.html_obj.fake_value.split('/') : fileName.split('/');
+        let tmpName = fileName[fileName.length-1].split('.');
+        fileName = '';
+        for(let i=0;i<tmpName.length-1;i++) {
+            fileName+=tmpName[i]+'.';
+        }
+        window.save_link.download = fileName ? fileName + 'pt' : 'data_'+Date.now()+'.pt';
+        window.save_link.click();
+    },
+
+    dataURLtoURL(dataurl) {
+        if (dataurl.substr(0,4) == 'http') return dataurl;
+        let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+        while(n--){
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        let file = new Blob([u8arr], {type:mime});
+        let url;
+        if (window.URL !== undefined)
+            url = window['URL']['createObjectURL'](file);
+        else
+            url =  window['webkitURL']['createObjectURL'](file);
+        return url;
+    },
+
+    openJson() {
+        if (!window.open_json) {
+            window.open_json = document.createElement("input");
+            window.open_json.id = 'FileSelector';
+            window.open_json.type = "file";
+            window.open_json.accept = "application/pt";
+            window.open_json.style.height = "0px";
+            window.open_json.style.display = "block";
+            window.open_json.style.overflow = "hidden";
+            document.body.insertBefore(window.open_json, document.body.firstChild);
+            window.open_json.onchange = function(event) {
+                let files = event.target.files;
+                let fileName = files[0].name.replace(/\\/g, '/');
+                fileName = fileName.split('/');
+                let tmpName = fileName[fileName.length-1].split('.');
+                fileName = '';
+                for(let i=0;i<tmpName.length-1;i++) {
+                    fileName+=tmpName[i]+'.';
+                }
+                window.fileSelector.html_obj.fake_value = fileName + '.jpg';
+                let reader = new FileReader();
+                reader.onload = function() {
+                    let jn = JSON.parse(this.result);
+                    cc.log(jn);
+                    try {
+                        window.current_method = jn.method;
+                        window.current_room = 'new';
+                        window.current_step = 'new';
+                        window.result_id = 'new';
+                        if(window.current_method=='colorization'){
+                            window.controller.tog1.getComponent('cc.Toggle').isChecked = true;
+                            window.controller.tog2.getComponent('cc.Toggle').isChecked = false;
+                            window.controller.tog3.getComponent('cc.Toggle').isChecked = false;
+                        }
+                        if(window.current_method=='rendering'){
+                            window.controller.tog1.getComponent('cc.Toggle').isChecked = false;
+                            window.controller.tog2.getComponent('cc.Toggle').isChecked = true;
+                            window.controller.tog3.getComponent('cc.Toggle').isChecked = false;
+                        }
+                        if(window.current_method=='recolorization'){
+                            window.controller.tog1.getComponent('cc.Toggle').isChecked = false;
+                            window.controller.tog2.getComponent('cc.Toggle').isChecked = false;
+                            window.controller.tog3.getComponent('cc.Toggle').isChecked = true;
+                        }
+                        window.controller.line_enabled.isChecked = jn.line;
+                        let lc = new cc.Color();
+                        lc.r = jn.lineColor[0];
+                        lc.g = jn.lineColor[1];
+                        lc.b = jn.lineColor[2];
+                        window.lcolor = lc;
+                        window.controller.line_color.color = lc;
+                        window.hasReference = jn.hasReference;
+                        jn.referenceImg && (window.referenceImg = jn.referenceImg);
+                        if(window.hasReference && jn.referenceImg){
+                            window.controller.load_reference_url(window.controller.dataURLtoURL(jn.referenceImg), function () {
+                                window.hasReference = true;
+                            });
+                        }else{
+                            window.controller.load_reference_url("res\\raw-assets\\texture\\ring.png?t="+Math.random());
+                        }
+                        window.current_referenceAlpha = jn.alpha;
+                        window.controller.sliderNode.getComponent('cc.Slider').progress = window.current_referenceAlpha;
+                        window.controller.on_slider();
+                        window.temp_points = jn.points;
+                        window.creativeCanvas.points_XYRGBR = window.temp_points;
+                        window.creativeCanvas.finish();
+                        jn.srcImg && (window.srcImg = jn.srcImg);
+                        jn.srcImg && window.controller.load_sketch_url(window.controller.dataURLtoURL(jn.srcImg), window.controller.uploadSketch);
+                        window.uploading = false;
+                    } catch(e) {
+                        alert('open failed:'+e);
+                    }
+                };
+                reader.onerror = function() {
+                    alert('open failed.');
+                }
+                reader.readAsText(files[0]);
+            }
+        }
+        window.open_json.click();
+    },
+
+    onOpenWithJson() {
+        this.openJson();
+    }
 
 });
