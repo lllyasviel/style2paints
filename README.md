@@ -8,7 +8,7 @@
 
 First of all, why not spend 5 minutes to try it yourself!
 
-http://paintstransfer.com
+~http://paintstransfer.com~ (Because some financial problems, our online app is shut down temporarily.)
 
 *(PaintsTransfer-Euclid is the new name of style2paintsV3.)*
 
