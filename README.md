@@ -1,4 +1,8 @@
-﻿# Welcome to PaintsTransfer-Euclid !
+# Latest News
+
+We will release style2paints V3.5 at about 2018.10.15 with many breakthroughs.
+ 
+# Welcome to PaintsTransfer-Euclid !
 
 **Can you colorize line arts?**
 
