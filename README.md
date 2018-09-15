@@ -563,9 +563,12 @@ Current model list of the 6 neural networks:
 
 2. The recommended training sketches is from [sketchKeras](https://github.com/lllyasviel/sketchKeras).
 
-# Community
+# 中文社区
 
-QQ Group ID: 184467946
+欢迎加入以下500人qq群，但是不保证一直有空位，如果你一次加群失败，可以多次尝试。
+
+    纸片协会总舵-圣辇船（已经满了不要加）：184467946
+    纸片协会分部-红魔馆（建议你加这个群）：879417437
 
 ## Acknowledgements
 
