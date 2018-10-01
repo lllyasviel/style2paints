@@ -80,8 +80,12 @@ cc.Class({
         if(window.uploading){
             return;
         }
+        if(window.controller.logo_node.active){
+            window.controller.logo_node.active = false;
+            return;
+        }
         window.controller.welcome_node.active = !window.controller.welcome_node.active;
-        window.controller.logo_node.active = window.controller.welcome_node.active;
+        window.controller.logo_node.active = false;
     },
 
     on_start: function () {
@@ -90,6 +94,18 @@ cc.Class({
 
     onGithub: function () {
         window.open('http://github.com/lllyasviel/style2paints');
+    },
+
+    onCD: function () {
+        window.open('https://zhuanlan.zhihu.com/p/36560034');
+    },
+
+    onAlter: function () {
+        if (window.cnzh) {
+            this.onCD();
+        }else{
+            this.onGithub();
+        }
     },
 
     load_reference_url: function (url, call_back=null) {
@@ -318,6 +334,8 @@ cc.Class({
     },
 
     onLoad: function () {
+
+        window.cnzh = false;
 
         window.server_url = 'http://127.0.0.1:8000';
         window.server_url = '';

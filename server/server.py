@@ -1,9 +1,5 @@
 from config import *
 
-if multiple_process:
-    from gevent import monkey
-    monkey.patch_all()
-
 import re
 import os
 import cv2
@@ -268,7 +264,7 @@ os.makedirs('results', exist_ok=True)
 threading.Thread(target=server_loop).start()
 
 if multiple_process:
-    run(host="0.0.0.0", port=80, server='gevent')
+    run(host="0.0.0.0", port=80, server='paste')
 else:
-    run(host="0.0.0.0", port=8000)
+    run(host="0.0.0.0", port=8000, server='paste')
 

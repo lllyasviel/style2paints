@@ -2,6 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     chinese: function () {
+        window.cnzh = true;
         console.log("chinese");
         var tests = this.getComponentsInChildren("interLabel");
         for (var i = 0; i < tests.length; i++) {
@@ -10,6 +11,7 @@ cc.Class({
     },
 
     japanese: function () {
+        window.cnzh = false;
         console.log("japanese");
         var tests = this.getComponentsInChildren("interLabel");
         for (var i = 0; i < tests.length; i++) {
@@ -18,6 +20,7 @@ cc.Class({
     },
 
     english: function () {
+        window.cnzh = false;
         console.log("english");
         var tests = this.getComponentsInChildren("interLabel");
         for (var i = 0; i < tests.length; i++) {
@@ -27,8 +30,10 @@ cc.Class({
 
     onLoad: function () {
         this.english();
+        window.cnzh = false;
         if (navigator.language.substring(0,2) == "zh") {
             this.chinese();
+            window.cnzh = true;
         }
         if (navigator.language.substring(0, 2) == "ja") {
             this.japanese();
