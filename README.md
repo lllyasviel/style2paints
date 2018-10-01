@@ -1,4 +1,4 @@
-# Latest News
+﻿# Latest News
 
 We will release style2paints V3.5 at about 2018.10.15 with many breakthroughs.
  
@@ -526,6 +526,7 @@ Or we want to see a method to do image to image translation like this:
     pip install bottle
     pip install gevent
     pip install h5py
+    pip install paste
     pip install opencv-python
     pip install scikit-image
     git clone https://github.com/lllyasviel/style2paints.git
