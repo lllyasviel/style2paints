@@ -574,3 +574,14 @@ Current model list of the 6 neural networks:
 ## Acknowledgements
 
 Thanks a lot to TaiZan. This project could not be achieved without his great help.
+
+    @Article{ACMTOGTSC2018,
+      author  = {LvMin Zhang, Chengze Li, Tien-Tsin Wong, Yi Ji and ChunPing Liu},
+      title   = {Two-stage Sketch Colorization},
+      journal = {ACM Transactions on Graphics},
+      year    = {2018},
+      volume  = {37},
+      number  = {6},
+      month   = nov,
+      doi     = {https://doi.org/10.1145/3272127.3275090},
+    }
