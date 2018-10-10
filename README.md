@@ -12,10 +12,6 @@ https://github.com/lllyasviel/PaintsTransfer
 
 **If no, you will be able to do it if you can read this page.**
 
-First of all, why not spend 5 minutes to try it yourself!
-
-http://paintstransfer.com
-
 *(PaintsTransfer-Euclid is the new name of style2paintsV3.)*
 
 The AI can paint on a sketch, obeying your instructions.
