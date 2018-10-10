@@ -1,6 +1,8 @@
 # Latest News
 
-We will release style2paints V3.2 at about 2018.10.15.
+We are moving style2paints 3.2 to here:
+
+https://github.com/lllyasviel/PaintsTransfer
  
 # Welcome to PaintsTransfer-Euclid !
 
