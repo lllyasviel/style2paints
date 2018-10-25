@@ -1,10 +1,12 @@
-# Latest News
+# Latest News (Style2Paints V4)
 
-We are moving style2paints 3.2 to here:
+**Style2Paints V4 will be avaliable at 2018.11.01!**
 
-https://github.com/lllyasviel/PaintsTransfer
+**Style2Paints V4 will be avaliable at 2018.11.01!**
+
+**Style2Paints V4 will be avaliable at 2018.11.01!**
  
-# Welcome to PaintsTransfer-Euclid !
+# Welcome to PaintsTransfer-Euclid (Style2Paints V3) !
 
 **Can you colorize line arts?**
 
