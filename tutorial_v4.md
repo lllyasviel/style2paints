@@ -113,7 +113,7 @@ Result (lightness):
 
 ![imgs](https://github.com/lllyasviel/style2paints/raw/master/imgs/a4.png)
 
-Rendering mask:
+Rendering mask (You can use photoshop to **overlay** the image):
 
 ![imgs](https://github.com/lllyasviel/style2paints/raw/master/imgs/a5.png)
 
