@@ -1,12 +1,4 @@
-# Latest News (Style2Paints V4)
-
-**Style2Paints V4 will be avaliable at 2018.11.01!**
-
-**Style2Paints V4 will be avaliable at 2018.11.01!**
-
-**Style2Paints V4 will be avaliable at 2018.11.01!**
- 
-# Welcome to PaintsTransfer-Euclid (Style2Paints V3) !
+﻿# Welcome to PaintsTransfer-Euclid (Style2Paints V3) !
 
 **Can you colorize line arts?**
 
