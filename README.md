@@ -42,23 +42,23 @@ And the corresponding layers are:
     
 Our AI is also working in this way. Here we are showing some examples. For each figure, the left-top is input sketch, the right-top is the flat color, the left-bottom is the color gradient, and the last one is the shaded result.
 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/1.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/2.jpg)
 
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/1.jpg)
+
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/3.jpg)
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/6.jpg)
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/9.jpg)
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
 
 # Know more about us!
 
