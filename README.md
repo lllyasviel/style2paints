@@ -40,57 +40,25 @@ And the corresponding layers are:
 
     lineart layers + flat color layers + gradient layers + shading layers
     
-Our AI is also working in this way. Here is a fully automatic example:
+Our AI is also working in this way. Here we are showing some examples. For each figure, the left-top is input sketch, the right-top is the flat color, the left-bottom is the color gradient, and the last one is the shaded result.
 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/2.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/1.jpg)
 
-*\*CC-BY-NC-SA 4.0 (c) style2paints, 2018. It is OK for ACM/IEEE fair use (for comparison).*
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/2.jpg)
 
-Note that in this example, all step 123 are fully automatic without any human hint points or local manipulation. You can follow our [user instruction](https://style2paints.github.io/) to reproduce this result. 
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/3.jpg)
 
-And here is another fully automatic example:
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/3.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
 
-*\*CC-BY-NC-SA 4.0 (c) style2paints, 2018. It is OK for ACM/IEEE fair use (for comparison).*
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/6.jpg)
 
-*[Original lineart can be found here.](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/4.jpg)*
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
 
-*[A video of screen record can be found here.](https://youtu.be/9IabzvPuK2A)*
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
 
-# Some almost automatic results
-
-By refering "almost automatic results", we are taliking about results which can be achieved with less than 15 user clicks. These results can be achieved with less than 30 seconds interaction.
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/5.jpg)
-
-The above result is achieved with 14 clicks.
-
-*[Original lineart can be found here.](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/6.jpg)*
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/7.jpg)
-
-The above result is achieved with 7 clicks.
-
-*[Original lineart can be found here.](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/8.jpg)*
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/9.jpg)
-
-The above result is achieved with 8 clicks.
-
-*[Original lineart can be found here.](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/10.jpg)*
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/11.jpg)
-
-The above result is achieved with 4 clicks.
-
-*[Original lineart can be found here.](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/12.jpg)*
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/13.jpg)
-
-The above result is achieved with 7 clicks.
-
-*[Original lineart can be found here.](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/14.jpg)*
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/9.jpg)
 
 # Know more about us!
 
@@ -103,14 +71,6 @@ And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) acco
 # Acknowledgement
 
 Thanks a lot to TaiZan. This project could not be achieved without his great help.
-
-# Previous publication
-
-*This section is not finished yet.*
-
-# Source code
-
-*This section is not finished yet.*
 
 # About Copyright
 
