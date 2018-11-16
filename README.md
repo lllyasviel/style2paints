@@ -42,6 +42,8 @@ And the corresponding layers are:
     
 Our AI is also working in this way. Here we are showing some examples. For each figure, the left-top is input sketch, the right-top is the flat color, the left-bottom is the color gradient, and the last one is the shaded result.
 
+Here is the video: https://youtu.be/Hqw0vvEULEw
+
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
