@@ -63,7 +63,7 @@ Here is the video: [https://youtu.be/B6WEky9nY7Q](https://youtu.be/B6WEky9nY7Q)
 
 See video at: 11:28
 
-All human color modification: only 3 clicks.
+All human local color modification: only 3 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
 
@@ -73,7 +73,7 @@ All human color modification: only 3 clicks.
 
 See video at: 06:19
 
-All human color modification: only 2 clicks.
+All human local color modification: only 2 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
 
@@ -83,7 +83,7 @@ All human color modification: only 2 clicks.
 
 See video at: 01:40
 
-All human color modification: only 6 clicks.
+All human local color modification: only 6 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/2.jpg)
 
@@ -93,7 +93,7 @@ All human color modification: only 6 clicks.
 
 See video at: 00:42
 
-All human color modification: NO human color modification.
+All human local color modification: NO human color modification.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/1.jpg)
 
@@ -103,7 +103,7 @@ All human color modification: NO human color modification.
 
 See video at: 02:57
 
-All human color modification: NO human color modification.
+All human local color modification: NO human color modification.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/3.jpg)
 
@@ -113,7 +113,7 @@ All human color modification: NO human color modification.
 
 See video at: 07:57
 
-All human color modification: 11 clicks.
+All human local color modification: 11 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/6.jpg)
 
@@ -121,7 +121,7 @@ All human color modification: 11 clicks.
 
 See video at: 13:00
 
-All human color modification: only 6 clicks.
+All human local color modification: only 6 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/9.jpg)
 
@@ -131,7 +131,7 @@ All human color modification: only 6 clicks.
 
 See video at: 04:27
 
-All human color modification: only 3 clicks.
+All human local color modification: only 3 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
 
@@ -139,7 +139,7 @@ All human color modification: only 3 clicks.
 
 See video at: 09:46
 
-All human color modification: only 5 clicks.
+All human local color modification: only 5 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
 
