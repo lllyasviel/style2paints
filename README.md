@@ -145,6 +145,14 @@ All human local color modification: only 5 clicks.
 
 *\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
 
+# Real-life results
+
+Nowadays researchers can always get pretty good results by cherry-picking, overfitting or tricky manipulation. Nothing is trustable now. To validate a really effective, useful, robust, generizable and scalable system, we firmly believe that the only convincing evidence is its real-life performance form real industry, real market, and real users.
+
+In this section, we present real-life results from twitter artists. We are sorry that we can only provide screenshots because we do not own the copyrights of these images. These twitters can be found by searching keyword “style2paints” and “s2p.moe” on twitter. Additionally, there are also lots of results under twitter hashtag #style2paints.
+
+(TO DO: put some twitter results here.)
+
 # Know more about us!
 
 Online APP: [http://s2p.moe/](http://s2p.moe/)
