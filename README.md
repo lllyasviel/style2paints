@@ -57,6 +57,8 @@ The video is a pure screen record without any after modification or speed modifi
 
 Here is the video: [https://youtu.be/B6WEky9nY7Q](https://youtu.be/B6WEky9nY7Q)
 
+And all input sketches can be found [here](https://github.com/lllyasviel/style2paints/raw/master/temps/show/sketches).
+
 *(Because this page is prepared before the video is recoreded, some numbers may have minor differences.)*
 
 ## Example #1
@@ -152,6 +154,10 @@ To validate a really effective, useful, robust, generizable and scalable system,
 In this section, we present real-life results from twitter artists. We are sorry that we can only provide screenshots because we do not own the copyrights of these images. These twitters can be found by searching keyword “style2paints” and “s2p.moe” on twitter. Additionally, there are also lots of results under twitter hashtag #style2paints. These results are from artists from different countries. Note that some (very minor) results contains artists' after effect decorations. Note that some of these artists did not share their original sketch inputs on twitter.
 
 (TO DO: put some twitter results here.)
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/a.png)
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/b.png)
 
 # Know more about us!
 
