@@ -212,7 +212,7 @@ TOG 2018:
       doi     = {https://doi.org/10.1145/3272127.3275090},
     }
 
-[paper](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
+[paper](https://github.com/lllyasviel/style2paints/blob/master/papers/sa.pdf)
 
 ## Style2paints V4:
 
