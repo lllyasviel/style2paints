@@ -61,7 +61,7 @@ Here is the video: [https://youtu.be/B6WEky9nY7Q](https://youtu.be/B6WEky9nY7Q)
 
 ## Example #1
 
-See video at: 11:28
+Begin at 11:28 in the above video.
 
 All human local color modification: only 3 clicks.
 
@@ -71,7 +71,7 @@ All human local color modification: only 3 clicks.
 
 ## Example #2
 
-See video at: 06:19
+Begin at 06:19 in the above video.
 
 All human local color modification: only 2 clicks.
 
@@ -81,7 +81,7 @@ All human local color modification: only 2 clicks.
 
 ## Example #3
 
-See video at: 01:40
+Begin at 01:40 in the above video.
 
 All human local color modification: only 6 clicks.
 
@@ -91,7 +91,7 @@ All human local color modification: only 6 clicks.
 
 ## Example #4
 
-See video at: 00:42
+Begin at 00:42 in the above video.
 
 All human local color modification: NO human color modification.
 
@@ -101,7 +101,7 @@ All human local color modification: NO human color modification.
 
 ## Example #5
 
-See video at: 02:57
+Begin at 02:57 in the above video.
 
 All human local color modification: NO human color modification.
 
@@ -111,7 +111,7 @@ All human local color modification: NO human color modification.
 
 ## Example #6
 
-See video at: 07:57
+Begin at 07:57 in the above video.
 
 All human local color modification: 11 clicks.
 
@@ -119,7 +119,7 @@ All human local color modification: 11 clicks.
 
 ## Example #7
 
-See video at: 13:00
+Begin at 13:00 in the above video.
 
 All human local color modification: only 6 clicks.
 
@@ -129,7 +129,7 @@ All human local color modification: only 6 clicks.
 
 ## Example #8
 
-See video at: 04:27
+Begin at 04:27 in the above video.
 
 All human local color modification: only 3 clicks.
 
@@ -137,7 +137,7 @@ All human local color modification: only 3 clicks.
 
 ## Example #9
 
-See video at: 09:46
+Begin at 09:46 in the above video.
 
 All human local color modification: only 5 clicks.
 
@@ -178,6 +178,45 @@ With our permission, you can enjoy more professional services with our cutting-e
     纸片协会总舵-圣辇船：184467946
     纸片协会分部-红魔馆：879417437
 
+# Previous Publications
+
+## Style2paints V1:
+
+ACPR 2017:
+
+    @Article{ACPR2017ZLM,
+      author  = {LvMin Zhang, Yi Ji and ChunPing Liu},
+      title   = {Style Transfer for Anime Sketches with Enhanced Residual U-net and Auxiliary Classifier GAN},
+      conference = {Asian Conference on Pattern Recognition (ACPR)},
+      year    = {2017},
+    }
+
+[paper](https://arxiv.org/abs/1706.03319)
+
+## Style2paints V2:
+
+No Publications.
+
+## Style2paints V3:
+
+TOG 2018:
+
+    @Article{ACMTOGTSC2018,
+      author  = {LvMin Zhang, Chengze Li, Tien-Tsin Wong, Yi Ji and ChunPing Liu},
+      title   = {Two-stage Sketch Colorization},
+      journal = {ACM Transactions on Graphics},
+      year    = {2018},
+      volume  = {37},
+      number  = {6},
+      month   = nov,
+      doi     = {https://doi.org/10.1145/3272127.3275090},
+    }
+
+[paper](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
+
+## Style2paints V4:
+
+No Publications.
 
 
 
