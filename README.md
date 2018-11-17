@@ -151,6 +151,8 @@ Nowadays researchers can always get pretty good results by cherry-picking, overf
 
 In this section, we present real-life results from twitter artists. We are sorry that we can only provide screenshots because we do not own the copyrights of these images. These twitters can be found by searching keyword “style2paints” and “s2p.moe” on twitter. Additionally, there are also lots of results under twitter hashtag #style2paints.
 
+These results are from artists from different countries. Note that some (very minor) results contains artists' after effect decorations.
+
 (TO DO: put some twitter results here.)
 
 # Know more about us!
