@@ -56,11 +56,11 @@ Here is the video: https://youtu.be/B6WEky9nY7Q
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/6.jpg)
 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/9.jpg)
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
 
 # Know more about us!
 
