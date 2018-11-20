@@ -535,6 +535,11 @@ If you don't have GPU, you can still use software TensorFlow, but it will be muc
 
 You can try [TensorFlow optimized for latest Intel CPU](https://software.intel.com/en-us/articles/intel-optimization-for-tensorflow-installation-guide#pip_35).
 
+To colorize image from command line, use this command:
+
+    cd style2paints/server
+    python cmdline.py <infile.jpg> <colorized.jpg>
+
 
 # Models
 
