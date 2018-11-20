@@ -529,6 +529,13 @@ Then you need to download all models from our Google Drive and put these into 's
     python server.py
 
 
+If you don't have GPU, you can still use software TensorFlow, but it will be much slower:
+
+    pip install tensorflow
+
+You can try [TensorFlow optimized for latest Intel CPU](https://software.intel.com/en-us/articles/intel-optimization-for-tensorflow-installation-guide#pip_35).
+
+
 # Models
 
 Currently, we reserve all rights about all these models. 
