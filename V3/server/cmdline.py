@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
 
+import os
 import sys
+
+for f in ['baby.net', 'head.net', 'neck.net', 'tail.net', 'reader.net', 'girder.net']:
+    if not os.path.exists(f):
+        print('Error: neural network models not downloaded!')
+        print('Download them here, and put to current directory:')
+        print('https://drive.google.com/open?id=1fWi4wmNj-xr-nCzuWMsN2rcm0249_Aem')
+        exit(1)
+
 if len(sys.argv) < 3:
-    print("Usage: cmdline.py <imagefile> <outputfile> [colorization|rendering|recolorization]")
-    exit()
+    print('Usage: cmdline.py <imagefile> <outputfile> [colorization|rendering|recolorization]')
+    exit(1)
+
 
 from config import *
 
 import re
-import os
 import cv2
 import time
 import json
