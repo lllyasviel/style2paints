@@ -10,8 +10,9 @@ for f in ['baby.net', 'head.net', 'neck.net', 'tail.net', 'reader.net', 'girder.
         print('https://drive.google.com/open?id=1fWi4wmNj-xr-nCzuWMsN2rcm0249_Aem')
         exit(1)
 
-if len(sys.argv) < 3:
-    print('Usage: cmdline.py <imagefile> <outputfile> [colorization|rendering|recolorization]')
+if len(sys.argv) <= 2:
+    print('Usage: %s <imagefile> <outputfile> [colorization|rendering|recolorization] [x y color x y color ...]' % sys.argv[0])
+    print('Example: %s sketch.jpg colorized.jpg colorization 0.5 0.25 77ee00 0.5 0.75 0011cc' % sys.argv[0])
     exit(1)
 
 
@@ -136,7 +137,7 @@ def upload_sketch(inputfilename, method):
     return room
 
 
-def request_result(room, method):
+def request_result(room, method, points):
     ID = datetime.datetime.now().strftime('H%HM%MS%S')
     room_path = 'game/rooms/' + room
     if debugging:
@@ -145,7 +146,6 @@ def request_result(room, method):
     options = json.loads(options_str)
     sketch = cv2.imread(room_path + '/sketch.' + method + '.jpg', cv2.IMREAD_GRAYSCALE)
     alpha = float(options["alpha"])
-    points = options["points"]
     for _ in range(len(points)):
         points[_][1] = 1 - points[_][1]
     reference = None
@@ -157,10 +157,22 @@ def request_result(room, method):
 
 os.makedirs('game/rooms', exist_ok=True)
 
-method = 'colorization' if len(sys.argv) < 4 else sys.argv[3]
+method = 'colorization' if len(sys.argv) <= 3 else sys.argv[3]
+points = []
+
+i = 4
+while len(sys.argv) > i:
+    x = float(sys.argv[i])
+    y = float(sys.argv[i+1])
+    h = sys.argv[i+2]
+    r = int(h[0:2], 16)
+    g = int(h[2:4], 16)
+    b = int(h[4:6], 16)
+    points.append([x, y, r, g, b, 0])
+    i += 3
+
 room = upload_sketch(sys.argv[1], method)
 handle_sketch_upload_pool()
-request_result(room, method)
+request_result(room, method, points)
 result = handle_painting_pool()
 shutil.copyfile(result, sys.argv[2])
-
