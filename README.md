@@ -59,7 +59,7 @@ Here is the video: [https://youtu.be/B6WEky9nY7Q](https://youtu.be/B6WEky9nY7Q)
 
 And all input sketches can be found [here](https://github.com/lllyasviel/style2paints/raw/master/temps/show/sketches).
 
-*(Because this page is prepared before the video is recoreded, some numbers may have minor differences.)*
+*(Because this page is prepared before the video is recorded, some numbers may have minor differences.)*
 
 ## Example #1
 
