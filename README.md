@@ -316,7 +316,6 @@ With our permission, you can enjoy more professional services with our cutting-e
 欢迎加入以下qq群，但是不保证一直有空位，如果你一次加群失败，可以多次尝试。
 
     纸片协会总舵-圣辇船：184467946
-    纸片协会分部-红魔馆：879417437
 
 # Previous Publications
 
