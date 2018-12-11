@@ -28,27 +28,27 @@ The AI can transfer illustrations' style.
 
 *All results below are achieved with one reference image and some human hints.*
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/001.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/001.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/002.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/002.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/003.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/003.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/011.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/011.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/004.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/004.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/005.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/005.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/006.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/006.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/007.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/007.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/008.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/008.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/009.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/009.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/010.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/010.png)
 
 # Results without Hints
 
@@ -60,23 +60,23 @@ The AI can transfer illustrations' style.
 
 **IMPORTANT: NO human hint and NO reference is involved!**
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/012.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/012.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/013.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/013.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/014.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/014.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/015.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/015.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/016.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/016.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/017.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/017.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/018.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/018.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/019.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/019.png)
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/tempfile/020.png)
+![web_preview](https://raw.githubusercontent.com/SNSLogty/style2paints/master/V2/tempfile/020.png)
 
 # Launch Server
 
