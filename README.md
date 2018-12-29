@@ -4,10 +4,10 @@
 
 Style2paints V4 is the current best AI driven lineart colorization tool.
 
-![](https://img.shields.io/github/repo-size/lllyasviel/style2paints.svg)
-![](https://img.shields.io/github/license/lllyasviel/style2paints.svg)
-![](https://img.shields.io/github/issues/lllyasviel/style2paints.svg)
-![](https://img.shields.io/github/stars/lllyasviel/style2paints.svg?label=Stars&style=social)
+[![](https://img.shields.io/github/repo-size/lllyasviel/style2paints.svg)](https://github.com/lllyasviel/style2paints)
+[![](https://img.shields.io/github/license/lllyasviel/style2paints.svg)](https://github.com/lllyasviel/style2paints)
+[![](https://img.shields.io/github/issues/lllyasviel/style2paints.svg)](https://github.com/lllyasviel/style2paints/issues)
+[![](https://img.shields.io/github/stars/lllyasviel/style2paints.svg?label=Stars&style=social)](https://github.com/lllyasviel/style2paints/stargazers)
 [![](https://img.shields.io/twitter/follow/IlIIlIIIllIllII.svg?label=Follow&style=social)](https://twitter.com/IlIIlIIIllIllII)
 
 
