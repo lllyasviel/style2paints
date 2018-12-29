@@ -6,13 +6,6 @@
 
 PaintsTransfer: [http://paintstransfer.com/](http://paintstransfer.com/)
 
-![new_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/new_preview/0.png)
-
-![new_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/new_preview/1.png)
-
-![new_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/new_preview/2.png)
-
-![new_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/new_preview/3.png)
 
 # You have just found STYLE2PAINTS
 
@@ -24,125 +17,11 @@ The AI can paint on a sketch according to a given specific color style.
 
 The AI can transfer illustrations' style.
 
-![web_preview](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot.png)
 
-![web_preview2](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot2.png)
-
-![web_preview3](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot3.png)
-
-![web_preview4](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/screen_shot4.png)
 
 # Tuitions
 
 [tuition 001](https://www.bilibili.com/video/av15014229/)
-
-# Example 1 (Google Search results test)
-
-![google](https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/google.png)
-
-A content sketch (**the first google image search result of key word 'anime sketch'**) and some style images:
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo1.jpg" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo1_styles.png" height = "300"/>
-.
-
-Results:
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled8.png" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled1.png" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled2.png" height = "300"/>
-.
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled3.png" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled6.png" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled7.png" height = "300"/>
-.
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled4.png" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled5.png" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/untitled0.png" height = "300"/>
-.
-
-# Example 2 (western sketch)
-
-A western content sketch and 2 style images:
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo2.jpg" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo2.jpg" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo2.jpg" height = "150"/>
-.
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo2.png"/>
-
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo2.png"/>
-
-# Example 3 (messy sketch)
-
-A messy content sketch and 2 style images:
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo3.jpg" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo3.jpg" width = "200"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo3.jpg" width = "200"/>
-.
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo3.png" width = "350"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo3.png" width = "350"/>
-.
-
-# Example 4 (detailed sketch)
-
-A detailed content sketch and 2 style images:
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo5.jpg" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo5.jpg" width = "200"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo5.jpg" width = "200"/>
-.
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo5.png" width = "350"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo5.png" width = "350"/>
-.
-
-# Example 5 (simple sketch)
-
-A simple content sketch **without shadow rendering** and 2 style images:
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/demo4.jpg" height = "300"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style1_demo4.jpg" width = "200"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/style2_demo4.jpg" width = "200"/>
-.
-
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result1_demo4.png" width = "350"/>
-.
-<img src="https://raw.githubusercontent.com/lllyasviel/style2paints/master/page/result2_demo4.png" width = "350"/>
-.
 
 # CPU Server for Beginner
 
@@ -179,7 +58,7 @@ A simple content sketch **without shadow rendering** and 2 style images:
 
 # Model
 
-Models are available in 'release' page.
+Models lost (add at 2018.12.1)
 
 1. base_generator.net -> all rights reserved 2017 style2paints
 2. style2paints.net -> all rights reserved 2017 style2paints
