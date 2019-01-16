@@ -1,4 +1,4 @@
-# The server of style2paints V4 will be not avaliable from 2018.01.09 to 2018.01.16.
+# The server of style2paints V4 will be not avaliable from 2018.01.09 to 2018.01.27.
  
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/logo.jpg)
 
