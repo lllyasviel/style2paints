@@ -17,10 +17,10 @@ We are currently actively developing Style2PaintsV5, which is the top secret of 
 We are actively developing the offline version of Style2PaintsV4 (and MangaCraft), you will be able to run our APP on your host when our online server is not accessible. Maybe the offline version will be released together with Style2PaintsV5. Furthermore, Style2PaintsV5 is an offline APP.
 
 Thank you all for your support!
- 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/logo.jpg)
 
 # Welcome to style2paints V4!
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/logo.jpg)
 
 Style2paints V4 is the current best AI driven lineart colorization tool.
 
