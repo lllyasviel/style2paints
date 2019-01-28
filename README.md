@@ -45,7 +45,7 @@ Outputs:
 
 Style2paints V4 gives you results of the current highest quality. You are able to get separated layers from our system. These layers can be directly used in your painting workflow. Different from all previous AI driven colorization tools, our results are not single 'JPG/PNG' images, and in fact, our results are 'PSD' layers.
 
-Online APP: [http://s2p.moe/](http://s2p.moe/)
+Online APP: [http://s2p.moe/](http://s2p.moe/) (Currently not accessible.)
 
 User Instruction: [https://style2paints.github.io/](https://style2paints.github.io/)
 
