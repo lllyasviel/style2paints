@@ -1,568 +1,387 @@
-﻿# Welcome to PaintsTransfer-Euclid !
+# News
 
-**Can you colorize line arts?**
+The server of Style2paintsV4 (s2p.moe) is currently shut down because we do not have enough money. The GPU server (1000USD/MONTH) is costly. You can donate us if you like our previous service.
 
-**If yes, you will do it faster if you can read this page.**
+[patreon](https://www.patreon.com/style2paints)
+[支付宝](https://s2p.moe/img/zfb.jpg)
+[微信支付](https://s2p.moe/img/wx.jpg)
 
-**If no, you will be able to do it if you can read this page.**
+We will release all source codes of Style2paintsV4, including the server code (Python), the client code (Cocos2D-JS), the pretrained model (Keras) and some possible helpers (Chrome plugin) after some technique report is released.
 
-First of all, why not spend 5 minutes to try it yourself!
+Currently, the only publicly available version is style2paintsV3, which can be found [here](https://github.com/lllyasviel/style2paints/tree/master/V3). However, this page is only designed for the programmer. If you are an artist and want to colorize line drawings, we recommend you to use the alternative tool PaintsChainer, which can be found [here](https://paintschainer.preferred.tech/).
 
-~http://paintstransfer.com~ (Because some financial problems, our online app is shut down temporarily.)
+Though the possibility is minimal, the online APP of style2paints V4 may come back if we manage to obtain enough donation.
 
-*(PaintsTransfer-Euclid is the new name of style2paintsV3.)*
+We are currently actively developing Style2PaintsV5, which is the top secret of our team. Style2PaintsV5 is not only capable of coloring, but more importantly, it may help you to draw.
 
-The AI can paint on a sketch, obeying your instructions.
+We are actively developing the offline version of Style2PaintsV4 (and MangaCraft), you will be able to run our APP on your host when our online server is not accessible. Maybe the offline version will be released together with Style2PaintsV5. Furthermore, Style2PaintsV5 is an offline APP.
 
-The AI can paint on a sketch according to a given specific color style.
+Thank you all for your support!
 
-The AI can create its own color style to paint on a sketch.
+# Welcome to style2paints V4!
 
-The AI can transfer illustrations' style.
+![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/logo.jpg)
 
-We focus on interactivity, possibility and creativity.
+Style2paints V4 is the current best AI driven lineart colorization tool.
 
-![web_preview](https://raw.githubusercontent.com/lrisviel/markdown/master/github/0.jpg)
+Different from previous end-to-end image-to-image translation methods, style2paints V4 is the **first** system to colorize a lineart **in real-life human workflow**, and the outputs are **layered**.
 
-## An Overview
+Inputs:
 
-![glance](https://github.com/lllyasviel/style2paints/raw/master/temps/glance.jpg)
+    ● Linearts
+    ● (with or without) Human hints
+    ● (with or without) Color style reference images
+    ● (with or without) Light location and color
 
-# Colorize Line Arts In 3 minutes
+Outputs:
 
-[3 minutes fast colorization in PaintsTransfer 002](https://youtu.be/FBP9JuthyOQ) (YouTube)
+    ● Automatic color flattening without lines (solid/flat/inherent/固有色/底色 color layer)
+    ● Automatic color flattening with black lines
+    ● Automatic colorization without lines
+    ● Automatic colorization with black lines
+    ● Automatic colorization with colored lines
+    ● Automatic rendering (separated layer)
+    ● Automatic rendered colorization
 
-[3 minutes fast colorization in PaintsTransfer 002](https://youtu.be/G8aKt5PO77M) (YouTube)
+Style2paints V4 gives you results of the current highest quality. You are able to get separated layers from our system. These layers can be directly used in your painting workflow. Different from all previous AI driven colorization tools, our results are not single 'JPG/PNG' images, and in fact, our results are 'PSD' layers.
 
-[3 minutes fast colorization in PaintsTransfer 003](https://youtu.be/Ul3kBlmM3JA) (YouTube)
+Online APP: [http://s2p.moe/](http://s2p.moe/) (Currently not accessible.)
 
-[3 minutes fast colorization in PaintsTransfer 004](https://youtu.be/k4nnK-LgW7E) (YouTube)
+User Instruction: [https://style2paints.github.io/](https://style2paints.github.io/)
 
-[3 minutes fast colorization in PaintsTransfer 001 - 003](https://www.bilibili.com/video/av22709469/) (BiliBili搬运) (NOT official)
+And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) account.
 
-## SEX OR VIOLENCE WARNING
+# Help human in their standard coloring workflow!
 
-Contents below may include:
+Most human artists are familiar with this workflow:
 
-    1. Arts with female body.
-    2. Arts with nude skin.
-    3. Asia style arts of girls with short skirts, low bosom elements, lolita or others.
-    4. All virtual characters are more than 18 years old.
+    sketching -> color filling/flattening -> gradients/details adding -> shading
 
-**If you feel uncomfortable about these elements, you can stop reading here.**
+And the corresponding layers are:
 
-**You should stop reading if you are under 14 years old.**
+    lineart layers + flat color layers + gradient layers + shading layers
 
-**You have been warned.**
+Style2paints V4 is designed for this standard coloring workflow! In style2paints V4, you can automatically get separated results from each step!
 
-# New Feature: The Geometric Color Anchor
+# Examples
 
-**This github page contains many gif and png images, and it is a better choice to wait your browser before reading it.**
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/pip.jpg)
 
-To introduce this feature, let's begin with a kimono sketch of Shiki. The sketch is from google image.
+Here we present some results in this ABCD format. Users only need to upload their sketch, select a style, and put a light source. 
 
-![gif0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/gif0.gif)
+When the result is achieved immediately without any human color correction, we regard this result as **fully automatic result**. When the result needs some color correction, human can easily put some color hints on the canvas to guide the AI coloring process. In this case, we regard these results as **semi-automatic results**. If a result is semi-automatic, but the quantity of human color hint points is smaller than 10, we regard these results as **almost automatic result**. In this section, about half of the presented results are **fully automatic result**, and the others are all **almost automatic result**. Do notice that all the below results can be achieved with less than 15 clicks!
 
-The new tool, color anchor, enable you to control the color of your painting with great stability. In most cases, you can use this tool to control the global color of the painting. **In most cases, casting the color anchors should be your first step.**
+**Here we provide a video to show how all below results are achieved.**
 
-After this step, you should get a color draft like this:
+The video is a pure screen record without any after modification or speed modification. 
 
-![display1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/display1.jpg)
+Here is the video: [https://youtu.be/B6WEky9nY7Q](https://youtu.be/B6WEky9nY7Q)
 
-Then, after you finishing your color draft, you should shift to your **Accurate Point** tool. 
+And all input sketches can be found [here](https://github.com/lllyasviel/style2paints/raw/master/temps/show/sketches).
 
-![display2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/display2.jpg?t=233)
+*(Because this page is prepared before the video is recoreded, some numbers may have minor differences.)*
 
-Then, you add hint colors and get the final result, like this:
+## Example #1
 
-![display3](https://raw.githubusercontent.com/lrisviel/markdown/master/github/display3.jpg)
+Begin at 11:28 in the above video.
 
-Here is a gif version of the process:
+All human local color modification: only 3 clicks.
 
-![gif1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/gif1.gif)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
 
-## All you need to know:
+*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
 
-We provide some best-practice for you:
+## Example #2
 
-**If you are an artist, we highly recommend you to read these key points!!**
+Begin at 06:19 in the above video.
 
-    1. When color anchors are linked, it means that colors on the line may be 
-       fused in the final result.
-    
-    2. Each color anchor has a range circle, it means areas in the cicles may 
-       be infuenced. 
-    
-    3. Color Anchors does (!!!!!!!!!)NOT(!!!!!!!!!) influence the final color, 
-       it only influence the color style of the result.
-       Thus, DO NOT ONLY use Color Anchors.
-       
-    4. Accurate Points will only influence detailed, small, minor color area.
-       Thus, DO NOT ONLY use Accurate Points.
-       
-    5. In most cases, you can put some Accurate Points around a Color Anchor,
-       with same color. But for advanced usage, you can put Accurate Points
-       around anchors with different colors.
-       
-    6. You should NOT put Color Anchors with all same color. For example, 
-       instead of put 8 blue Color Anchors, You should put 3 blue ones, 2
-       black ones, 2 white ones and 1 green one. Otherwise the result color
-       will be ugly and unbalanced.
-       
-![right](https://raw.githubusercontent.com/lrisviel/markdown/master/github/right.jpg)
-    
-In the same way, you can get many Shiki with different color, such as:
+All human local color modification: only 2 clicks.
 
-![s1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sh1.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
 
-![s2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sh2.jpg)
+*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
 
-![s3](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sh3.jpg)
+## Example #3
 
-After reading these, you may ask: 
+Begin at 01:40 in the above video.
 
-*"Oh, you are just good at color selection! But I am blind to these color and I have never learnt to painting! How can I select right color?"*
+All human local color modification: only 6 clicks.
 
-Ok, here we present a best-practice color list for you:
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/2.jpg)
 
-![display4](https://raw.githubusercontent.com/lrisviel/markdown/master/github/display4.jpg?t=233)
+*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
 
-# You can still use reference images in V3.
+## Example #4
 
-You can still upload your reference, but keep in mind that you need to **drag** the "stylizing rate" slider.
+Begin at 00:42 in the above video.
 
-Here is an example with reference image:
+All human local color modification: NO human color modification.
 
-![omg](https://raw.githubusercontent.com/lrisviel/markdown/master/github/omg.jpg?t=233)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/1.jpg)
 
-*We do NOT recommend you to paint in this way, because it is hard to find suitable reference images.*
+*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
 
-Anyway, I selected some good reference images for you:
+## Example #5
 
-https://github.com/lllyasviel/lllyasviel.github.io/raw/master/default_references.zip
+Begin at 02:57 in the above video.
 
-# New Feature: The Controlable Shading
+All human local color modification: NO human color modification.
 
-Let's begin with one of the promotion sketch of our friend paintschainer *(paintschainer.preferred.tech)*. 
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/3.jpg)
 
-You can find this sketch here:
+*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
 
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/dis5.jpg" height = "300" />
+## Example #6
 
-Here is a overview of this feature:
+Begin at 07:57 in the above video.
 
-![shading](https://raw.githubusercontent.com/lrisviel/markdown/master/github/shading.jpg)
+All human local color modification: 11 clicks.
 
-Here we explain what happen. First of all, you just make a normal paintstransfer painting, like this:
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/6.jpg)
 
-![screen0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/screen0.jpg)
+## Example #7
 
-Then we select colors for shadow.
+Begin at 13:00 in the above video.
 
-![colorshadow](https://raw.githubusercontent.com/lrisviel/markdown/master/github/colorshadow.jpg)
+All human local color modification: only 6 clicks.
 
-Then you use these four step to get the shadow.
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/9.jpg)
 
-![shadowhints](https://raw.githubusercontent.com/lrisviel/markdown/master/github/shadowhints.jpg)
+*\*CC-BY-NC-4.0 (c) Henjo. Only for this presentation.*
 
-![sa0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sa0.jpg)
+## Example #8
 
-We can also change the dress into black, and use similar method to reach a highlight shading:
+Begin at 04:27 in the above video.
 
-![shadow2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/shadow2.jpg)
+All human local color modification: only 3 clicks.
 
-![ssa](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ssa.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
 
-Some other similar examples:
+## Example #9
 
-![se0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/se0.jpg)
-
-![se1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/se1.jpg)
-
-# New Feature: The New Skin Engine
-
-Let us begin with a sketch from google, and this sketch has relative large skin area:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/sketch.original.jpg" height = "300" />
-
-And here is the result from **PaintsChainer** :
-
-![pc](https://raw.githubusercontent.com/lrisviel/markdown/master/github/pc.jpg)
-
-As we can see, the skin rendering is very hard for AI. But we have a new Skin Engine, and here is our result.
-
-![sk0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sk0.jpg)
-
-And some other similar results:
-
-![sk1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sk1.jpg)
-
-![sk3](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sk3.jpg)
-
-[Another NSFW result](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sk2.jpg)
-
-## Our baseline sample of skin rendering
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/sbl2.jpg" height = "360" />
-
-![sbl1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sbl1.jpg)
-
-# Some Other Results of Male
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/001.jpg?t=7879)
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/002.jpg?t=7879)
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/003.jpg?t=7879)
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/004.jpg?t=7879)
-
-# Some Other Results of Special Style
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/005.jpg?t=7879)
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/006.jpg?t=7879)
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/007.jpg?t=7879)
-
-# Or landscapes
-
-![001](https://raw.githubusercontent.com/lllyasviel/style2paints/master/temps/008.jpg?t=7879)
-
-## How can I get these skin rendering on my own sketch?
-
-Because our software is designed for professional use, you need to know what is skin color first. It is easy:
-
-![color3](https://raw.githubusercontent.com/lrisviel/markdown/master/github/color3.jpg?t=987)
-
-And then, you need to try some of these to get your favorite one. Do not be lazy.
-
-Here is an Ayase for you to practice:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/huili.jpg" height = "360" />
-
-![skinright](https://raw.githubusercontent.com/lrisviel/markdown/master/github/skinright.jpg)
-
-# New Feature: The Outline Emphasizer
-
-Sometimes you may want to emphasize the lines so as to achieve a natural painting. Then we have developed the standalone **Outline Emphasizer**:
-
-![ous](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ous.jpg)
-
-Let begin with a sample of sakura:
-
-![sakura](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sakura.jpg)
-
-Then, we enable the **Outline Emphasizer** and we can get this result:
-
-![sakura2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sakura2.jpg)
-
-Here is a comparison:
-
-![com01](https://raw.githubusercontent.com/lrisviel/markdown/master/github/com01.jpg)
-
-Another example with **Outline Emphasizer**:
-
-![ane0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ane0.jpg)
-
-Without **Outline Emphasizer**:
-
-![ane1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ane1.jpg)
-
-Here is a comparison:
-
-![cp2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/cp2.jpg)
-
-# Let us have a step by step practice!
-
-Here is a Minami for you:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/xn.jpg" height = "300" />
-
-First of all, you just upload this sketch to the APP and click one of the right arrows to get the automatic result, like this:
-
-![as1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/as1.jpg?t=1)
-
-Then, you may change the overall color. In my case, I use 7 color anchors, like this:
-
-![as2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/as2.jpg?t=1)
-
-Then, you see that color anchors will **NOT** directly influence the final color. We only use color anchor to suggest the neural network to **create a color atomosphere**. In the image above, I put two pink color anchors on the wings and one color anchor on the shose, but these objects are still white in final results. Here is an example:
-
-![ane](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ane.jpg?t=y)
-
-Then, we come to the important step: We need to make sure of these color. We need to tell the neural network what we really need.
-
-First of all, we make sure of the pink wings:
-
-![ds1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds1.jpg?t=1)
-
-Is it easy? We only add some accurate pink points, and this will tell the AI that you need a pink color block. Then we continue with the face and hair:
-
-![ds2](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds2.jpg?t=1)
-
-Still, it is very easy. We add gray points on hair, and white points on backgrounds. Then, we continue with the skirt:
-
-![ds3](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds3.jpg?t=1)
-
-OK. Still very easy, just put white color on the skirt. This is important because if you do not do that, the AI will not know you need a white skirt. You need to use these points to tell the AI that "you are right", otherwise the AI will be confused and it will hesitate to use these colors.
-
-![ds5](https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds5.jpg?t=1)
-
-OK. The shose and leg color are checked. Then we add color to the skin:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds6.jpg" height = "500" />
-
-And we make some final decoration and get this:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/ds7.jpg" height = "500" />
-
-As you can see, this canvas seems very complex, but it is very easy to create if you can follow these steps.
-
-And here is the result:
-
-![as3](https://raw.githubusercontent.com/lrisviel/markdown/master/github/as3.jpg?t=1)
-
-Another similar result in the same way:
-
-![as4](https://raw.githubusercontent.com/lrisviel/markdown/master/github/as4.jpg?t=1)
-
-# Repaint Mode (Re-Colorization Mode)
-
-**NOTICE!! This feature is NOT stable currently !!**
-
-If you upload a finished painting and shift to the re-colorization mode, the software will give you a sketch extracted from the painting and it will paint on the new sketch again, obying your hints.
-
-Here is an example:
-
-![violet](https://raw.githubusercontent.com/lrisviel/markdown/master/github/violet.jpg)
-
-My 《Deep Violet Fantasy》, a result of **Re-Colorization Mode** in PaintsTransferV3. Original Image is from [Here](https://raw.githubusercontent.com/lrisviel/markdown/master/github/or1.jpg). 
-
-Here is how I create it:
-
-![st0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/st0.jpg)
-
-Some other examples:
-
-Origins:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/ors.jpg?t=55" height = "180" />
-
-Results:
-
-![st0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/st1.jpg)
-
-![st0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/st3.jpg)
-
-## A trick - the rerendering mode
-
-Sometimes your sketch may not combines of lines, or the sketch itself is a black-and-white illustration. 
-
-Then you may need this mode. For example, this sketch:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/baws.jpg" height = "250" />
-
-And the results:
-
-![blac](https://raw.githubusercontent.com/lrisviel/markdown/master/github/bawc.jpg)
-
-## A trick - get the pure sketch from sketch
-
-Sometimes your sketch may not combines of lines, and then you can use **Re-Colorization Mode** option to get the pure sketch.
-
-![spt](https://raw.githubusercontent.com/lrisviel/markdown/master/github/sksk.jpg)
-
-# Create special texture
-
-**NOTICE!! This feature is NOT stable currently !!**
-
-You can create some special texture like:
-
-![spt](https://raw.githubusercontent.com/lrisviel/markdown/master/github/spt.jpg)
-
-# Extreme Hint Density Holder
-
-Our new engine can hold as much as possible hints, without causing disordering or blurring. 
-
-Here is some example when there are LOTS of user hints:
-
-![hss](https://raw.githubusercontent.com/lrisviel/markdown/master/github/e0.jpg)
-
-![hss](https://raw.githubusercontent.com/lrisviel/markdown/master/github/e1.jpg)
-
-![hss](https://raw.githubusercontent.com/lrisviel/markdown/master/github/e2.jpg)
-
-![hss](https://raw.githubusercontent.com/lrisviel/markdown/master/github/e3.jpg)
-
-![hss](https://raw.githubusercontent.com/lrisviel/markdown/master/github/e4.jpg)
-
-![hss](https://raw.githubusercontent.com/lrisviel/markdown/master/github/e7.jpg)
-
-## Whatever you get, never give up your painting!
-
-In many cases, you may get a not very good result, with disordered color or ugly compositions.
-
-But keep in mind that you should not give up this painting! 
-
-In our study, we find that more than 70% bad paintings have potential to become fine arts, and they just need your extra 5 minutes to put some hints!!
-
-For example, this painting looks not good at all, when we finish the color anchor:
-
-![nbefore](https://raw.githubusercontent.com/lrisviel/markdown/master/github/nbefore.jpg)
-
-![nbefore](https://raw.githubusercontent.com/lrisviel/markdown/master/github/n2before.jpg)
-
-But if you can spend your extra minutes, making some extra efforts, things may be a bit better:
-
-![nafter](https://raw.githubusercontent.com/lrisviel/markdown/master/github/nafter.jpg)
-
-![nafter](https://raw.githubusercontent.com/lrisviel/markdown/master/github/n2after.jpg)
-
-One of the main advantage of PaintsTransfer is: no matter how much hint points you put, the results will never be blured because of this.
-
-**Then you may ask: OMG! Then I need to add sooooooo many points? It is so difficult and not practical at all!!**
-
-**In fact, though there are many points, most of these points are just of same color. You only need to select one color and then click, click, click, click, click, click....　It is very easy! If you have actually tried, you will find that it do not require any art knowledge.**
-
-# The Palette Prediction for Lazy Users
-
-**NOTICE!! This feature is NOT stable currently !!**
-
-**Lazy** users are those who do not want to input any instructions. For those users, we updated our core models so as to make the results reasonable when there are no user hints.
-
-**All below results are achieved without human hints, or with minor detailed hints:**
-
-![w0](https://raw.githubusercontent.com/lrisviel/markdown/master/github/w0.jpg)
-
-![w1](https://raw.githubusercontent.com/lrisviel/markdown/master/github/w1.jpg)
-
-![w3](https://raw.githubusercontent.com/lrisviel/markdown/master/github/w3.jpg)
-
-![w4](https://raw.githubusercontent.com/lrisviel/markdown/master/github/w4.jpg)
-
-![w5](https://raw.githubusercontent.com/lrisviel/markdown/master/github/w5.jpg)
-
-# What our AI like and what our AI dislike
-
-Our AI has its own hobbies. You can get good results if the AI *like* your sketches. But if our AI *dislike* your sketch, you would better go to paintschainer (http://paintschainer.preferred.tech).
-
-Here is a list:
-
-![dont](https://raw.githubusercontent.com/lrisviel/markdown/master/github/dont.jpg)
-
-# Manga Colorization
-
-Currently, our model is designed to colorize sketch, not manga.
-
-In the near future, we will **NOT** work on **Manga Colorization** because our friend PaintsChainer is working on it, and we do not want to see the research community of Manga Colorization be under great pressure.
-
-If you are interested in Manga Colorization, just do your research! 
-
-# Next Step
-
-Currently, the baseline of sketch colorization is very high (PaintsChainerV1/V2/V3+PaintsTransferV2/V3), but still, there remains great improvement space. 
-
-For example, if someone can train a model to colorize this:
-
-<img src="https://raw.githubusercontent.com/lrisviel/markdown/master/github/bs.jpg" height = "512" />
-
-Then we will appreciate it very much, because it remains a BIG problem how we can improve sketch itself. BTW, our result is here:
-
-![bad](https://raw.githubusercontent.com/lrisviel/markdown/master/github/bad.jpg)
-
-Or we want to see a method to do image to image translation like this:
-
-![impos](https://raw.githubusercontent.com/lrisviel/markdown/master/github/impos.jpg)
-
-# Video Tutorials
-
-[How to get high quality paintings from line sketches in PaintsTransfer (for non-artist)](https://youtu.be/u8bvHDDstlY)
-
-# Latest News
-
-2018.4.28 - PaintsTransfer-Euclid released.
-
-2018.4.16 - We changed our time schedule:
-
-    1. PaintsTransfer V3 will have an online demo, and V2 demo will not be avaliable online anymore.
-    2. PaintsTransfer V3 can do all what V2 can do (in theory).
-    3. PaintsTransfer V3 will be renamed into PaintsTransfer-Euclid V1.0.
-    4. PaintsTransfer-Euclid will be released at 2018.04.28 23:59 CST.
-
-2018.4.13 - A good news: PaintsTransfer V3 is decided to be released at 2018.04.28-2018.04.30. Have a magical day!
-
-2018.4.13 - A good news: We finally get the server. PaintsTransfer V2 will be avaliable again before 2018.04.13.
-
-2018.4.6 - A bad news: We have developed paintstransfer V3, but it is defeated by V2. Theoretically, the deeper V3 should be better than V2 but our user studies show that V2 is still the best painter. 
-
-*The consequence is:*
-
-    50% possibility: We will combine some good part of unfinished V3 into V2 and release V2.5. 
-                     And V3 will not be released.
-    50% possibility: We will improve V3 and release V3.
-
-
-2018.2.12 - PaintsTransfer 3.0 will be released in 2018.04.25-2018.05.15. We will use a totally non-residual very deep model.
-
-2018.2.3 - We added the *super accurate pencil*, and the original pencil tool is replaced by *brush*. The problem of over colorization in non-reference mode is fixed when you use the *super accurate pencil*, and the color spreading of *super accurate pencil* is limited to a relative small degree.
-
-2018.01.15 - PaintsTransfer V2.1 released.
-
-2017.12.29 - PaintsTransfer V2.0 released.
-
-2017.10.23 - PaintsTransfer released.
-
-# Launch Server
-
-*you need a python 3.5/3.6 GPU environment with cuda.*
-
-    pip install tensorflow_gpu
-    pip install keras
-    pip install bottle
-    pip install gevent
-    pip install h5py
-    pip install opencv-python
-    pip install scikit-image
-    git clone https://github.com/lllyasviel/style2paints.git
-    
-Then you need to download all models from our Google Drive and put these into 'server' folder.
-    
-    cd style2paints/server
-    python server.py
-
-
-# Models
-
-Currently, we reserve all rights about all these models. 
-
-We use Google Drive to upload models:
-
-    https://drive.google.com/open?id=1fWi4wmNj-xr-nCzuWMsN2rcm0249_Aem
-    
-Current model list of the 6 neural networks:
-
-    baby.net
-    head.net
-    neck.net
-    tail.net
-    reader.net
-    girder.net
-
-# Training Datasets
-
-**We do not use additional training data.**
-
-**Danbooru2017 is highly recommended.**
-
-1. The recommended training dataset of illustrations is the 400k images from [nico-opendata](https://nico-opendata.jp/en/seigadata/index.html) and [Danbooru2017](http://www.gwern.net/Danbooru2017).
-
-2. The recommended training sketches is from [sketchKeras](https://github.com/lllyasviel/sketchKeras).
-
-# Community
-
-QQ Group ID: 184467946
-
-## Acknowledgements
+Begin at 09:46 in the above video.
+
+All human local color modification: only 5 clicks.
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
+
+*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
+
+# Real-life results
+
+To validate a really effective, useful, robust, generizable and scalable system, we firmly believe that the only convincing evidence is its real-life performance form real industry, real market, and real users.
+
+In this section, we present real-life results from twitter artists. We are sorry that we can only provide low-resolution screenshots because we do not own the copyrights of these images. These twitters can be found by searching keyword “style2paints” and “s2p.moe” on twitter. Additionally, there are also lots of results under twitter hashtag #style2paints. These results are from artists from different countries. Note that some (very minor) results contains artists' after effect decorations. Note that some of these artists did not share their original sketch inputs on twitter.
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/a.png)
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/b.png)
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/1.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/2.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/3.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/4.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/5.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/6.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/7.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/8.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/9.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/10.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/11.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/12.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/13.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/14.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/15.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/16.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/17.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/18.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/19.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/20.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/21.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/22.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/23.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/24.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/25.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/26.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/27.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/28.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/29.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/30.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/31.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/32.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/33.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/34.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/35.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/36.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/37.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/38.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/39.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/40.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/41.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/42.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/43.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/44.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/45.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/46.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/47.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/48.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/49.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/50.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/51.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/52.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/53.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/54.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/55.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/56.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/57.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/58.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/59.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/60.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/61.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/62.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/63.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/64.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/65.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/66.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/67.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/68.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/69.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/70.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/71.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/72.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/73.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/74.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/75.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/76.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/77.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/78.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/79.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/80.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/81.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/82.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/83.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/84.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/85.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/86.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/87.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/88.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/89.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/90.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/91.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/92.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/93.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/94.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/95.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/96.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/97.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/98.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/99.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/100.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/101.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/102.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/103.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/104.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/105.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/106.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/107.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/108.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/109.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/110.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/111.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/112.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/113.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/114.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/115.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/116.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/117.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/118.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/119.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/120.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/121.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/122.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/123.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/124.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/125.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/126.jpg)
+![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/127.jpg)
+
+# Know more about us!
+
+Online APP: [http://s2p.moe/](http://s2p.moe/)
+
+User Instruction: [https://style2paints.github.io/](https://style2paints.github.io/)
+
+And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) account.
+
+# Acknowledgement
 
 Thanks a lot to TaiZan. This project could not be achieved without his great help.
+
+# About Copyright
+
+We won’t claim any additional copyright of the colorized manga, but we would be delightful if you share our software with your friends.
+
+Furthermore, if you want to use our software in large-scale commercial or industrial production or publication, e.g. manga (entity paper manga or online e-manga), magazine, book or other online/offline large-scale materials, please contact us for permission:
+
+    914847518@qq.com
+    Please attach following materials when e-mailing us:
+    The name and additional information of the commercial publication.
+    The quantity of pages you are willing to print.
+    The sample images of the black-and-white manga and the sample pages colored via our software.
+
+With our permission, you can enjoy more professional services with our cutting-edge technologies. Please do not use our software for large-scale commercial or industrial publications without our approval.
+
+# 中文社区
+
+欢迎加入以下qq群，但是不保证一直有空位，如果你一次加群失败，可以多次尝试。
+
+    纸片协会总舵-圣辇船：184467946
+
+# Previous Publications
+
+## Style2paints V1:
+
+ACPR 2017:
+
+    @Article{ACPR2017ZLM,
+      author  = {LvMin Zhang, Yi Ji and ChunPing Liu},
+      title   = {Style Transfer for Anime Sketches with Enhanced Residual U-net and Auxiliary Classifier GAN},
+      conference = {Asian Conference on Pattern Recognition (ACPR)},
+      year    = {2017},
+    }
+
+[paper](https://arxiv.org/abs/1706.03319)
+
+## Style2paints V2:
+
+No Publications.
+
+## Style2paints V3:
+
+TOG 2018:
+
+    @Article{ACMTOGTSC2018,
+      author  = {LvMin Zhang, Chengze Li, Tien-Tsin Wong, Yi Ji and ChunPing Liu},
+      title   = {Two-stage Sketch Colorization},
+      journal = {ACM Transactions on Graphics},
+      year    = {2018},
+      volume  = {37},
+      number  = {6},
+      month   = nov,
+      doi     = {https://doi.org/10.1145/3272127.3275090},
+    }
+
+[paper](https://github.com/lllyasviel/style2paints/blob/master/papers/sa.pdf)
+
+## Style2paints V4:
+
+No Publications.
+
+
+
+
+
+
+
+
+
