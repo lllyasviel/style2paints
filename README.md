@@ -6,15 +6,15 @@ The server of Style2paintsV4 (s2p.moe) is currently shut down because we do not 
 [支付宝](https://s2p.moe/img/zfb.jpg)
 [微信支付](https://s2p.moe/img/wx.jpg)
 
-We will release all source codes of Style2paintsV4, including the server code (Python), the client code (Cocos2D-JS), the pretrained model (Keras) and some possible helpers (Chrome plugin) after some technique report is released.
+We will release all source codes of Style2paintsV4, including the server code (Python), the client code (Cocos2D-JS), the pretrained model (Keras) and some possible helpers (Chrome plugin) after we release a technical report.
 
-Currently, the only publicly available version is style2paintsV3, which can be found [here](https://github.com/lllyasviel/style2paints/tree/master/V3). However, this page is only designed for the programmer. If you are an artist and want to colorize line drawings, we recommend you to use the alternative tool PaintsChainer, which can be found [here](https://paintschainer.preferred.tech/).
+Currently, the only publicly available version is style2paintsV3, which can be found [here](https://github.com/lllyasviel/style2paints/tree/master/V3). However, this page is only useful for programmers. If you are an artist and want to colorize line drawings, we recommend you to use the alternative tool PaintsChainer, which can be found [here](https://paintschainer.preferred.tech/).
 
-Though the possibility is minimal, the online APP of style2paints V4 may come back if we manage to obtain enough donation.
+Though the possibility is minimal, the online APP of style2paints V4 may return if we manage to obtain enough donation.
 
-We are currently actively developing Style2PaintsV5, which is the top secret of our team. Style2PaintsV5 is not only capable of coloring, but more importantly, it may help you to draw.
+We are currently actively developing Style2PaintsV5. Style2PaintsV5 is not only capable of coloring, but could also help with sketches.
 
-We are actively developing the offline version of Style2PaintsV4 (and MangaCraft), you will be able to run our APP on your host when our online server is not accessible. Maybe the offline version will be released together with Style2PaintsV5. Furthermore, Style2PaintsV5 is an offline APP.
+We are also actively developing an offline version of Style2PaintsV4 (and MangaCraft) so that you will be able to run our APP on your host whenever our online server is unaccessible. This offline version might be released at the same time with Style2PaintsV5 (which also an offline app).
 
 Thank you all for your support!
 
@@ -22,7 +22,7 @@ Thank you all for your support!
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/logo.jpg)
 
-Style2paints V4 is the current best AI driven lineart colorization tool.
+Style2paints V4 is the current best AI-driven lineart colorization tool.
 
 Different from previous end-to-end image-to-image translation methods, style2paints V4 is the **first** system to colorize a lineart **in real-life human workflow**, and the outputs are **layered**.
 
@@ -43,13 +43,13 @@ Outputs:
     ● Automatic rendering (separated layer)
     ● Automatic rendered colorization
 
-Style2paints V4 gives you results of the current highest quality. You are able to get separated layers from our system. These layers can be directly used in your painting workflow. Different from all previous AI driven colorization tools, our results are not single 'JPG/PNG' images, and in fact, our results are 'PSD' layers.
+Style2paints V4 gives you results of the current highest quality. You are able to get separated layers from our system. These layers can be directly used in your painting workflow. Different from all previous AI driven colorization tools, our results are not single 'JPG/PNG' images but 'PSD' layers.
 
 Online APP: [http://s2p.moe/](http://s2p.moe/) (Currently not accessible.)
 
 User Instruction: [https://style2paints.github.io/](https://style2paints.github.io/)
 
-And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) account.
+Official [Twitter](https://twitter.com/IlIIlIIIllIllII) account.
 
 # Help human in their standard coloring workflow!
 
