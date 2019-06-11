@@ -1,10 +1,6 @@
 # News
 
-The server of Style2paintsV4 (s2p.moe) is currently shut down because we do not have enough money. The GPU server (1000USD/MONTH) is costly. You can donate us if you like our previous service.
-
-[patreon](https://www.patreon.com/style2paints)
-[支付宝](https://s2p.moe/img/zfb.jpg)
-[微信支付](https://s2p.moe/img/wx.jpg)
+The server of Style2paintsV4 (s2p.moe) is currently shut down because we do not have enough money. The GPU server (1000USD/MONTH) is costly. 
 
 We will release all source codes of Style2paintsV4, including the server code (Python), the client code (Cocos2D-JS), the pretrained model (Keras) and some possible helpers (Chrome plugin) after some technique report is released.
 
