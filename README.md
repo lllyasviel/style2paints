@@ -1,18 +1,8 @@
-# News
+# Latest News of Style2PaintsV4.5
 
-The server of Style2paintsV4 (s2p.moe) is currently shut down because we do not have enough money. The GPU server (1000USD/MONTH) is costly. 
+The web application style2paintsV4 is currently not available. If you are interested in using an offline version of style2paints, you may download offline versions of style2paints.
 
-We will release all source codes of Style2paintsV4, including the server code (Python), the client code (Cocos2D-JS), the pretrained model (Keras) and some possible helpers (Chrome plugin) after some technique report is released.
-
-Currently, the only publicly available version is style2paintsV3, which can be found [here](https://github.com/lllyasviel/style2paints/tree/master/V3). However, this page is only designed for the programmer. If you are an artist and want to colorize line drawings, we recommend you to use the alternative tool PaintsChainer, which can be found [here](https://paintschainer.preferred.tech/).
-
-Though the possibility is minimal, the online APP of style2paints V4 may come back if we manage to obtain enough donation.
-
-We are currently actively developing Style2PaintsV5, which is the top secret of our team. Style2PaintsV5 is not only capable of coloring, but more importantly, it may help you to draw.
-
-We are actively developing the offline version of Style2PaintsV4 (and MangaCraft), you will be able to run our APP on your host when our online server is not accessible. Maybe the offline version will be released together with Style2PaintsV5. Furthermore, Style2PaintsV5 is an offline APP.
-
-Thank you all for your support!
+The beta test of Style2PaintsV45 will begin at 2019.12.15. You may send “test” to 914847518@qq.com before 12.15, and we will send you an invitation letter at 12.15. If you missed our deadline, you may wait for our official version of Style2PaintsV45 to be made publicly available.
 
 # Welcome to style2paints V4!
 
