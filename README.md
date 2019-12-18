@@ -1,8 +1,22 @@
-# Latest News of Style2PaintsV4.5
+# Download Style2Paints V4.5
 
-The web application style2paintsV4 is currently not available. If you are interested in using an offline version of style2paints, you may download offline versions of style2paints.
+You can directly download the software (windows x64) at:
 
-The beta test of Style2PaintsV45 will begin at 2019.12.15. You may send “test” to 914847518@qq.com before 12.15, and we will send you an invitation letter at 12.15. If you missed our deadline, you may wait for our official version of Style2PaintsV45 to be made publicly available at 2020.01.05.
+Google Drive:
+
+    https://drive.google.com/open?id=1gmg2wwNIp4qMzxqP12SbcmVAHsLt1iRE
+
+Baidu Drive (百度网盘):
+
+    https://pan.baidu.com/s/15xCm1jRVeHipHkiB3n1vzA
+
+QQ Group (QQ群文件):
+
+    772366683
+
+You do **NOT** need to install any complex things like CUDA and python. You can directly download it and then double click it, as if you were playing a normal video game.
+
+Never hesitate to let me know if you have any suggestions or ideas. You may directly send emails to my private address [lmzhang9@stu.suda.edu.cn].
 
 # Welcome to style2paints V4!
 
