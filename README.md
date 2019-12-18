@@ -1,4 +1,4 @@
-# Download Style2Paints V4.5
+﻿# Download Style2Paints V4.5
 
 You can directly download the software (windows x64) at:
 
@@ -12,7 +12,7 @@ Baidu Drive (百度网盘):
 
 QQ Group (QQ群文件):
 
-    772366683
+    184467946
 
 You do **NOT** need to install any complex things like CUDA and python. You can directly download it and then double click it, as if you were playing a normal video game.
 
