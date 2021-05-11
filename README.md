@@ -1,6 +1,6 @@
 # News
 
-1. Style2Paints will be renamed into "SEPA" before 2022. The name "**SEPA**" is a short version of **S**tyl**E**2**PA**ints.
+1. Style2Paints will be renamed into "SEPA" before 2022. The name "**SEPA**" is a short version of "**S**tyl**E**2**PA**ints".
 2. We are (I am) actively developing SEPA (or called style2paints V5). 
 3. SEPA has already been developed for two years, and it will be released before 2022.
 4. If you are interested, we have a twitter account [here](https://twitter.com/IlIIlIIIllIllII/status/1392143022221975554).
