@@ -1,4 +1,4 @@
-﻿# Welcome to PaintsTransfer-Euclid (Style2Paints V3) !
+﻿# Welcome to Style2Paints V3 (PaintsTransfer-Euclid) !
 
 **Can you colorize line arts?**
 
