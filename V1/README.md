@@ -1,12 +1,3 @@
-# Lastest News
-
-**Style2paints V2 is coming soon with better color!**
-
-**Our new UI (Style2paints V1) is under construction now. You can try it directly!**
-
-PaintsTransfer: [http://paintstransfer.com/](http://paintstransfer.com/)
-
-
 # You have just found STYLE2PAINTS
 
 :pushpin:[GithubPage](https://lllyasviel.github.io/) :pushpin:[GithubPageChinese](https://lllyasviel.github.io/chinese) :pushpin:[StyleTransfer](https://github.com/lllyasviel/style2paints/blob/master/AnimeStyleTransfer.md)
