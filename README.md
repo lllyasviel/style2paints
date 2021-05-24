@@ -1,6 +1,38 @@
-![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/logo.jpg)
+# News
+
+1. Style2Paints will be renamed into "SEPA" before 2022. The name "**SEPA**" is a short version of "**S**tyl**E**2**PA**ints".
+2. We are actively developing SEPA (or called style2paints V5). 
+3. SEPA has already been developed for two years, and it will be released before 2022.
+4. If you are interested, we have a twitter account [here](https://twitter.com/IlIIlIIIllIllII/status/1392143022221975554).
+5. We will release the source codes for the previous online version style2paints v4 and this offline version style2paints v4.5 when the project SEPA (previously called style2paints v5) is released, at which point the life cycle of style2paints 4.X is end.
+6. We have removed the shading functionality from style2paints V4.5 because some packages are incompatiable with the backend engine of V4.5 windows binary release. Project SEPA (previously called style2paints v5) has a much better backend engine and the shading functionality will come back in SEPA (style2paints v5).
+7. SEPA (style2paints v5) is scheduled to be released before 2022.
+
+Currently, we recommend you to use style2paints V4.5 before Project SEPA is ready.
+ 
+# Download Style2Paints V4.5
+
+You can directly download the software (windows x64) at:
+
+Google Drive:
+
+    https://drive.google.com/open?id=1gmg2wwNIp4qMzxqP12SbcmVAHsLt1iRE
+
+Baidu Drive (百度网盘):
+
+    https://pan.baidu.com/s/15xCm1jRVeHipHkiB3n1vzA
+
+QQ Group (QQ群文件):
+
+    184467946
+
+You do **NOT** need to install any complex things like CUDA and python. You can directly download it and then double click it, as if you were playing a normal video game.
+
+Never hesitate to let me know if you have any suggestions or ideas. You may directly send emails to my private address [lvminzhang@acm.org] or [lvminzhang@siggraph.org].
 
 # Welcome to style2paints V4!
+
+![logo](https://github.com/lllyasviel/style2paints/raw/master/imgs/pages/logo.jpg)
 
 Style2paints V4 is the current best AI driven lineart colorization tool.
 
@@ -32,8 +64,6 @@ Outputs:
 
 Style2paints V4 gives you results of the current highest quality. You are able to get separated layers from our system. These layers can be directly used in your painting workflow. Different from all previous AI driven colorization tools, our results are not single 'JPG/PNG' images, and in fact, our results are 'PSD' layers.
 
-Online APP: [http://s2p.moe/](http://s2p.moe/)
-
 User Instruction: [https://style2paints.github.io/](https://style2paints.github.io/)
 
 And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) account.
@@ -58,112 +88,28 @@ Here we present some results in this ABCD format. Users only need to upload thei
 
 When the result is achieved immediately without any human color correction, we regard this result as **fully automatic result**. When the result needs some color correction, human can easily put some color hints on the canvas to guide the AI coloring process. In this case, we regard these results as **semi-automatic results**. If a result is semi-automatic, but the quantity of human color hint points is smaller than 10, we regard these results as **almost automatic result**. In this section, about half of the presented results are **fully automatic result**, and the others are all **almost automatic result**. Do notice that all the below results can be achieved with less than 15 clicks!
 
-**Here we provide a video to show how all below results are achieved.**
-
-The video is a pure screen record without any after modification or speed modification. 
-
-Here is the video: [https://youtu.be/B6WEky9nY7Q](https://youtu.be/B6WEky9nY7Q)
-
-And all input sketches can be found [here](https://github.com/lllyasviel/style2paints/raw/master/temps/show/sketches).
-
-*(Because this page is prepared before the video is recoreded, some numbers may have minor differences.)*
-
-## Example #1
-
-Begin at 11:28 in the above video.
-
-All human local color modification: only 3 clicks.
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
-
-*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
-
-## Example #2
-
-Begin at 06:19 in the above video.
-
-All human local color modification: only 2 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
 
-*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
-
-## Example #3
-
-Begin at 01:40 in the above video.
-
-All human local color modification: only 6 clicks.
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/2.jpg)
-
-*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
-
-## Example #4
-
-Begin at 00:42 in the above video.
-
-All human local color modification: NO human color modification.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/1.jpg)
 
-*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
-
-## Example #5
-
-Begin at 02:57 in the above video.
-
-All human local color modification: NO human color modification.
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/3.jpg)
-
-*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
-
-## Example #6
-
-Begin at 07:57 in the above video.
-
-All human local color modification: 11 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/6.jpg)
 
-## Example #7
-
-Begin at 13:00 in the above video.
-
-All human local color modification: only 6 clicks.
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/9.jpg)
-
-*\*CC-BY-NC-4.0 (c) Henjo. Only for this presentation.*
-
-## Example #8
-
-Begin at 04:27 in the above video.
-
-All human local color modification: only 3 clicks.
 
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
 
-## Example #9
-
-Begin at 09:46 in the above video.
-
-All human local color modification: only 5 clicks.
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
-
-*\*CC-BY-NC-SA-4.0 (c) Various artist of style2paints team, 2018. This image is OK for ACM/IEEE fair use.*
 
 # Real-life results
 
-To validate a really effective, useful, robust, generizable and scalable system, we firmly believe that the only convincing evidence is its real-life performance form real industry, real market, and real users.
-
-In this section, we present real-life results from twitter artists. We are sorry that we can only provide low-resolution screenshots because we do not own the copyrights of these images. These twitters can be found by searching keyword “style2paints” and “s2p.moe” on twitter. Additionally, there are also lots of results under twitter hashtag #style2paints. These results are from artists from different countries. Note that some (very minor) results contains artists' after effect decorations. Note that some of these artists did not share their original sketch inputs on twitter.
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/a.png)
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/b.png)
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/1.jpg)
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/2.jpg)
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/t/3.jpg)
@@ -294,8 +240,6 @@ In this section, we present real-life results from twitter artists. We are sorry
 
 # Know more about us!
 
-Online APP: [http://s2p.moe/](http://s2p.moe/)
-
 User Instruction: [https://style2paints.github.io/](https://style2paints.github.io/)
 
 And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) account.
@@ -304,25 +248,19 @@ And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) acco
 
 Thanks a lot to TaiZan. This project could not be achieved without his great help.
 
-# About Copyright
+# Lisence
 
-We won’t claim any additional copyright of the colorized manga, but we would be delightful if you share our software with your friends.
+All codes are released in Apache-2.0 License.
 
-Furthermore, if you want to use our software in large-scale commercial or industrial production or publication, e.g. manga (entity paper manga or online e-manga), magazine, book or other online/offline large-scale materials, please contact us for permission:
+We preserve all rights on all pretrained deep learning models and binary releases.
 
-    914847518@qq.com
-    Please attach following materials when e-mailing us:
-    The name and additional information of the commercial publication.
-    The quantity of pages you are willing to print.
-    The sample images of the black-and-white manga and the sample pages colored via our software.
-
-With our permission, you can enjoy more professional services with our cutting-edge technologies. Please do not use our software for large-scale commercial or industrial publications without our approval.
+Your colorized images are yours, and we do not add any extra lisences to colorized results. Use your colorized images in any commercial or non-commercial cases.
 
 # 中文社区
 
 欢迎加入以下qq群，但是不保证一直有空位，如果你一次加群失败，可以多次尝试。
 
-    纸片协会总舵-圣辇船：184467946
+    纸片协会：184467946
 
 # Previous Publications
 
@@ -364,7 +302,16 @@ TOG 2018:
 
 No Publications.
 
+## Style2paints V5 (Project SEPA, not released yet):
 
+CVPR2021
+
+    @InProceedings{Filling2021zhang,
+      author={Lvmin Zhang and Chengze Li and Edgar Simo-Serra and Yi Ji and Tien-Tsin Wong and Chunping Liu}, 
+      booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+      title={User-Guided Line Art Flat Filling with Split Filling Mechanism}, 
+      year={2021}, 
+    }
 
 
 
