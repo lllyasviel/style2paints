@@ -1,3 +1,3 @@
-﻿# Under construction now
+﻿# Currently not avaliable
 
-Under construction now.
+Currently not avaliable.
