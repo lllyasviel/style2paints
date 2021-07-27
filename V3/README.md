@@ -36,21 +36,6 @@ We focus on interactivity, possibility and creativity.
 
 [3 minutes fast colorization in PaintsTransfer 001 - 003](https://www.bilibili.com/video/av22709469/) (BiliBili搬运) (NOT official)
 
-## SEX OR VIOLENCE WARNING
-
-Contents below may include:
-
-    1. Arts with female body.
-    2. Arts with nude skin.
-    3. Asia style arts of girls with short skirts, low bosom elements, lolita or others.
-    4. All virtual characters are more than 18 years old.
-
-**If you feel uncomfortable about these elements, you can stop reading here.**
-
-**You should stop reading if you are under 14 years old.**
-
-**You have been warned.**
-
 # New Feature: The Geometric Color Anchor
 
 **This github page contains many gif and png images, and it is a better choice to wait your browser before reading it.**
