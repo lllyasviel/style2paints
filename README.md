@@ -248,13 +248,13 @@ And we also have an official [Twitter](https://twitter.com/IlIIlIIIllIllII) acco
 
 Thanks a lot to TaiZan. This project could not be achieved without his great help.
 
-# Lisence
+# Licence
 
 All codes are released in Apache-2.0 License.
 
 We preserve all rights on all pretrained deep learning models and binary releases.
 
-Your colorized images are yours, and we do not add any extra lisences to colorized results. Use your colorized images in any commercial or non-commercial cases.
+Your colorized images are yours, and we do not add any extra licences to colorized results. Use your colorized images in any commercial or non-commercial cases.
 
 # 中文社区
 
