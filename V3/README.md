@@ -496,23 +496,15 @@ Or we want to see a method to do image to image translation like this:
 
 # Launch Server
 
-*you need a python 3.5/3.6 GPU environment with cuda.*
+1. Clone repository using: `git clone https://github.com/lllyasviel/style2paints.git`
+2. Go into `server` directory: `cd style2paints/V3/server`
+3. Create a Python 3.5/3.6 environment and install required libraries: `pip install -r requirements.txt`
+4. For GPU environment you will need to download and install [CUDA Toolkit 9.0](https://developer.nvidia.com/cuda-90-download-archive) and [cuDNN v7 for CUDA 9.0](https://developer.nvidia.com/rdp/cudnn-archive) (NVIDIA Developer Program Membership is Required)
+5. Then you need to download all models from our [Google Drive](https://drive.google.com/open?id=1fWi4wmNj-xr-nCzuWMsN2rcm0249_Aem) and put all these .net files into `server` folder.
+6. Launch WEB-server by typing this command: `python server.py`
+7. Go to http://127.0.0.1:8080/
 
-    pip install tensorflow_gpu
-    pip install keras
-    pip install bottle
-    pip install gevent
-    pip install h5py
-    pip install paste
-    pip install opencv-python
-    pip install scikit-image
-    git clone https://github.com/lllyasviel/style2paints.git
-    
-Then you need to download all models from our Google Drive and put these into 'server' folder.
-    
-    cd style2paints/server
-    python server.py
-
+<hr>
 
 If you don't have GPU, you can still use software TensorFlow, but it will be much slower:
 
@@ -520,10 +512,14 @@ If you don't have GPU, you can still use software TensorFlow, but it will be muc
 
 You can try [TensorFlow optimized for latest Intel CPU](https://software.intel.com/en-us/articles/intel-optimization-for-tensorflow-installation-guide#pip_35).
 
+<hr>
+
 To colorize image from command line, use this command:
 
-    cd style2paints/server
-    python cmdline.py <infile.jpg> <colorized.jpg>
+    python cmdline.py <imagefile> <outputfile> [colorization|rendering|recolorization] [x y color x y color ...]
+
+Example: `cmdline.py sketch.jpg colorized.jpg colorization 0.5 0.25 77ee00 0.5 0.75 0011cc`
+
 
 
 # Models
