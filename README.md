@@ -88,23 +88,9 @@ Here we present some results in this ABCD format. Users only need to upload thei
 
 When the result is achieved immediately without any human color correction, we regard this result as **fully automatic result**. When the result needs some color correction, human can easily put some color hints on the canvas to guide the AI coloring process. In this case, we regard these results as **semi-automatic results**. If a result is semi-automatic, but the quantity of human color hint points is smaller than 10, we regard these results as **almost automatic result**. In this section, about half of the presented results are **fully automatic result**, and the others are all **almost automatic result**. Do notice that all the below results can be achieved with less than 15 clicks!
 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/8.jpg)
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/5.jpg)
 
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/2.jpg)
-
 ![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/1.jpg)
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/3.jpg)
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/6.jpg)
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/9.jpg)
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/4.jpg)
-
-![logo](https://github.com/lllyasviel/style2paints/raw/master/temps/show/7.jpg)
 
 # Real-life results
 
