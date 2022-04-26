@@ -525,6 +525,18 @@ To colorize image from command line, use this command:
     cd style2paints/server
     python cmdline.py <infile.jpg> <colorized.jpg>
 
+## Launch the server in docker
+
+build the docker image by
+```bash
+docker build --progress=plain -t stylepaints .
+```
+
+and then run by 
+```bash
+docker run --gpus=all -p 80:80 stylepaints python server.py
+```
+
 
 # Models
 
