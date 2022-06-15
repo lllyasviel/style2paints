@@ -1,0 +1,5 @@
+opencv-contrib-python==4.1.0.25
+tensorflow_gpu==1.14.0
+bottle==0.12.10
+tqdm
+
