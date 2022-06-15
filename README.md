@@ -1,6 +1,8 @@
 # News
 
-1. See some recent Announcements here (https://lllyasviel.github.io/Style2PaintsResearch/0109).
+0. See some recent Announcements here (https://lllyasviel.github.io/Style2PaintsResearch/0615).
+
+1. And some previous announcements here (https://lllyasviel.github.io/Style2PaintsResearch/0109).
 
 2. Style2Paints will be renamed into "SEPA" before 2022. The name "**SEPA**" is a short version of "**S**tyl**E**2**PA**ints".
 3. We are actively developing SEPA (or called style2paints V5). 
