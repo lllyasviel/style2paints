@@ -25,7 +25,7 @@ Baidu Drive (百度网盘):
 
 QQ Group (QQ群文件):
 
-    184467946
+    599929904
 
 You do **NOT** need to install any complex things like CUDA and python. You can directly download it and then double click it, as if you were playing a normal video game.
 
@@ -247,7 +247,7 @@ Your colorized images are yours, and we do not add any extra lisences to coloriz
 
 欢迎加入以下qq群，但是不保证一直有空位，如果你一次加群失败，可以多次尝试。
 
-    纸片协会：184467946
+    纸片协会：599929904
 
 # Previous Publications
 
