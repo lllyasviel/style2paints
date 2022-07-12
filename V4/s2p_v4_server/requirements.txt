@@ -1,6 +1,6 @@
 opencv-contrib-python==4.1.0.25
 tensorflow_gpu==1.14.0
-bottle==0.12.10
+bottle==0.12.20
 keras==2.2.5
 scikit-learn==0.23.1
 scikit-image==0.14.5
