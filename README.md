@@ -6,7 +6,7 @@
 
 2. Style2Paints will be renamed into "SEPA" before 2022. The name "**SEPA**" is a short version of "**S**tyl**E**2**PA**ints".
 3. We are actively developing SEPA (or called style2paints V5). 
-4. If you are interested, we have a twitter account [here](https://twitter.com/IlIIlIIIllIllII/status/1392143022221975554).
+4. If you are interested, we have a twitter account [here](https://twitter.com/lvminzhang/status/1392143022221975554).
 5. We have removed the shading functionality from style2paints V4.5 because some packages are incompatiable with the backend engine of V4.5 windows binary release, though the source of V4 is still avaliable. Project SEPA (previously called style2paints v5) has a much better backend engine and the shading functionality will come back in SEPA (style2paints v5). 
 
 Currently, we recommend you to use style2paints V4.5 before Project SEPA is ready.
