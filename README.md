@@ -23,10 +23,6 @@ Baidu Drive (百度网盘):
 
     https://pan.baidu.com/s/15xCm1jRVeHipHkiB3n1vzA
 
-QQ Group (QQ群文件):
-
-    599929904
-
 You do **NOT** need to install any complex things like CUDA and python. You can directly download it and then double click it, as if you were playing a normal video game.
 
 Never hesitate to let me know if you have any suggestions or ideas. You may directly send emails to my private address [lvminzhang@acm.org] or [lvminzhang@siggraph.org].
