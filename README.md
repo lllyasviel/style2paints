@@ -245,9 +245,7 @@ Your colorized images are yours, and we do not add any extra lisences to coloriz
 
 # 中文社区
 
-欢迎加入以下qq群，但是不保证一直有空位，如果你一次加群失败，可以多次尝试。
-
-    纸片协会：599929904
+我们有一个除了技术什么东西都聊的以技术交流为主的群。如果你一次加群失败，可以多次尝试: 816096787。
 
 # Previous Publications
 
