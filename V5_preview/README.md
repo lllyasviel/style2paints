@@ -74,7 +74,7 @@ The new pipeline is roughly visualized as this:
 
 ![img](imgs/a1.png)
 
-* note that this image is only for a quick preview.
+* note that this image is only for a quick preview. After we finalize this part, the results will look better.
 
 Q: What if I already have a reference image? 
 
