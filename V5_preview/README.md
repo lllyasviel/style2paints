@@ -16,6 +16,10 @@ The model is trained by [Lvmin Zhang](https://lllyasviel.github.io/Style2PaintsR
 
 [2] We thank [Linaqruf](https://huggingface.co/Linaqruf) for providing Anything V3. Many initial weights are from this pretty model.
 
+# Discussion Thread
+
+[Here](https://github.com/lllyasviel/style2paints/issues/205) is a discussion thread.
+
 # From Sketch To Illustrations
 
 In this result, the left-top is the input line drawing (created by Lvmin). All other images are outputs.
