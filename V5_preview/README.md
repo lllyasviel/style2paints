@@ -60,6 +60,10 @@ Many people in the old days did not like to use prompt in their visual work. in 
 
 ![img](imgs/6.png)
 
+# Supporting Color Scribbles
+
+This section is under construction. Please come back tomorrow.
+
 # Workflow-Oriented Assistant
 
 We will continue to assist the workflow of artists. The new pipeline will use a costumed model to generate ‘inner’ references that artists may or may not need to see. The workflow-oriented considerations will be preserved and continue to develop in V5.
