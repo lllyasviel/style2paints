@@ -76,7 +76,7 @@ The new pipeline is roughly visualized as this:
 
 ! note that this image is only for a quick preview - after we finalize this part, the results will look better !
 
-This inner-reference-based legendary coloring part is a relatively easy component from a technical perspective. We will put this part in higher priority after seeing great feedbacks of all of you.
+This inner-reference-based legendary coloring part is a relatively easy component from a technical perspective (Controlling diffusion with sketches is much more difficult). We will put this part in higher priority after seeing great feedbacks of all of you.
 
 We spent most time and efforts in controlling diffusion models using sketches and seems to have underestimated the importance of this part (after seeing many artist feedbacks). Our next step will be finishing this part first.
 
