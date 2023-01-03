@@ -68,7 +68,9 @@ This section is under construction. Please come back tomorrow.
 
 We will continue to assist the workflow of artists. The new pipeline will use a costumed model to generate ‘inner’ references that artists may or may not need to see. The workflow-oriented considerations will be preserved and continue to develop in V5.
 
-We were and will be the friend of artists forever. The new pipeline is roughly visualized as this:
+We were and will be the friend of artists forever. Some other groups may be AI-centric. But we are 100% human-centric. You can totally trust us in this point.
+
+The new pipeline is roughly visualized as this:
 
 ![img](imgs/a1.png)
 
