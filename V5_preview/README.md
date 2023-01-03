@@ -78,7 +78,7 @@ The new pipeline is roughly visualized as this:
 
 Q: What if I already have a reference image? 
 
-A: The 'inner' reference is a generated reference that is *almost aligned* with the line drawing. It will be used by the model in a different way than 'outside' references, which are, in most cases, have arbitrary shapes. In most cases, you will not even see the 'inner' references (style2paints V3/V4 already use many techniques that are similar to inner references). You will still be able to provide outside references just like previous versions.
+A: The 'inner' reference is a generated reference that is *almost aligned* with the line drawing. It will be used by the model in a different way than 'outside' references, which, in most cases, have arbitrary shapes. In most cases, you will not even see the 'inner' references (style2paints V3/V4 already use many techniques that are similar to inner references). You will still be able to provide outside references just like previous versions.
 
 # Citation
 
