@@ -80,6 +80,10 @@ Q: What if I already have a reference image?
 
 A: The 'inner' reference is a generated reference that is *almost aligned* with the line drawing. It will be used by the model in a different way than 'outside' references, which, in most cases, have arbitrary shapes. In most cases, you will not even see the 'inner' references (style2paints V3/V4 already use many techniques that are similar to inner references). You will still be able to provide outside references just like previous versions.
 
+This inner-reference-based legendary coloring part is a relatively easy component from a technical perspective. We will put this part in higher priority after seeing great feedbacks of all of you.
+
+We spent most time and efforts in controlling diffusion models using sketches and seems to have underestimated the importance of this part (after seeing many artist feedbacks). Our next step will be finishing this part first.
+
 # Citation
 
 If you want to mention us:
