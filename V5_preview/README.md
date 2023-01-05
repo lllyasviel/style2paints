@@ -26,7 +26,7 @@ The model is trained by [Lvmin Zhang](https://lllyasviel.github.io/Style2PaintsR
 
 # Discussion Thread
 
-[Here](https://github.com/lllyasviel/style2paints/issues/205) is a discussion thread.
+[Here](https://github.com/lllyasviel/style2paints/issues/205) is a discussion thread. [Here](https://twitter.com/lvminzhang) is a Twitter thread.
 
 # Style2Paints V5: Dorothy
 
