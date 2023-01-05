@@ -22,7 +22,7 @@ The model is trained by [Lvmin Zhang](https://lllyasviel.github.io/Style2PaintsR
 
 [1] The extra parameters are mainly in the encoding layers of the input sketch, not in the image generating layers. Nevertheless, since we actively use skip connections, it seems that all layers work together as a whole. If that is true, the model *may* be more powerful than SD but we have no evidence to say that. FID and CLIP scores are not well-suited for illustrations.
 
-[2] We thank [Linaqruf](https://huggingface.co/Linaqruf) for providing Anything V3. Many initial weights are from this pretty model.
+[2] We thank all authors of all those amazing SD pre-trained weights! Many initial layer weights are from different fine-tuned and dreambrooth models.
 
 # Discussion Thread
 
