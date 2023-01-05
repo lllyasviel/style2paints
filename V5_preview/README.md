@@ -32,7 +32,7 @@ The model is trained by [Lvmin Zhang](https://lllyasviel.github.io/Style2PaintsR
 
 **Dorothy** is an loyal assistant. She will try best to absolutely obey your input sketch. 
 
-The left-top is the input line drawing (created by Lvmin). All other images are outputs.
+The left-top is the input line drawing. All other images are outputs.
 
 We use the same default prompt.
 
