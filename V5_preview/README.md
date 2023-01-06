@@ -24,6 +24,10 @@ The model is trained by [Lvmin Zhang](https://lllyasviel.github.io/Style2PaintsR
 
 [2] We thank all authors of all those amazing SD pre-trained weights! Many initial layer weights are from different fine-tuned and dreambrooth models.
 
+# Value Code
+
+As a human-centric research project, Style2Paints promises that, in the future, we will put equal time and efforts to improve both the Alice and Dorothy methods. The project will always be focused on enhancing human artists, rather than generating random contents.
+
 # Discussion Thread
 
 [Here](https://github.com/lllyasviel/style2paints/issues/205) is a discussion thread. [Here](https://twitter.com/lvminzhang) is a Twitter thread.
