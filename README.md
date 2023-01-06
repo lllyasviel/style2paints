@@ -8,6 +8,8 @@ See also the [Preview of Style2Paints V5](https://github.com/lllyasviel/style2pa
 
 You can directly download the software (windows x64) at:
 
+**Again, this is style2paints V4.5, NOT style2paints V5!**
+
 Google Drive:
 
     https://drive.google.com/open?id=1gmg2wwNIp4qMzxqP12SbcmVAHsLt1iRE
