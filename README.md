@@ -2,7 +2,7 @@
 
 See also the [Preview of Style2Paints V5](https://github.com/lllyasviel/style2paints/tree/master/V5_preview).
  
-**Note that below is previous versions of style2paints. If you comes from a introduction of V5 and are instrested in V5, you do not need to download the V4 or V4.5. Note that V5 is still in preview and we have not released it yet.**
+**Note that below are previous versions of style2paints. If you come from an introduction of V5 and are interested in V5, you do not need to download the V4 or V4.5. Note that V5 is still in preview and we have not released it yet.**
  
 # Download Style2Paints V4.5
 
