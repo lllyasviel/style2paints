@@ -38,7 +38,25 @@ We use the same default prompt.
 
     1girl, masterpiece, best quality, ultra-detailed, illustration, disheveled hair
   
-![img](imgs/7.png)
+![img](imgs/p1.png)
+
+### Below are some random results collected by some other team members
+
+![img](imgs/p2.png)
+
+![img](imgs/p3.png)
+
+![img](imgs/p4.png)
+
+![img](imgs/p5.png)
+
+![img](imgs/p6.png)
+
+![img](imgs/p7.png)
+
+![img](imgs/p8.png)
+
+![img](imgs/p9.png)
 
 # Style2Paints V5: Alice
 
