@@ -134,7 +134,7 @@ The exact way of releasing the model is still in heated discussion in Style2Pain
 
 We want to hear voice from both technical world and artists, especially all thoughtful consideration of AI ethics and copyright.
 
-If you want to influence the decision making, feel free to message in [this issue](https://github.com/lllyasviel/style2paints/issues/205).
+If you want to influence the decision making, feel free to message in [this issue](https://github.com/lllyasviel/style2paints/issues/207).
 
 # 中文社区
 
