@@ -30,7 +30,7 @@ As a human-centric research project, Style2Paints promises that, in the future, 
 
 # Discussion Thread
 
-[Here](https://github.com/lllyasviel/style2paints/issues/205) is a discussion thread. [Here](https://twitter.com/lvminzhang) is a Twitter thread.
+[Here](https://github.com/lllyasviel/style2paints/issues/207) is a discussion thread. [Here](https://twitter.com/lvminzhang) is a Twitter thread.
 
 # Style2Paints V5: Dorothy
 
