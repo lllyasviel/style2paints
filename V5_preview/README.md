@@ -108,7 +108,11 @@ Many people in the old days did not like to use prompt in their visual work. in 
 
 ![img](imgs/6.png)
 
-### Supporting Color Scribbles
+# Comparison
+
+![img](imgs/c1.png)
+
+# Supporting Color Scribbles
 
 This section is under construction. Please come back tomorrow.
 
