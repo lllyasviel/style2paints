@@ -114,7 +114,11 @@ Many people in the old days did not like to use prompt in their visual work. in 
 
 # Supporting Color Scribbles
 
-This section is under construction. Please come back tomorrow.
+Note that color scribbles in large diffusion models can be very tricky. We are still experimenting this to make it easier to control.
+
+![img](imgs/cs1.png)
+
+![img](imgs/cs2.png)
 
 # Workflow-Oriented Assistant
 
