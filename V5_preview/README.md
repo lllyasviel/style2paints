@@ -96,11 +96,11 @@ Your sketch does not need to be finished. You can draw a part of your wanted thi
 
 ### Controlling the Confidence of Sketch
 
-We provide different levels of control. But we also emphasize that the absolute control is super difficult. The model tends to rebel violently when it disagrees with your decision.
-
-For example, in the case below, the collar was never controlled to follow the appearance of that in the line drawing. This is a limitation of the model. We are trying to improve it.
+In Alice mode, we provide different levels of control. But we also emphasize that the absolute control is super difficult. The model tends to rebel violently when it disagrees with your decision. For example, in the case below, the collar was never controlled to follow the appearance of that in the line drawing. This is a limitation of the model. We are trying to improve it.
 
 ![img](imgs/5.png)
+
+Note that Dorothy always follow line so that Dorothy does not need this feature.
 
 ### Start to Use Prompts
 
