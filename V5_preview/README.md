@@ -16,7 +16,7 @@ The model is not trained from scratch. The initial weight comes from three sourc
 
 The architecture is not a U-net. It is more like a W-net since we also use an encoder for sketch input. Our original intention is to train a sketch encoder that can encode any sketch into some feature maps that can be interpreted by some certain layers of SD, but as this super large model being trained with many skip connections, now we are not sure about the exact functionality of the very large sketch encoder. 
 
-The model is trained with 2TB GPU memory. We will release a technical report in two or three weeks. The model and code will be 100% open-sourced. 
+The model is trained with 2TB GPU memory. We will release the model and a technical report in ~two or three weeks~ ([delayed](https://github.com/lllyasviel/style2paints/issues/207#issuecomment-1382733953)). The model and code will be 100% open-sourced. 
 
 The model is trained by [Lvmin Zhang](https://lllyasviel.github.io/Style2PaintsResearch/lvmin).
 
