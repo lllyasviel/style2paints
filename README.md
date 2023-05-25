@@ -17,6 +17,10 @@ Google Drive:
 Baidu Drive (百度网盘):
 
     https://pan.baidu.com/s/15xCm1jRVeHipHkiB3n1vzA
+    
+Online version of style2paints V4.5 https://highcwu-style2paints-4-5-gradio.hf.space/file/ui/web-mobile/index.html
+
+Online version of style2paints V4 https://highcwu-style2paints-4-gradio.hf.space/file/ui/web-mobile/index.html
 
 You do **NOT** need to install any complex things like CUDA and python. You can directly download it and then double click it, as if you were playing a normal video game.
 
